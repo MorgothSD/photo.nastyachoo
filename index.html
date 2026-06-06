@@ -3,239 +3,552 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="photo.nastyachoo — Lifestyle & Family Photographer в Москве. Детские, семейные, студийные съемки.">
-<title>photo.nastyachoo — Lifestyle & Family Photographer</title>
+<meta name="description" content="photo.nastyachoo — Lifestyle, Family & Wedding Photographer в Москве.">
+<title>photo.nastyachoo</title>
+
+<!-- Favicon SVG логотип -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231A1814'/><text x='50%25' y='72%25' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23C9B99A'>N</text></svg>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/hero.webp">
 <link rel="preload" as="image" href="images/portfolio-6.webp">
-<link rel="preload" as="image" href="images/portfolio-7.webp">
 <link rel="preload" as="image" href="images/portfolio-8.webp">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap"></noscript>
+
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --cream:#F5F0EA;
-  --ivory:#F7F4EF;
-  --warm-white:#FDFBF8;
-  --beige:#E8DDD0;
-  --sand:#C9B99A;
   --dark:#1A1814;
-  --mid:#6B6560;
-  --accent:#A89480;
+  --dark2:#231F1B;
+  --warm:#FDFBF8;
+  --cream:#F5F0EA;
+  --ivory:#F0EAE2;
+  --beige:#E0D5C8;
+  --sand:#C9B99A;
+  --mid:#7A7470;
   --rose:#D4B8A8;
+  --gold:#B8A080;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--dark);font-weight:300;letter-spacing:.01em;overflow-x:hidden}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--warm);font-weight:300;letter-spacing:.01em;overflow-x:hidden}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.75rem 5rem;display:flex;align-items:center;justify-content:space-between;transition:background .5s,padding .4s,border-color .5s;border-bottom:1px solid transparent}
-nav.scrolled{background:rgba(253,251,248,.96);backdrop-filter:blur(16px);padding:1rem 5rem;border-bottom-color:var(--beige)}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:.08em;color:#fff;text-decoration:none;transition:color .3s}
-nav.scrolled .nav-logo{color:var(--dark)}
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:1.5rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .5s ease;
+}
+nav.scrolled{
+  background:rgba(26,24,20,.92);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  padding:1rem 4rem;
+  border-bottom:1px solid rgba(201,185,154,.12);
+}
+.nav-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1rem;font-weight:400;letter-spacing:.1em;
+  color:rgba(255,255,255,.75);text-decoration:none;
+  transition:color .3s;
+}
+.nav-logo:hover{color:#fff}
 .nav-links{display:flex;gap:2.5rem;list-style:none}
-.nav-links a{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.8);transition:color .3s}
-nav.scrolled .nav-links a{color:var(--mid)}
-.nav-links a:hover{color:#fff}
-nav.scrolled .nav-links a:hover{color:var(--dark)}
-
-/* HERO */
-#hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#2C2420 0%,#3D3028 40%,#4A3A2E 100%);background-image:url('images/hero.webp');background-size:cover;background-position:center}
-.hero-parallax{position:absolute;inset:-8%;background-image:url('images/hero.webp');background-size:cover;background-position:center;will-change:transform}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,18,14,.25) 0%,rgba(20,18,14,.55) 100%)}
-.hero-grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
-.hero-logo-mark{position:absolute;top:2rem;left:5rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.6);letter-spacing:.3em;border:1px solid rgba(255,255,255,.2);width:44px;height:44px;display:flex;align-items:center;justify-content:center;animation:fadeIn 1.5s ease both}
-.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:700px}
-.hero-eyebrow{font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);margin-bottom:2rem;animation:fadeUp 1s .2s ease both;opacity:0}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,6rem);font-weight:300;color:#fff;line-height:.95;letter-spacing:-.01em;margin-bottom:1rem;animation:fadeUp 1s .35s ease both;opacity:0}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(.9rem,2vw,1.2rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-bottom:.75rem;animation:fadeUp 1s .5s ease both;opacity:0}
-.hero-divider{width:40px;height:1px;background:rgba(255,255,255,.3);margin:.75rem auto 1.5rem;animation:fadeUp 1s .55s ease both;opacity:0}
-.hero-phrase{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.8vw,1.2rem);font-style:italic;color:rgba(255,255,255,.65);margin-bottom:3.5rem;line-height:1.6;animation:fadeUp 1s .65s ease both;opacity:0}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s .8s ease both;opacity:0}
-.btn-primary{padding:.9rem 2.5rem;background:rgba(255,255,255,.95);color:var(--dark);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'Jost',sans-serif;font-weight:400}
-.btn-primary:hover{background:#fff;transform:translateY(-2px)}
-.btn-outline{padding:.9rem 2.5rem;background:transparent;color:#fff;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.4);cursor:pointer;transition:all .3s;font-family:'Jost',sans-serif;font-weight:400}
-.btn-outline:hover{border-color:rgba(255,255,255,.8);transform:translateY(-2px)}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:rgba(255,255,255,.4);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;animation:fadeUp 1s 1.2s ease both;opacity:0}
-.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
-
-/* SECTIONS */
-section{padding:9rem 5rem}
-.section-label{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--sand);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-.section-label::after{content:'';display:block;width:2.5rem;height:1px;background:var(--sand)}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.75rem);font-weight:300;line-height:1.08;letter-spacing:-.01em}
-
-/* ABOUT */
-#about{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;padding:9rem 5rem}
-.about-photo{position:relative;aspect-ratio:3/4}
-.about-photo-frame{position:absolute;top:2.5rem;right:-2rem;bottom:-2.5rem;left:1.5rem;border:1px solid var(--beige);z-index:0}
-.about-photo-img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;display:block}
-.about-text{max-width:460px}
-.about-text h2{margin-bottom:2rem}
-.about-text p{font-size:1rem;line-height:1.9;color:var(--mid);margin-bottom:1.1rem}
-.about-text p:first-of-type{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--dark);font-weight:400;line-height:1.6}
-.about-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--beige)}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:300;color:var(--dark);line-height:1}
-.stat-label{font-size:.65rem;letter-spacing:.12em;color:var(--mid);text-transform:uppercase;margin-top:.3rem}
-
-/* PORTFOLIO */
-#portfolio{background:var(--warm-white);padding:9rem 5rem}
-.portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
-.category-filters{display:flex;gap:.4rem;flex-wrap:wrap}
-.cat-btn{padding:.5rem 1.2rem;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid var(--beige);color:var(--mid);cursor:pointer;transition:all .25s;font-family:'Jost',sans-serif}
-.cat-btn:hover,.cat-btn.active{background:var(--dark);border-color:var(--dark);color:var(--warm-white)}
-.masonry{columns:3;column-gap:1rem}
-.masonry-item{break-inside:avoid;margin-bottom:1rem;position:relative;overflow:hidden;cursor:pointer}
-#why,#packages,#reviews,#instagram,#contact{content-visibility:auto;contain-intrinsic-size:0 800px}
-.masonry-item img{width:100%;height:auto;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);decoding:async}
-.masonry-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .4s;display:flex;align-items:flex-end;padding:1.5rem}
-.masonry-item:hover .masonry-overlay{background:rgba(26,24,20,.5)}
-.masonry-item:hover img{transform:scale(1.05)}
-.masonry-info{opacity:0;transition:opacity .4s,transform .4s;transform:translateY(10px);color:#fff}
-.masonry-item:hover .masonry-info{opacity:1;transform:translateY(0)}
-.masonry-cat{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:.2rem}
-.masonry-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300}
-.masonry-item{transition:opacity .4s,transform .4s}
-.masonry-item.hidden{opacity:.12;transform:scale(.97);pointer-events:none}
-
-/* WHY */
-#why{background:var(--dark);padding:9rem 5rem}
-#why .section-label{color:var(--sand)}
-#why h2{color:var(--warm-white);margin-bottom:4.5rem}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.08)}
-.why-card{padding:3rem;border:1px solid rgba(255,255,255,.08);transition:background .35s}
-.why-card:hover{background:rgba(255,255,255,.03)}
-.why-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(255,255,255,.08);line-height:1;margin-bottom:1.5rem}
-.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--warm-white);margin-bottom:.75rem}
-.why-card p{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.45)}
-
-/* PACKAGES */
-#packages{background:var(--cream);padding:9rem 5rem}
-.packages-intro{max-width:500px;margin-bottom:5rem}
-.packages-intro p{font-size:1rem;color:var(--mid);line-height:1.8;margin-top:1rem}
-.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.pkg-card{background:var(--warm-white);padding:3.5rem 2.5rem;position:relative;transition:transform .35s,box-shadow .35s}
-.pkg-card:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(26,24,20,.08)}
-.pkg-card.featured{background:var(--dark)}
-.pkg-card.featured .pkg-name,.pkg-card.featured .pkg-price,.pkg-card.featured .pkg-detail-label{color:var(--warm-white)}
-.pkg-card.featured .pkg-duration{color:rgba(255,255,255,.5)}
-.pkg-card.featured .pkg-divider{background:rgba(255,255,255,.12)}
-.pkg-card.featured .pkg-list li{color:rgba(255,255,255,.65);border-bottom-color:rgba(255,255,255,.07)}
-.pkg-badge{position:absolute;top:2rem;right:2rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);border:1px solid rgba(201,185,154,.4);padding:.3rem .8rem}
-.pkg-num{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;line-height:1;color:rgba(0,0,0,.05);margin-bottom:1.5rem;display:block}
-.pkg-card.featured .pkg-num{color:rgba(255,255,255,.06)}
-.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:.3rem}
-.pkg-duration{font-size:.8rem;color:var(--mid);letter-spacing:.05em;margin-bottom:.25rem}
-.pkg-price{font-size:1.1rem;font-weight:400;letter-spacing:.03em;color:var(--dark);margin-bottom:2rem}
-.pkg-divider{height:1px;background:var(--beige);margin-bottom:2rem}
-.pkg-detail-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;color:var(--mid)}
-.pkg-list{list-style:none}
-.pkg-list li{font-size:.85rem;line-height:1.6;color:var(--mid);padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:flex-start;gap:.75rem}
-.pkg-check{color:var(--sand);flex-shrink:0;margin-top:.1rem}
-.pkg-cta{display:block;text-align:center;margin-top:2.5rem;padding:.9rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid var(--beige);color:var(--dark);transition:all .3s;font-family:'Jost',sans-serif}
-.pkg-cta:hover{background:var(--dark);color:var(--warm-white);border-color:var(--dark)}
-.pkg-card.featured .pkg-cta{border-color:rgba(255,255,255,.25);color:var(--warm-white)}
-.pkg-card.featured .pkg-cta:hover{background:var(--warm-white);color:var(--dark)}
-
-/* REVIEWS */
-#reviews{background:var(--warm-white);padding:9rem 5rem}
-.reviews-wrap{position:relative;margin-top:5rem;overflow:hidden}
-.reviews-track{display:flex;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
-.review-slide{min-width:100%;display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:center;padding:0 4rem}
-.review-avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;flex-shrink:0}
-.review-avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
-.review-qmark{font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:.6;color:var(--beige);display:block;margin-bottom:1.5rem}
-.review-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.65rem);font-weight:300;font-style:italic;line-height:1.55;color:var(--dark);margin-bottom:1.5rem}
-.review-author{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}
-.review-dots{display:flex;justify-content:center;gap:.5rem;margin-top:3rem}
-.dot{width:6px;height:6px;background:var(--beige);border-radius:50%;cursor:pointer;transition:all .3s;border:none}
-.dot.active{background:var(--dark);width:22px;border-radius:3px}
-.review-arrows{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
-.arrow-btn{pointer-events:all;width:48px;height:48px;background:none;border:1px solid var(--beige);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--mid);font-size:1.1rem;font-family:'Jost',sans-serif}
-.arrow-btn:hover{background:var(--dark);color:var(--warm-white);border-color:var(--dark)}
-
-/* INSTAGRAM */
-#instagram{background:var(--cream);text-align:center;padding:9rem 5rem}
-#instagram h2{margin-bottom:.75rem}
-.ig-sub{font-size:.875rem;color:var(--mid);margin-bottom:3rem;letter-spacing:.05em}
-.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-bottom:3rem}
-.ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
-.ig-thumb{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .55s}
-.ig-item:hover .ig-thumb{transform:scale(1.08)}
-.ig-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .3s;display:flex;align-items:center;justify-content:center}
-.ig-item:hover .ig-overlay{background:rgba(26,24,20,.38)}
-.ig-icon{opacity:0;transition:opacity .3s;color:#fff;font-size:1.3rem}
-.ig-item:hover .ig-icon{opacity:1}
-.ig-btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.5rem;background:var(--dark);color:var(--warm-white);text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;transition:background .3s;font-family:'Jost',sans-serif}
-.ig-btn:hover{background:#2C2420}
-
-/* CONTACT */
-#contact{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
-.contact-left{background:var(--dark);padding:9rem 5rem;display:flex;flex-direction:column;justify-content:center}
-.contact-left .section-label{color:var(--sand)}
-.contact-left h2{color:var(--warm-white);margin-bottom:1.5rem}
-.contact-desc{font-size:.9rem;line-height:1.85;color:rgba(255,255,255,.5);margin-bottom:3rem;max-width:360px}
-.contact-links{display:flex;flex-direction:column;gap:0}
-.contact-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:rgba(255,255,255,.7);font-size:.875rem;letter-spacing:.04em;transition:color .3s;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
-.contact-link:hover{color:#fff}
-.contact-link-icon{width:42px;height:42px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:border-color .3s}
-.contact-link:hover .contact-link-icon{border-color:rgba(255,255,255,.3)}
-.contact-right{background:var(--ivory);padding:9rem 5rem}
-.contact-right h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:2.5rem}
-.form-group{margin-bottom:1.5rem}
-.form-label{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:.6rem}
-.form-input,.form-select,.form-textarea{width:100%;padding:.85rem 0;background:none;border:none;border-bottom:1px solid var(--beige);font-family:'Jost',sans-serif;font-size:.95rem;font-weight:300;color:var(--dark);outline:none;transition:border-color .3s;appearance:none}
-.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--dark)}
-.form-select{cursor:pointer}
-.form-textarea{resize:none;height:80px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-.form-submit{width:100%;padding:1.1rem;background:var(--dark);color:var(--warm-white);border:none;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s;margin-top:1rem;text-decoration:none;display:block;text-align:center}
-.form-submit:hover{background:#2C2420}
-
-/* FOOTER */
-footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(255,255,255,.06)}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.06em}
-.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);letter-spacing:.06em}
-.footer-love{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.875rem;color:rgba(255,255,255,.3)}
-
-/* BACK TO TOP */
-#back-top{position:fixed;bottom:2rem;right:2rem;z-index:50;width:46px;height:46px;background:var(--dark);color:var(--warm-white);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
-#back-top.visible{opacity:1;pointer-events:all;transform:translateY(0)}
-#back-top:hover{background:#2C2420}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes scrollPulse{0%,100%{opacity:.35}50%{opacity:.8}}
-.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.2s}
-.reveal-delay-3{transition-delay:.3s}
-
-/* RESPONSIVE */
-@media(max-width:1024px){
-  nav,nav.scrolled{padding:1rem 2rem}
-  .nav-links{display:none}
-  section,#about,#contact .contact-left,#contact .contact-right{padding:6rem 2rem}
-  #about{grid-template-columns:1fr;gap:3rem}
-  .about-photo-frame{display:none}
-  .masonry{columns:2}
-  .packages-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr 1fr}
-  #contact{grid-template-columns:1fr}
-  .review-slide{padding:0 1rem;grid-template-columns:1fr;gap:1.5rem}
-  footer{flex-direction:column;text-align:center}
-  .ig-grid{grid-template-columns:repeat(3,1fr)}
-  .form-row{grid-template-columns:1fr}
-  .hero-logo-mark{left:2rem}
+.nav-links a{
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;color:rgba(255,255,255,.5);transition:color .3s;
 }
-@media(max-width:600px){
-  .masonry{columns:1}
-  .why-grid{grid-template-columns:1fr}
-  .ig-grid{grid-template-columns:repeat(2,1fr)}
+.nav-links a:hover{color:rgba(255,255,255,.9)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;background:none;border:none}
+.nav-burger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.7);transition:all .3s}
+.nav-mobile{
+  display:none;position:fixed;inset:0;z-index:99;
+  background:rgba(26,24,20,.97);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
+}
+.nav-mobile.open{display:flex}
+.nav-mobile a{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:300;letter-spacing:.05em;
+  color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s;
+}
+.nav-mobile a:hover{color:#fff}
+.nav-close{
+  position:absolute;top:1.5rem;right:1.5rem;
+  background:none;border:none;color:rgba(255,255,255,.5);
+  font-size:1.5rem;cursor:pointer;padding:.5rem;
+}
+
+/* ── HERO ── */
+#hero{
+  height:100vh;min-height:600px;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-img{
+  position:absolute;inset:0;
+  background:url('images/hero.webp') center/cover no-repeat;
+  transform:scale(1.08);
+  transition:transform 8s ease;
+  will-change:transform;
+}
+.hero-img.loaded{transform:scale(1)}
+.hero-fog{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(20,17,13,.15) 0%,
+    rgba(20,17,13,.4) 60%,
+    rgba(20,17,13,.75) 100%
+  );
+}
+/* N монограмма — внизу слева */
+.hero-monogram{
+  position:absolute;
+  bottom:2.5rem;left:3.5rem;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.85rem;font-weight:300;
+  color:rgba(255,255,255,.45);
+  letter-spacing:.35em;
+  border:1px solid rgba(255,255,255,.18);
+  width:38px;height:38px;
+  display:flex;align-items:center;justify-content:center;
+  animation:fadeIn 2s 1s ease both;
+}
+.hero-content{
+  position:relative;z-index:2;
+  text-align:center;padding:1.5rem;
+  max-width:640px;width:100%;
+}
+.hero-eyebrow{
+  font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:1.75rem;
+  animation:fadeUp 1s .3s ease both;opacity:0;
+}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.6rem,8vw,5.5rem);
+  font-weight:300;color:#fff;
+  line-height:.92;letter-spacing:-.01em;
+  margin-bottom:1.25rem;
+  animation:fadeUp 1s .45s ease both;opacity:0;
+}
+.hero-rule{
+  width:32px;height:1px;background:rgba(255,255,255,.3);
+  margin:.9rem auto;
+  animation:fadeUp 1s .55s ease both;opacity:0;
+}
+.hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(.85rem,2vw,1.1rem);font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.55);letter-spacing:.07em;
+  margin-bottom:2.75rem;
+  animation:fadeUp 1s .65s ease both;opacity:0;
+}
+.hero-phrase{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(.95rem,1.8vw,1.15rem);font-style:italic;
+  color:rgba(255,255,255,.6);line-height:1.65;
+  margin-bottom:3rem;
+  animation:fadeUp 1s .75s ease both;opacity:0;
+}
+.hero-btns{
+  display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp 1s .9s ease both;opacity:0;
+}
+.btn-light{
+  padding:.8rem 2rem;
+  background:rgba(255,255,255,.92);color:var(--dark);
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;border:none;cursor:pointer;
+  font-family:'Jost',sans-serif;font-weight:400;
+  transition:all .3s;display:inline-block;
+}
+.btn-light:hover{background:#fff;transform:translateY(-2px)}
+.btn-ghost{
+  padding:.8rem 2rem;
+  background:transparent;color:rgba(255,255,255,.85);
+  font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;border:1px solid rgba(255,255,255,.35);cursor:pointer;
+  font-family:'Jost',sans-serif;font-weight:400;
+  transition:all .3s;display:inline-block;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.75);transform:translateY(-2px)}
+.hero-scroll-hint{
+  position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.35);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
+  animation:fadeIn 1s 1.5s ease both;opacity:0;
+}
+.scroll-bar{
+  width:1px;height:40px;
+  background:linear-gradient(to bottom,rgba(255,255,255,.45),transparent);
+  animation:pulse 2.2s ease-in-out infinite;
+}
+
+/* ── ОБЩИЕ ── */
+.section-dark{background:var(--dark);color:var(--warm)}
+.section-warm{background:var(--cream);color:var(--dark)}
+.section-mid{background:#211E1A;color:var(--warm)}
+
+.pad{padding:8rem 4rem}
+@media(max-width:768px){.pad{padding:5rem 1.5rem}}
+
+.label{
+  font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:.9rem;
+}
+.label::after{content:'';width:2rem;height:1px;background:var(--sand)}
+
+h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,4.5vw,3.5rem);
+  font-weight:300;line-height:1.08;letter-spacing:-.01em;
+}
+.section-warm h2{color:var(--dark)}
+.section-dark h2,.section-mid h2{color:var(--warm)}
+
+/* ── ABOUT ── */
+#about{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6rem;align-items:center;
+}
+.about-img-wrap{position:relative;aspect-ratio:3/4}
+.about-img-frame{
+  position:absolute;
+  top:2rem;right:-1.5rem;bottom:-2rem;left:1.5rem;
+  border:1px solid rgba(201,185,154,.25);z-index:0;
+}
+.about-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  object-position:center top;
+  position:relative;z-index:1;display:block;
+}
+.about-text p{
+  font-size:1rem;line-height:1.9;color:var(--sand);margin-bottom:1rem;
+}
+.about-text p.lead{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-style:italic;color:rgba(255,255,255,.8);
+  line-height:1.65;font-weight:300;
+}
+.about-text h2{margin-bottom:2rem}
+.stats{
+  display:flex;gap:2.5rem;margin-top:2.5rem;
+  padding-top:2rem;border-top:1px solid rgba(201,185,154,.15);
+}
+.stat-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.5rem;font-weight:300;color:#fff;line-height:1;
+}
+.stat-l{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sand);margin-top:.3rem}
+
+/* ── PORTFOLIO ── */
+#portfolio .portfolio-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem;
+}
+.cats{display:flex;gap:.35rem;flex-wrap:wrap}
+.cat{
+  padding:.45rem 1.1rem;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+  background:none;border:1px solid rgba(201,185,154,.2);color:var(--sand);
+  cursor:pointer;transition:all .25s;font-family:'Jost',sans-serif;
+}
+.cat:hover,.cat.on{background:rgba(201,185,154,.12);border-color:var(--sand);color:#fff}
+.masonry{columns:3;column-gap:.75rem}
+@media(max-width:900px){.masonry{columns:2}}
+@media(max-width:500px){.masonry{columns:1}}
+.m-item{
+  break-inside:avoid;margin-bottom:.75rem;
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.m-item img{
+  width:100%;height:auto;display:block;
+  object-fit:cover;
+  transition:transform .7s cubic-bezier(.25,.46,.45,.94);
+}
+.m-item:hover img{transform:scale(1.05)}
+.m-over{
+  position:absolute;inset:0;
+  background:rgba(20,17,13,0);
+  transition:background .4s;
+  display:flex;align-items:flex-end;padding:1.25rem;
+}
+.m-item:hover .m-over{background:rgba(20,17,13,.55)}
+.m-info{opacity:0;transform:translateY(8px);transition:all .4s;color:#fff}
+.m-item:hover .m-info{opacity:1;transform:translateY(0)}
+.m-cat{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:.2rem}
+.m-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300}
+.m-item{transition:opacity .4s}
+.m-item.off{opacity:.1;pointer-events:none}
+
+/* ── WHY ── */
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border-top:1px solid rgba(201,185,154,.12);
+  border-left:1px solid rgba(201,185,154,.12);
+  margin-top:4rem;
+}
+@media(max-width:768px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
+.why-c{
+  padding:2.5rem;
+  border-right:1px solid rgba(201,185,154,.12);
+  border-bottom:1px solid rgba(201,185,154,.12);
+  transition:background .3s;
+}
+.why-c:hover{background:rgba(201,185,154,.05)}
+.why-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.5rem;font-weight:300;
+  color:rgba(201,185,154,.12);line-height:1;margin-bottom:1.2rem;
+}
+.why-c h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.85);margin-bottom:.6rem;
+}
+.why-c p{font-size:.82rem;line-height:1.8;color:rgba(255,255,255,.4)}
+
+/* ── PACKAGES ── */
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,185,154,.12);margin-top:4rem}
+@media(max-width:768px){.pkg-grid{grid-template-columns:1fr;gap:1px}}
+.pkg{
+  background:var(--dark2);padding:3rem 2.5rem;
+  position:relative;transition:background .3s;
+}
+.pkg:hover{background:#27231E}
+.pkg.feat{background:#201C18}
+.pkg-badge{
+  display:inline-block;
+  font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--sand);border:1px solid rgba(201,185,154,.3);
+  padding:.25rem .7rem;margin-bottom:1.5rem;
+}
+.pkg-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:4rem;font-weight:300;line-height:1;
+  color:rgba(255,255,255,.05);margin-bottom:1.5rem;display:block;
+}
+.pkg-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.7rem;font-weight:300;color:#fff;margin-bottom:.25rem;
+}
+.pkg-dur{font-size:.78rem;color:var(--mid);letter-spacing:.04em;margin-bottom:.25rem}
+.pkg-price{font-size:1rem;font-weight:400;color:var(--sand);margin-bottom:2rem;letter-spacing:.02em}
+.pkg-div{height:1px;background:rgba(255,255,255,.07);margin-bottom:1.75rem}
+.pkg-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:.9rem}
+.pkg-list{list-style:none}
+.pkg-list li{
+  font-size:.82rem;line-height:1.6;color:rgba(255,255,255,.5);
+  padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.05);
+  display:flex;gap:.6rem;
+}
+.pkg-check{color:var(--sand);flex-shrink:0}
+.pkg-cta{
+  display:block;text-align:center;margin-top:2rem;
+  padding:.8rem;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;
+  text-decoration:none;border:1px solid rgba(201,185,154,.25);color:rgba(255,255,255,.7);
+  transition:all .3s;font-family:'Jost',sans-serif;
+}
+.pkg-cta:hover{border-color:var(--sand);color:#fff;background:rgba(201,185,154,.08)}
+
+/* ── REVIEWS ── */
+.reviews-wrap{position:relative;margin-top:4.5rem;overflow:hidden}
+.reviews-track{display:flex;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.r-slide{
+  min-width:100%;
+  display:grid;grid-template-columns:80px 1fr;
+  gap:3rem;align-items:start;
+  padding:0 6rem;
+}
+@media(max-width:768px){
+  .r-slide{grid-template-columns:1fr;padding:0;gap:1.5rem}
+}
+.r-avatar{
+  width:80px;height:80px;border-radius:50%;overflow:hidden;flex-shrink:0;
+  border:1px solid rgba(201,185,154,.2);
+}
+.r-avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
+.r-qmark{
+  font-family:'Cormorant Garamond',serif;
+  font-size:5rem;line-height:.5;
+  color:rgba(201,185,154,.2);display:block;margin-bottom:1.25rem;
+}
+.r-text{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.05rem,2vw,1.5rem);
+  font-weight:300;font-style:italic;line-height:1.6;
+  color:rgba(255,255,255,.8);margin-bottom:1.25rem;
+}
+.r-author{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sand)}
+.r-dots{display:flex;justify-content:center;gap:.5rem;margin-top:2.5rem}
+.dot{width:5px;height:5px;background:rgba(201,185,154,.25);border-radius:50%;cursor:pointer;border:none;transition:all .3s}
+.dot.on{background:var(--sand);width:20px;border-radius:3px}
+.r-arrows{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:100%;display:flex;justify-content:space-between;
+  pointer-events:none;
+}
+.r-arr{
+  pointer-events:all;width:44px;height:44px;
+  background:none;border:1px solid rgba(201,185,154,.2);
+  cursor:pointer;color:var(--sand);font-size:1rem;
+  transition:all .3s;font-family:'Jost',sans-serif;
+}
+.r-arr:hover{border-color:var(--sand);background:rgba(201,185,154,.08)}
+
+/* ── INSTAGRAM ── */
+#instagram{text-align:center}
+#instagram h2{margin-bottom:.75rem}
+.ig-note{font-size:.82rem;color:var(--sand);margin-bottom:2.5rem;letter-spacing:.04em}
+.ig-grid{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:.4rem;margin-bottom:2.5rem;
+}
+@media(max-width:768px){.ig-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:400px){.ig-grid{grid-template-columns:repeat(2,1fr)}}
+.ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
+.ig-item img{
+  width:100%;height:100%;object-fit:cover;object-position:top;
+  transition:transform .55s;
+}
+.ig-item:hover img{transform:scale(1.08)}
+.ig-fog{
+  position:absolute;inset:0;background:rgba(20,17,13,0);
+  transition:background .3s;
+  display:flex;align-items:center;justify-content:center;
+}
+.ig-item:hover .ig-fog{background:rgba(20,17,13,.4)}
+.ig-heart{opacity:0;transition:opacity .3s;color:#fff;font-size:1.2rem}
+.ig-item:hover .ig-heart{opacity:1}
+.ig-btn{
+  display:inline-flex;align-items:center;gap:.65rem;
+  padding:.9rem 2.25rem;
+  border:1px solid rgba(201,185,154,.3);color:var(--sand);
+  text-decoration:none;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:all .3s;font-family:'Jost',sans-serif;
+}
+.ig-btn:hover{border-color:var(--sand);color:#fff;background:rgba(201,185,154,.08)}
+
+/* ── CONTACT ── */
+#contact{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+@media(max-width:768px){#contact{grid-template-columns:1fr}}
+.c-left{
+  background:#131110;
+  padding:7rem 4rem;
+  display:flex;flex-direction:column;justify-content:center;
+}
+@media(max-width:768px){.c-left,.c-right{padding:5rem 1.5rem}}
+.c-left h2{margin-bottom:1.25rem}
+.c-desc{font-size:.88rem;line-height:1.85;color:rgba(255,255,255,.4);margin-bottom:2.5rem;max-width:340px}
+.c-links{display:flex;flex-direction:column}
+.c-link{
+  display:flex;align-items:center;gap:.9rem;
+  text-decoration:none;color:rgba(255,255,255,.6);
+  font-size:.85rem;letter-spacing:.03em;
+  padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.06);
+  transition:color .3s;
+}
+.c-link:hover{color:#fff}
+.c-ico{
+  width:38px;height:38px;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:.95rem;
+  transition:border-color .3s;
+}
+.c-link:hover .c-ico{border-color:rgba(201,185,154,.4)}
+.c-right{background:var(--dark2);padding:7rem 4rem}
+.c-right h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.75rem;font-weight:300;color:#fff;margin-bottom:2.25rem;
+}
+.f-group{margin-bottom:1.4rem}
+.f-label{
+  display:block;font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--mid);margin-bottom:.55rem;
+}
+.f-input,.f-select,.f-textarea{
+  width:100%;padding:.8rem 0;background:none;border:none;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300;
+  color:#fff;outline:none;transition:border-color .3s;
+  appearance:none;-webkit-appearance:none;
+}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-bottom-color:var(--sand)}
+.f-input::placeholder,.f-textarea::placeholder{color:rgba(255,255,255,.2)}
+.f-select{cursor:pointer;color:rgba(255,255,255,.5)}
+.f-select option{background:var(--dark);color:#fff}
+.f-textarea{resize:none;height:72px}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:480px){.f-row{grid-template-columns:1fr}}
+.f-submit{
+  display:block;width:100%;text-align:center;
+  margin-top:1.5rem;padding:1rem;
+  background:rgba(201,185,154,.12);
+  border:1px solid rgba(201,185,154,.3);
+  color:var(--sand);
+  font-family:'Jost',sans-serif;font-size:.65rem;
+  letter-spacing:.22em;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;
+  transition:all .3s;
+}
+.f-submit:hover{background:rgba(201,185,154,.2);border-color:var(--sand);color:#fff}
+
+/* ── FOOTER ── */
+footer{
+  background:#0F0D0B;
+  padding:2.5rem 4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
+  border-top:1px solid rgba(255,255,255,.04);
+}
+@media(max-width:600px){footer{padding:2rem 1.5rem;flex-direction:column;text-align:center}}
+.f-logo{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.2rem;font-weight:300;color:rgba(255,255,255,.5);letter-spacing:.07em;
+}
+.f-copy{font-size:.65rem;color:rgba(255,255,255,.2);letter-spacing:.05em}
+.f-love{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.8rem;color:rgba(255,255,255,.2)}
+
+/* ── BACK TOP ── */
+#top-btn{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:50;
+  width:42px;height:42px;background:rgba(201,185,154,.12);
+  border:1px solid rgba(201,185,154,.25);color:var(--sand);
+  cursor:pointer;font-size:.9rem;font-family:'Jost',sans-serif;
+  opacity:0;pointer-events:none;
+  transition:all .3s;transform:translateY(8px);
+}
+#top-btn.on{opacity:1;pointer-events:all;transform:translateY(0)}
+#top-btn:hover{background:rgba(201,185,154,.2);border-color:var(--sand);color:#fff}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .85s ease,transform .85s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv-1{transition-delay:.1s}.rv-2{transition-delay:.2s}.rv-3{transition-delay:.3s}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+
+/* ── PRINT ── */
+@media print{
+  nav,#top-btn,.hero-scroll-hint,.hero-monogram,
+  .hero-btns,.r-arrows,.r-dots,.pkg-cta{display:none!important}
+  body{background:#fff;color:#000}
+  .hero-img,.hero-fog{display:none}
+  #hero{height:auto;min-height:0;padding:3rem}
+  .hero-title{color:#000}
+  section{padding:2rem!important;page-break-inside:avoid}
+  .masonry{columns:2}
+  img{max-height:300px;object-fit:cover}
 }
 </style>
 </head>
@@ -251,159 +564,162 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
     <li><a href="#reviews">Отзывы</a></li>
     <li><a href="#contact">Записаться</a></li>
   </ul>
+  <button class="nav-burger" id="burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE NAV -->
+<div class="nav-mobile" id="mob-nav">
+  <button class="nav-close" id="mob-close">✕</button>
+  <a href="#about" class="mob-link">Обо мне</a>
+  <a href="#portfolio" class="mob-link">Работы</a>
+  <a href="#packages" class="mob-link">Пакеты</a>
+  <a href="#reviews" class="mob-link">Отзывы</a>
+  <a href="#contact" class="mob-link">Записаться</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg">
-    <div class="hero-parallax" id="parallax"></div>
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-grain"></div>
-  <div class="hero-logo-mark">N</div>
+  <div class="hero-img" id="hero-bg"></div>
+  <div class="hero-fog"></div>
+  <div class="hero-monogram">N</div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Москва · Lifestyle · Family · Studio</p>
+    <p class="hero-eyebrow">Москва · Lifestyle · Family · Wedding</p>
     <h1 class="hero-title">photo<br>.nastyachoo</h1>
-    <p class="hero-sub">Family · Lifestyle · Studio Photographer</p>
-    <div class="hero-divider"></div>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Family · Lifestyle · Wedding Photographer</p>
     <p class="hero-phrase">«Ловлю настоящие эмоции<br>и превращаю их в воспоминания.»</p>
     <div class="hero-btns">
-      <a href="https://t.me/patcheycho" target="_blank" class="btn-primary">Записаться на съёмку</a>
-      <a href="#portfolio" class="btn-outline">Посмотреть работы</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="btn-light">Записаться на съёмку</a>
+      <a href="#portfolio" class="btn-ghost">Посмотреть работы</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-bar"></div>
     <span>Листать</span>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="about-photo reveal">
-    <div class="about-photo-frame"></div>
-    <img class="about-photo-img" src="images/about.webp" alt="Анастасия фотограф Москва" loading="lazy">
-  </div>
-  <div class="about-text">
-    <div class="section-label reveal">Обо мне</div>
-    <h2 class="reveal">Привет!<br>Меня зовут<br><em style="font-style:italic;">Анастасия.</em></h2>
-    <div style="margin-top:2rem">
-      <p class="reveal reveal-delay-1">Я создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
-      <p class="reveal reveal-delay-2">Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой.</p>
-      <p class="reveal reveal-delay-3">Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
+<section id="about" class="section-dark pad rv">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center" id="about-grid">
+    <div class="about-img-wrap rv">
+      <div class="about-img-frame"></div>
+      <img src="images/about.webp" alt="Анастасия фотограф" decoding="async">
     </div>
-    <div class="about-stats reveal">
-      <div>
-        <div class="stat-num">1+</div>
-        <div class="stat-label">Год опыта</div>
+    <div class="about-text rv rv-1">
+      <div class="label">Обо мне</div>
+      <h2>Привет!<br>Меня зовут<br><em style="font-style:italic;font-family:'Cormorant Garamond',serif">Анастасия.</em></h2>
+      <div style="margin-top:1.75rem">
+        <p class="lead">Я создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
+        <p>Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой.</p>
+        <p>Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
       </div>
-      <div>
-        <div class="stat-num">100+</div>
-        <div class="stat-label">Съёмок</div>
-      </div>
-      <div>
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Любви к делу</div>
+      <div class="stats">
+        <div><div class="stat-n">1+</div><div class="stat-l">Год опыта</div></div>
+        <div><div class="stat-n">100+</div><div class="stat-l">Съёмок</div></div>
+        <div><div class="stat-n">∞</div><div class="stat-l">Любви к делу</div></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="portfolio-header reveal">
+<section id="portfolio" class="section-dark pad">
+  <div class="portfolio-head rv">
     <div>
-      <div class="section-label">Портфолио</div>
+      <div class="label">Портфолио</div>
       <h2>Работы</h2>
     </div>
-    <div class="category-filters">
-      <button class="cat-btn active" data-cat="all">Все</button>
-      <button class="cat-btn" data-cat="children">Детские</button>
-      <button class="cat-btn" data-cat="studio">Студийные</button>
-      <button class="cat-btn" data-cat="street">Уличные</button>
+    <div class="cats">
+      <button class="cat on" data-cat="all">Все</button>
+      <button class="cat" data-cat="children">Детские</button>
+      <button class="cat" data-cat="studio">Студийные</button>
+      <button class="cat" data-cat="street">Уличные</button>
+      <button class="cat" data-cat="wedding">Свадебные</button>
     </div>
   </div>
-  <div class="masonry reveal" id="masonry">
-    <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-6.webp" alt="Студийная съёмка Москва" fetchpriority="high" decoding="async">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Естественность</div></div></div>
+  <div class="masonry rv" id="masonry">
+    <div class="m-item" data-cat="studio">
+      <img src="images/portfolio-6.webp" alt="Студийная съёмка" fetchpriority="high" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Студийные</span><div class="m-title">Естественность</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-7.webp" alt="Студийный портрет девушки" fetchpriority="high" decoding="async">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Чистый образ</div></div></div>
+    <div class="m-item" data-cat="children">
+      <img src="images/portfolio-8.webp" alt="Детский праздник" fetchpriority="high" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Детские</span><div class="m-title">Лучшие подруги</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="children">
-      <img src="images/portfolio-8.webp" alt="Детский праздник подруги" fetchpriority="high" decoding="async">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Лучшие подруги</div></div></div>
+    <div class="m-item" data-cat="studio">
+      <img src="images/portfolio-3.webp" alt="Студийная съёмка" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Студийные</span><div class="m-title">Женственность</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-3.webp" alt="Студийная съёмка девушки" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Женственность</div></div></div>
+    <div class="m-item" data-cat="wedding">
+      <img src="images/hero.webp" alt="Свадебная съёмка" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Свадебные</span><div class="m-title">Золотой час</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="street">
-      <img src="images/portfolio-5.webp" alt="Уличный портрет Москва" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Уличные</span><div class="masonry-title">Город как фон</div></div></div>
+    <div class="m-item" data-cat="studio">
+      <img src="images/portfolio-7.webp" alt="Студийный портрет" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Студийные</span><div class="m-title">Чистый образ</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="children">
-      <img src="images/portfolio-1.webp" alt="Детский праздник pop-it" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Яркий день</div></div></div>
+    <div class="m-item" data-cat="children">
+      <img src="images/portfolio-1.webp" alt="Детский праздник" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Детские</span><div class="m-title">Яркий день</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="children">
-      <img src="images/portfolio-2.webp" alt="Детский день рождения торт" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Торт!</div></div></div>
+    <div class="m-item" data-cat="street">
+      <img src="images/portfolio-5.webp" alt="Уличная съёмка" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Уличные</span><div class="m-title">Город как фон</div></div></div>
     </div>
-    <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-9.webp" alt="Мужской портрет студия" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Сила образа</div></div></div>
+    <div class="m-item" data-cat="children">
+      <img src="images/portfolio-2.webp" alt="Детский праздник" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Детские</span><div class="m-title">Торт!</div></div></div>
+    </div>
+    <div class="m-item" data-cat="studio">
+      <img src="images/portfolio-9.webp" alt="Мужской портрет" loading="lazy" decoding="async">
+      <div class="m-over"><div class="m-info"><span class="m-cat">Студийные</span><div class="m-title">Сила образа</div></div></div>
     </div>
   </div>
 </section>
 
 <!-- WHY -->
-<section id="why">
-  <div class="section-label reveal">Преимущества</div>
-  <h2 class="reveal">Почему мне<br>доверяют</h2>
-  <div class="why-grid reveal">
-    <div class="why-card"><div class="why-num">01</div><h3>Помогаю с позированием</h3><p>Направляю и подсказываю — вы расслабляетесь, я получаю искренние кадры.</p></div>
-    <div class="why-card"><div class="why-num">02</div><h3>Лучшие локации</h3><p>Знаю красивые места и подбираю подходящее под ваш образ и настроение.</p></div>
-    <div class="why-card"><div class="why-num">03</div><h3>Быстрая обработка</h3><p>Отредактированные фотографии в течение 7–10 дней после съёмки.</p></div>
-    <div class="why-card"><div class="why-num">04</div><h3>Индивидуальный подход</h3><p>Каждая съёмка — история конкретных людей, а не шаблонный набор кадров.</p></div>
-    <div class="why-card"><div class="why-num">05</div><h3>Комфортная атмосфера</h3><p>Создаю тёплую расслабляющую атмосферу — даже если вы не любите фотографироваться.</p></div>
-    <div class="why-card"><div class="why-num">06</div><h3>Естественная ретушь</h3><p>Обработка без перебора: вы остаётесь собой, но в лучшем свете.</p></div>
+<section id="why" class="section-mid pad">
+  <div class="rv"><div class="label">Преимущества</div><h2>Почему мне доверяют</h2></div>
+  <div class="why-grid rv rv-1">
+    <div class="why-c"><div class="why-n">01</div><h3>Помогаю с позированием</h3><p>Направляю и подсказываю — вы расслабляетесь, я получаю искренние кадры.</p></div>
+    <div class="why-c"><div class="why-n">02</div><h3>Лучшие локации</h3><p>Знаю красивые места и подбираю под ваш образ и настроение.</p></div>
+    <div class="why-c"><div class="why-n">03</div><h3>Быстрая обработка</h3><p>Готовые фотографии в течение 7–10 дней после съёмки.</p></div>
+    <div class="why-c"><div class="why-n">04</div><h3>Индивидуальный подход</h3><p>Каждая съёмка — история конкретных людей, а не шаблон.</p></div>
+    <div class="why-c"><div class="why-n">05</div><h3>Комфортная атмосфера</h3><p>Создаю тёплую атмосферу — даже если вы не любите фотографироваться.</p></div>
+    <div class="why-c"><div class="why-n">06</div><h3>Естественная ретушь</h3><p>Обработка без перебора: вы остаётесь собой, но в лучшем свете.</p></div>
   </div>
 </section>
 
 <!-- PACKAGES -->
-<section id="packages">
-  <div class="packages-intro">
-    <div class="section-label reveal">Услуги</div>
-    <h2 class="reveal">Пакеты съёмок</h2>
-    <p class="reveal">Выберите формат, который подходит именно вам — или напишите мне, и мы придумаем что-то своё.</p>
-  </div>
-  <div class="packages-grid">
-    <div class="pkg-card reveal">
+<section id="packages" class="section-dark pad">
+  <div class="rv"><div class="label">Услуги</div><h2>Пакеты съёмок</h2></div>
+  <div class="pkg-grid">
+    <div class="pkg rv">
       <span class="pkg-num">01</span>
       <div class="pkg-name">Мини</div>
-      <div class="pkg-duration">1 час съёмки</div>
+      <div class="pkg-dur">1 час съёмки</div>
       <div class="pkg-price">от 3 500 ₽</div>
-      <div class="pkg-divider"></div>
-      <div class="pkg-detail-label">Включено</div>
+      <div class="pkg-div"></div>
+      <div class="pkg-lbl">Включено</div>
       <ul class="pkg-list">
         <li><span class="pkg-check">✓</span>1 час · одна локация</li>
         <li><span class="pkg-check">✓</span>30–40 обработанных фото</li>
         <li><span class="pkg-check">✓</span>Галерея для скачивания</li>
         <li><span class="pkg-check">✓</span>Консультация перед съёмкой</li>
       </ul>
-      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться →</a>
     </div>
-    <div class="pkg-card featured reveal reveal-delay-1">
-      <div class="pkg-badge">Популярный</div>
+    <div class="pkg feat rv rv-1">
+      <div class="pkg-badge">Популярный выбор</div>
       <span class="pkg-num">02</span>
       <div class="pkg-name">Стандарт</div>
-      <div class="pkg-duration">2 часа съёмки</div>
+      <div class="pkg-dur">2 часа съёмки</div>
       <div class="pkg-price">от 6 000 ₽</div>
-      <div class="pkg-divider"></div>
-      <div class="pkg-detail-label">Включено</div>
+      <div class="pkg-div"></div>
+      <div class="pkg-lbl">Включено</div>
       <ul class="pkg-list">
         <li><span class="pkg-check">✓</span>2 часа · до 2 локаций</li>
         <li><span class="pkg-check">✓</span>70–100 обработанных фото</li>
@@ -411,15 +727,15 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
         <li><span class="pkg-check">✓</span>Приоритетная обработка</li>
         <li><span class="pkg-check">✓</span>Галерея для скачивания</li>
       </ul>
-      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться →</a>
     </div>
-    <div class="pkg-card reveal reveal-delay-2">
+    <div class="pkg rv rv-2">
       <span class="pkg-num">03</span>
       <div class="pkg-name">Премиум</div>
-      <div class="pkg-duration">Индивидуальный проект</div>
+      <div class="pkg-dur">Индивидуальный проект</div>
       <div class="pkg-price">Обсуждается</div>
-      <div class="pkg-divider"></div>
-      <div class="pkg-detail-label">Включено</div>
+      <div class="pkg-div"></div>
+      <div class="pkg-lbl">Включено</div>
       <ul class="pkg-list">
         <li><span class="pkg-check">✓</span>Полный день съёмки</li>
         <li><span class="pkg-check">✓</span>Неограниченное кол-во фото</li>
@@ -427,205 +743,205 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
         <li><span class="pkg-check">✓</span>Индивидуальная концепция</li>
         <li><span class="pkg-check">✓</span>Фотокнига в подарок</li>
       </ul>
-      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Обсудить проект</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Обсудить →</a>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section id="reviews">
-  <div class="section-label reveal">Отзывы</div>
-  <h2 class="reveal">Клиенты говорят</h2>
-  <div class="reviews-wrap reveal">
-    <div class="reviews-track" id="slides">
-      <div class="review-slide">
-        <div class="review-avatar">
-          <img src="images/portfolio-3.webp" alt="Анастасия" loading="lazy">
-        </div>
+<section id="reviews" class="section-mid pad">
+  <div class="rv"><div class="label">Отзывы</div><h2>Клиенты говорят</h2></div>
+  <div class="reviews-wrap rv rv-1">
+    <div class="reviews-track" id="rtrack">
+      <div class="r-slide">
+        <div class="r-avatar"><img src="images/portfolio-3.webp" alt="Анастасия" loading="lazy"></div>
         <div>
-          <span class="review-qmark">"</span>
-          <p class="review-text">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она умеет создать атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты. Фотографии до сих пор вызывают восторг у всех, кто их видит.</p>
-          <div class="review-author">Анастасия · Студийная съёмка</div>
+          <span class="r-qmark">"</span>
+          <p class="r-text">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты. Фотографии вызывают восторг у всех, кто их видит.</p>
+          <div class="r-author">Анастасия · Студийная съёмка</div>
         </div>
       </div>
-      <div class="review-slide">
-        <div class="review-avatar">
-          <img src="images/portfolio-5.webp" alt="Мария" loading="lazy">
-        </div>
+      <div class="r-slide">
+        <div class="r-avatar"><img src="images/portfolio-5.webp" alt="Мария" loading="lazy"></div>
         <div>
-          <span class="review-qmark">"</span>
-          <p class="review-text">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё оказалось иначе: она так легко и естественно направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими — именно такими, о которых я мечтала.</p>
-          <div class="review-author">Мария · Уличная съёмка · Москва</div>
+          <span class="r-qmark">"</span>
+          <p class="r-text">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё иначе: она так легко направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими — именно такими, о которых я мечтала.</p>
+          <div class="r-author">Мария · Уличная съёмка · Москва</div>
         </div>
       </div>
-      <div class="review-slide">
-        <div class="review-avatar">
-          <img src="images/portfolio-8.webp" alt="Екатерина" loading="lazy">
-        </div>
+      <div class="r-slide">
+        <div class="r-avatar"><img src="images/portfolio-8.webp" alt="Екатерина" loading="lazy"></div>
         <div>
-          <span class="review-qmark">"</span>
-          <p class="review-text">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Это настоящее сокровище, которое мы будем пересматривать годами!</p>
-          <div class="review-author">Екатерина · Детский праздник</div>
+          <span class="r-qmark">"</span>
+          <p class="r-text">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Это настоящее сокровище, которое мы будем пересматривать годами!</p>
+          <div class="r-author">Екатерина · Детский праздник</div>
         </div>
       </div>
     </div>
-    <div class="review-arrows">
-      <button class="arrow-btn" onclick="changeSlide(-1)">←</button>
-      <button class="arrow-btn" onclick="changeSlide(1)">→</button>
+    <div class="r-arrows">
+      <button class="r-arr" onclick="chSlide(-1)">←</button>
+      <button class="r-arr" onclick="chSlide(1)">→</button>
     </div>
-    <div class="review-dots" id="dots">
-      <button class="dot active" onclick="goToSlide(0)"></button>
-      <button class="dot" onclick="goToSlide(1)"></button>
-      <button class="dot" onclick="goToSlide(2)"></button>
+    <div class="r-dots" id="rdots">
+      <button class="dot on" onclick="goSlide(0)"></button>
+      <button class="dot" onclick="goSlide(1)"></button>
+      <button class="dot" onclick="goSlide(2)"></button>
     </div>
   </div>
 </section>
 
 <!-- INSTAGRAM -->
-<section id="instagram">
-  <div class="section-label reveal" style="justify-content:center">Instagram</div>
-  <h2 class="reveal">@photo.nastyachoo</h2>
-  <p class="ig-sub reveal">Следите за новыми работами и вдохновением</p>
-  <div class="ig-grid reveal">
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-3.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-5.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-8.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-1.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-6.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-2.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+<section id="instagram" class="section-dark pad">
+  <div class="rv"><div class="label" style="justify-content:center">Instagram</div>
+  <h2>@photo.nastyachoo</h2></div>
+  <p class="ig-note rv rv-1">Последние работы и закулисье съёмок</p>
+  <div class="ig-grid rv rv-2">
+    <div class="ig-item"><img src="ig_block/ig-1.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
+    <div class="ig-item"><img src="ig_block/ig-2.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
+    <div class="ig-item"><img src="ig_block/ig-3.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
+    <div class="ig-item"><img src="ig_block/ig-4.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
+    <div class="ig-item"><img src="ig_block/ig-5.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
+    <div class="ig-item"><img src="ig_block/ig-6.webp" alt="" loading="lazy"><div class="ig-fog"><span class="ig-heart">♡</span></div></div>
   </div>
-  <a href="https://instagram.com/photo.nastyachoo" target="_blank" class="ig-btn reveal">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+  <a href="https://instagram.com/photo.nastyachoo" target="_blank" class="ig-btn rv rv-3">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     Подписаться на @photo.nastyachoo
   </a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="contact-left">
-    <div class="section-label">Контакты</div>
+  <div class="c-left">
+    <div class="label">Контакты</div>
     <h2>Запишитесь<br>на съёмку</h2>
-    <p class="contact-desc">Напишите мне в удобном мессенджере или заполните форму — отвечу в течение нескольких часов.</p>
-    <div class="contact-links">
-      <a href="https://t.me/patcheycho" class="contact-link" target="_blank">
-        <div class="contact-link-icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-        </div>
+    <p class="c-desc">Напишите в удобном мессенджере или заполните форму — отвечу в течение нескольких часов.</p>
+    <div class="c-links">
+      <a href="https://t.me/patcheycho" target="_blank" class="c-link">
+        <div class="c-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
         Telegram · @patcheycho
       </a>
-      <a href="https://instagram.com/photo.nastyachoo" class="contact-link" target="_blank">
-        <div class="contact-link-icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        </div>
+      <a href="https://instagram.com/photo.nastyachoo" target="_blank" class="c-link">
+        <div class="c-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></div>
         Instagram · @photo.nastyachoo
       </a>
-      <a href="https://wa.me/79217504658" class="contact-link" target="_blank">
-        <div class="contact-link-icon">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-        </div>
+      <a href="https://wa.me/79217504658" target="_blank" class="c-link">
+        <div class="c-ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
         WhatsApp · +7 921 750 46 58
       </a>
     </div>
   </div>
-  <div class="contact-right">
+  <div class="c-right">
     <h3>Оставить заявку</h3>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">Имя</label>
-        <input type="text" class="form-input" id="f-name" placeholder="Анна">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Телефон</label>
-        <input type="tel" class="form-input" id="f-phone" placeholder="+7 (___) ___-__-__">
-      </div>
+    <div class="f-row">
+      <div class="f-group"><label class="f-label">Имя</label><input type="text" class="f-input" id="fn" placeholder="Анна"></div>
+      <div class="f-group"><label class="f-label">Телефон</label><input type="tel" class="f-input" id="fp" placeholder="+7 (___) ___-__-__"></div>
     </div>
-    <div class="form-group">
-      <label class="form-label">Тип съёмки</label>
-      <select class="form-select" id="f-type">
-        <option value="">Выберите тип съёмки</option>
+    <div class="f-group">
+      <label class="f-label">Тип съёмки</label>
+      <select class="f-select" id="ft">
+        <option value="">Выберите тип</option>
         <option>Детская съёмка</option>
         <option>Студийная съёмка</option>
         <option>Уличная съёмка</option>
         <option>Семейная съёмка</option>
+        <option>Свадебная съёмка</option>
         <option>Другое</option>
       </select>
     </div>
-    <div class="form-group">
-      <label class="form-label">Желаемая дата</label>
-      <input type="date" class="form-input" id="f-date">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Комментарий</label>
-      <textarea class="form-textarea" id="f-comment" placeholder="Расскажите о вашей идее..."></textarea>
-    </div>
-    <a id="form-submit" href="#" class="form-submit">Записаться на съёмку →</a>
+    <div class="f-group"><label class="f-label">Дата</label><input type="date" class="f-input" id="fd"></div>
+    <div class="f-group"><label class="f-label">Комментарий</label><textarea class="f-textarea" id="fc" placeholder="Расскажите о вашей идее..."></textarea></div>
+    <a href="#" id="fsub" class="f-submit">Записаться на съёмку →</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">photo.nastyachoo</div>
-  <div class="footer-copy">© 2026 photo.nastyachoo</div>
-  <div class="footer-love">Сделано с любовью к красивым историям.</div>
+  <div class="f-logo">photo.nastyachoo</div>
+  <div class="f-copy">© 2026 photo.nastyachoo</div>
+  <div class="f-love">Сделано с любовью к красивым историям.</div>
 </footer>
 
-<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-const backTop = document.getElementById('back-top');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 80);
-  backTop.classList.toggle('visible', window.scrollY > 500);
-  // Parallax
-  const p = document.getElementById('parallax');
-  if(p) p.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-}, {passive:true});
+// Hero zoom on load
+window.addEventListener('load',()=>{
+  document.getElementById('hero-bg').classList.add('loaded');
+});
+
+// Nav + scroll
+const nav=document.getElementById('nav');
+const topBtn=document.getElementById('top-btn');
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY>80;
+  nav.classList.toggle('scrolled',s);
+  topBtn.classList.toggle('on',window.scrollY>500);
+},{passive:true});
+
+// Mobile nav
+const burger=document.getElementById('burger');
+const mobNav=document.getElementById('mob-nav');
+const mobClose=document.getElementById('mob-close');
+burger.addEventListener('click',()=>mobNav.classList.add('open'));
+mobClose.addEventListener('click',()=>mobNav.classList.remove('open'));
+document.querySelectorAll('.mob-link').forEach(l=>{
+  l.addEventListener('click',()=>mobNav.classList.remove('open'));
+});
 
 // Reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, {threshold:0.08});
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.07});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// About grid mobile
+function fixAboutGrid(){
+  const g=document.getElementById('about-grid');
+  if(g) g.style.gridTemplateColumns=window.innerWidth<768?'1fr':'1fr 1fr';
+}
+fixAboutGrid();
+window.addEventListener('resize',fixAboutGrid);
 
 // Portfolio filter
-document.querySelectorAll('.cat-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    document.querySelectorAll('.masonry-item').forEach(item => {
-      item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
+document.querySelectorAll('.cat').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.cat').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    const cat=btn.dataset.cat;
+    document.querySelectorAll('.m-item').forEach(item=>{
+      item.classList.toggle('off',cat!=='all'&&item.dataset.cat!==cat);
     });
   });
 });
 
 // Reviews slider
-let cur = 0;
-const total = 3;
-function updateSlider() {
-  document.getElementById('slides').style.transform = `translateX(-${cur * 100}%)`;
-  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+let cur=0;const tot=3;
+function updSlider(){
+  document.getElementById('rtrack').style.transform=`translateX(-${cur*100}%)`;
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i===cur));
 }
-function changeSlide(dir) { cur = (cur + dir + total) % total; updateSlider(); }
-function goToSlide(i) { cur = i; updateSlider(); }
-setInterval(() => changeSlide(1), 6000);
+function chSlide(d){cur=(cur+d+tot)%tot;updSlider();}
+function goSlide(i){cur=i;updSlider();}
+let autoSlide=setInterval(()=>chSlide(1),6000);
+document.getElementById('rtrack').addEventListener('click',()=>{
+  clearInterval(autoSlide);
+  autoSlide=setInterval(()=>chSlide(1),6000);
+});
 
 // Form → Telegram
-document.getElementById('form-submit').addEventListener('click', function(e) {
+document.getElementById('fsub').addEventListener('click',function(e){
   e.preventDefault();
-  const name = document.getElementById('f-name').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
-  const type = document.getElementById('f-type').value;
-  const date = document.getElementById('f-date').value;
-  const comment = document.getElementById('f-comment').value.trim();
-  let msg = 'Привет! Хочу записаться на съёмку.';
-  if(name) msg += `\nИмя: ${name}`;
-  if(phone) msg += `\nТелефон: ${phone}`;
-  if(type) msg += `\nТип съёмки: ${type}`;
-  if(date) msg += `\nДата: ${date}`;
-  if(comment) msg += `\nКомментарий: ${comment}`;
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  const t=document.getElementById('ft').value;
+  const d=document.getElementById('fd').value;
+  const c=document.getElementById('fc').value.trim();
+  let msg='Привет! Хочу записаться на съёмку.';
+  if(n) msg+=`\nИмя: ${n}`;
+  if(p) msg+=`\nТелефон: ${p}`;
+  if(t) msg+=`\nТип: ${t}`;
+  if(d) msg+=`\nДата: ${d}`;
+  if(c) msg+=`\nКомментарий: ${c}`;
   window.open(`https://t.me/patcheycho?text=${encodeURIComponent(msg)}`, '_blank');
 });
 </script>
