@@ -3,824 +3,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="photo.nastyachoo — Lifestyle & Family Photographer в Москве. Детские, семейные, студийные съемки, Love Story, свадьбы.">
-<meta name="keywords" content="фотограф Москва, семейная съемка, детский фотограф, свадебный фотограф, love story">
-<meta property="og:title" content="photo.nastyachoo — Lifestyle & Family Photographer">
-<meta property="og:description" content="Ловлю настоящие эмоции и превращаю их в воспоминания.">
-<meta property="og:type" content="website">
+<meta name="description" content="photo.nastyachoo — Lifestyle & Family Photographer в Москве. Детские, семейные, студийные съемки.">
 <title>photo.nastyachoo — Lifestyle & Family Photographer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/hero.webp">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap"></noscript>
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F0EA;
+  --ivory:#F7F4EF;
+  --warm-white:#FDFBF8;
+  --beige:#E8DDD0;
+  --sand:#C9B99A;
+  --dark:#1A1814;
+  --mid:#6B6560;
+  --accent:#A89480;
+  --rose:#D4B8A8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--dark);font-weight:300;letter-spacing:.01em;overflow-x:hidden}
 
-  :root {
-    --cream: #F5F0EA;
-    --warm-white: #FDFBF8;
-    --beige: #E8DDD0;
-    --sand: #C9B99A;
-    --dark: #1A1814;
-    --mid: #6B6560;
-    --accent: #A89480;
-    --rose: #D4B8A8;
-  }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.75rem 5rem;display:flex;align-items:center;justify-content:space-between;transition:background .5s,padding .4s,border-color .5s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(253,251,248,.96);backdrop-filter:blur(16px);padding:1rem 5rem;border-bottom-color:var(--beige)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;letter-spacing:.08em;color:#fff;text-decoration:none;transition:color .3s}
+nav.scrolled .nav-logo{color:var(--dark)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:rgba(255,255,255,.8);transition:color .3s}
+nav.scrolled .nav-links a{color:var(--mid)}
+.nav-links a:hover{color:#fff}
+nav.scrolled .nav-links a:hover{color:var(--dark)}
 
-  html { scroll-behavior: smooth; font-size: 16px; }
+/* HERO */
+#hero{height:100vh;min-height:700px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#2C2420 0%,#3D3028 40%,#4A3A2E 100%);background-image:url('images/hero.webp');background-size:cover;background-position:center}
+.hero-parallax{position:absolute;inset:-8%;background-image:url('images/hero.webp');background-size:cover;background-position:center;will-change:transform}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,18,14,.25) 0%,rgba(20,18,14,.55) 100%)}
+.hero-grain{position:absolute;inset:0;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")}
+.hero-logo-mark{position:absolute;top:2rem;left:5rem;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(255,255,255,.6);letter-spacing:.3em;border:1px solid rgba(255,255,255,.2);width:44px;height:44px;display:flex;align-items:center;justify-content:center;animation:fadeIn 1.5s ease both}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:700px}
+.hero-eyebrow{font-size:.65rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rose);margin-bottom:2rem;animation:fadeUp 1s .2s ease both;opacity:0}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,6rem);font-weight:300;color:#fff;line-height:.95;letter-spacing:-.01em;margin-bottom:1rem;animation:fadeUp 1s .35s ease both;opacity:0}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(.9rem,2vw,1.2rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.6);letter-spacing:.06em;margin-bottom:.75rem;animation:fadeUp 1s .5s ease both;opacity:0}
+.hero-divider{width:40px;height:1px;background:rgba(255,255,255,.3);margin:.75rem auto 1.5rem;animation:fadeUp 1s .55s ease both;opacity:0}
+.hero-phrase{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,1.8vw,1.2rem);font-style:italic;color:rgba(255,255,255,.65);margin-bottom:3.5rem;line-height:1.6;animation:fadeUp 1s .65s ease both;opacity:0}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s .8s ease both;opacity:0}
+.btn-primary{padding:.9rem 2.5rem;background:rgba(255,255,255,.95);color:var(--dark);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'Jost',sans-serif;font-weight:400}
+.btn-primary:hover{background:#fff;transform:translateY(-2px)}
+.btn-outline{padding:.9rem 2.5rem;background:transparent;color:#fff;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.4);cursor:pointer;transition:all .3s;font-family:'Jost',sans-serif;font-weight:400}
+.btn-outline:hover{border-color:rgba(255,255,255,.8);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;color:rgba(255,255,255,.4);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;animation:fadeUp 1s 1.2s ease both;opacity:0}
+.scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(255,255,255,.5),transparent);animation:scrollPulse 2s ease-in-out infinite}
 
-  body {
-    font-family: 'Jost', sans-serif;
-    background: var(--warm-white);
-    color: var(--dark);
-    font-weight: 300;
-    letter-spacing: 0.01em;
-    overflow-x: hidden;
-  }
+/* SECTIONS */
+section{padding:9rem 5rem}
+.section-label{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--sand);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.section-label::after{content:'';display:block;width:2.5rem;height:1px;background:var(--sand)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.75rem);font-weight:300;line-height:1.08;letter-spacing:-.01em}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.5rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-    transition: background 0.4s, padding 0.4s;
-  }
-  nav.scrolled {
-    background: rgba(253,251,248,0.95);
-    backdrop-filter: blur(12px);
-    padding: 1rem 4rem;
-    border-bottom: 1px solid var(--beige);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: var(--warm-white);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  nav.scrolled .nav-logo { color: var(--dark); }
-  .nav-links {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: rgba(255,255,255,0.85);
-    transition: color 0.3s;
-  }
-  nav.scrolled .nav-links a { color: var(--mid); }
-  .nav-links a:hover { color: var(--sand); }
-  nav.scrolled .nav-links a:hover { color: var(--dark); }
+/* ABOUT */
+#about{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;padding:9rem 5rem}
+.about-photo{position:relative;aspect-ratio:3/4}
+.about-photo-frame{position:absolute;top:2.5rem;right:-2rem;bottom:-2.5rem;left:1.5rem;border:1px solid var(--beige);z-index:0}
+.about-photo-img{width:100%;height:100%;object-fit:cover;position:relative;z-index:1;display:block}
+.about-text{max-width:460px}
+.about-text h2{margin-bottom:2rem}
+.about-text p{font-size:1rem;line-height:1.9;color:var(--mid);margin-bottom:1.1rem}
+.about-text p:first-of-type{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:var(--dark);font-weight:400;line-height:1.6}
+.about-stats{display:flex;gap:3rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--beige)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.75rem;font-weight:300;color:var(--dark);line-height:1}
+.stat-label{font-size:.65rem;letter-spacing:.12em;color:var(--mid);text-transform:uppercase;margin-top:.3rem}
 
-  /* ── HERO ── */
-  #hero {
-    height: 100vh; min-height: 700px;
-    position: relative;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0;
-    background: linear-gradient(160deg, #2C2420 0%, #3D3028 40%, #4A3A2E 100%);
-    background-image: url('images/hero.webp');
-    background-size: cover;
-    background-position: center;
-  }
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, rgba(26,24,20,0.3) 0%, rgba(26,24,20,0.5) 100%);
-  }
-  /* Simulated photo texture */
-  .hero-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background-image:
-      radial-gradient(ellipse at 30% 60%, rgba(200,170,140,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 75% 30%, rgba(180,150,120,0.1) 0%, transparent 50%);
-  }
-  .hero-content {
-    position: relative; z-index: 2;
-    text-align: center;
-    padding: 2rem;
-    animation: fadeUp 1.2s ease both;
-  }
-  .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--rose);
-    margin-bottom: 1.5rem;
-    animation: fadeUp 1s 0.2s ease both;
-  }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 8vw, 6.5rem);
-    font-weight: 300;
-    color: var(--warm-white);
-    line-height: 0.95;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.5rem;
-    animation: fadeUp 1s 0.3s ease both;
-  }
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2.5vw, 1.4rem);
-    font-weight: 300;
-    font-style: italic;
-    color: rgba(255,255,255,0.65);
-    letter-spacing: 0.05em;
-    margin-bottom: 0.5rem;
-    animation: fadeUp 1s 0.4s ease both;
-  }
-  .hero-city {
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 3rem;
-    animation: fadeUp 1s 0.5s ease both;
-  }
-  .hero-phrase {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    font-style: italic;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 3rem;
-    animation: fadeUp 1s 0.6s ease both;
-  }
-  .hero-btns {
-    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    animation: fadeUp 1s 0.7s ease both;
-  }
-  .btn-primary {
-    padding: 0.85rem 2.25rem;
-    background: var(--warm-white);
-    color: var(--dark);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-  }
-  .btn-primary:hover { background: var(--cream); transform: translateY(-1px); }
-  .btn-outline {
-    padding: 0.85rem 2.25rem;
-    background: transparent;
-    color: var(--warm-white);
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(255,255,255,0.45);
-    cursor: pointer;
-    transition: border-color 0.3s, transform 0.2s;
-    font-family: 'Jost', sans-serif;
-    font-weight: 400;
-  }
-  .btn-outline:hover { border-color: var(--warm-white); transform: translateY(-1px); }
-  .hero-scroll {
-    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-    color: rgba(255,255,255,0.5);
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: fadeUp 1s 1s ease both;
-  }
-  .scroll-line {
-    width: 1px; height: 40px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
+/* PORTFOLIO */
+#portfolio{background:var(--warm-white);padding:9rem 5rem}
+.portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+.category-filters{display:flex;gap:.4rem;flex-wrap:wrap}
+.cat-btn{padding:.5rem 1.2rem;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid var(--beige);color:var(--mid);cursor:pointer;transition:all .25s;font-family:'Jost',sans-serif}
+.cat-btn:hover,.cat-btn.active{background:var(--dark);border-color:var(--dark);color:var(--warm-white)}
+.masonry{columns:3;column-gap:1rem}
+.masonry-item{break-inside:avoid;margin-bottom:1rem;position:relative;overflow:hidden;cursor:pointer}
+.masonry-item img{width:100%;height:auto;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.masonry-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .4s;display:flex;align-items:flex-end;padding:1.5rem}
+.masonry-item:hover .masonry-overlay{background:rgba(26,24,20,.5)}
+.masonry-item:hover img{transform:scale(1.05)}
+.masonry-info{opacity:0;transition:opacity .4s,transform .4s;transform:translateY(10px);color:#fff}
+.masonry-item:hover .masonry-info{opacity:1;transform:translateY(0)}
+.masonry-cat{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);display:block;margin-bottom:.2rem}
+.masonry-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300}
+.masonry-item{transition:opacity .4s,transform .4s}
+.masonry-item.hidden{opacity:.12;transform:scale(.97);pointer-events:none}
 
-  /* ── SECTIONS COMMON ── */
-  section { padding: 8rem 4rem; }
-  .section-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--sand);
-    margin-bottom: 1.5rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .section-label::after {
-    content: ''; display: block;
-    width: 3rem; height: 1px;
-    background: var(--sand);
-  }
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 300;
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-  }
+/* WHY */
+#why{background:var(--dark);padding:9rem 5rem}
+#why .section-label{color:var(--sand)}
+#why h2{color:var(--warm-white);margin-bottom:4.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.08)}
+.why-card{padding:3rem;border:1px solid rgba(255,255,255,.08);transition:background .35s}
+.why-card:hover{background:rgba(255,255,255,.03)}
+.why-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:rgba(255,255,255,.08);line-height:1;margin-bottom:1.5rem}
+.why-card h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--warm-white);margin-bottom:.75rem}
+.why-card p{font-size:.85rem;line-height:1.8;color:rgba(255,255,255,.45)}
 
-  /* ── ABOUT ── */
-  #about {
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  .about-photo {
-    position: relative;
-    aspect-ratio: 3/4;
-  }
-  .about-photo-img {
-    width: 100%; height: 100%;
-    background: linear-gradient(145deg, #3D3028 0%, #5C4A3A 50%, #7A6050 100%);
-    background-image: url('images/about.webp');
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-photo-img::before {
-    content: '';
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse at 40% 40%, rgba(200,175,150,0.2) 0%, transparent 60%),
-      radial-gradient(ellipse at 70% 80%, rgba(150,120,100,0.15) 0%, transparent 50%);
-  }
-  /* Simulated person silhouette */
-  .about-photo-img::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 50%; transform: translateX(-50%);
-    width: 55%; height: 80%;
-    background: radial-gradient(ellipse at 50% 30%, rgba(220,190,160,0.25) 0%, transparent 50%);
-  }
-  .about-accent {
-    position: absolute;
-    top: 2rem; right: -1.5rem;
-    width: 60%; height: 60%;
-    border: 1px solid var(--beige);
-    z-index: -1;
-  }
-  .about-text { max-width: 480px; }
-  .about-text h2 { margin-bottom: 2rem; }
-  .about-text p {
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: var(--mid);
-    margin-bottom: 1.2rem;
-  }
-  .about-text p:first-of-type {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-style: italic;
-    color: var(--dark);
-    font-weight: 400;
-  }
-  .about-stats {
-    display: flex; gap: 3rem; margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--beige);
-  }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--dark);
-  }
-  .stat-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    color: var(--mid);
-    text-transform: uppercase;
-  }
+/* PACKAGES */
+#packages{background:var(--cream);padding:9rem 5rem}
+.packages-intro{max-width:500px;margin-bottom:5rem}
+.packages-intro p{font-size:1rem;color:var(--mid);line-height:1.8;margin-top:1rem}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.pkg-card{background:var(--warm-white);padding:3.5rem 2.5rem;position:relative;transition:transform .35s,box-shadow .35s}
+.pkg-card:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(26,24,20,.08)}
+.pkg-card.featured{background:var(--dark)}
+.pkg-card.featured .pkg-name,.pkg-card.featured .pkg-price,.pkg-card.featured .pkg-detail-label{color:var(--warm-white)}
+.pkg-card.featured .pkg-duration{color:rgba(255,255,255,.5)}
+.pkg-card.featured .pkg-divider{background:rgba(255,255,255,.12)}
+.pkg-card.featured .pkg-list li{color:rgba(255,255,255,.65);border-bottom-color:rgba(255,255,255,.07)}
+.pkg-badge{position:absolute;top:2rem;right:2rem;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);border:1px solid rgba(201,185,154,.4);padding:.3rem .8rem}
+.pkg-num{font-family:'Cormorant Garamond',serif;font-size:5.5rem;font-weight:300;line-height:1;color:rgba(0,0,0,.05);margin-bottom:1.5rem;display:block}
+.pkg-card.featured .pkg-num{color:rgba(255,255,255,.06)}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:.3rem}
+.pkg-duration{font-size:.8rem;color:var(--mid);letter-spacing:.05em;margin-bottom:.25rem}
+.pkg-price{font-size:1.1rem;font-weight:400;letter-spacing:.03em;color:var(--dark);margin-bottom:2rem}
+.pkg-divider{height:1px;background:var(--beige);margin-bottom:2rem}
+.pkg-detail-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem;color:var(--mid)}
+.pkg-list{list-style:none}
+.pkg-list li{font-size:.85rem;line-height:1.6;color:var(--mid);padding:.45rem 0;border-bottom:1px solid rgba(0,0,0,.05);display:flex;align-items:flex-start;gap:.75rem}
+.pkg-check{color:var(--sand);flex-shrink:0;margin-top:.1rem}
+.pkg-cta{display:block;text-align:center;margin-top:2.5rem;padding:.9rem;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;border:1px solid var(--beige);color:var(--dark);transition:all .3s;font-family:'Jost',sans-serif}
+.pkg-cta:hover{background:var(--dark);color:var(--warm-white);border-color:var(--dark)}
+.pkg-card.featured .pkg-cta{border-color:rgba(255,255,255,.25);color:var(--warm-white)}
+.pkg-card.featured .pkg-cta:hover{background:var(--warm-white);color:var(--dark)}
 
-  /* ── PORTFOLIO ── */
-  #portfolio { background: var(--warm-white); }
-  .portfolio-header {
-    display: flex; justify-content: space-between; align-items: flex-end;
-    margin-bottom: 3rem;
-    flex-wrap: wrap; gap: 1.5rem;
-  }
-  .category-filters {
-    display: flex; gap: 0.5rem; flex-wrap: wrap;
-  }
-  .cat-btn {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    background: none;
-    border: 1px solid var(--beige);
-    color: var(--mid);
-    cursor: pointer;
-    transition: all 0.25s;
-    font-family: 'Jost', sans-serif;
-  }
-  .cat-btn:hover, .cat-btn.active {
-    background: var(--dark);
-    border-color: var(--dark);
-    color: var(--warm-white);
-  }
-  .masonry {
-    columns: 3; column-gap: 1.25rem;
-  }
-  .masonry-item {
-    break-inside: avoid;
-    margin-bottom: 1.25rem;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  .masonry-img {
-    width: 100%;
-    display: block;
-    transition: transform 0.6s ease;
-  }
-  .masonry-overlay {
-    position: absolute; inset: 0;
-    background: rgba(26,24,20,0);
-    transition: background 0.4s;
-    display: flex; align-items: flex-end; padding: 1.5rem;
-  }
-  .masonry-item:hover .masonry-overlay {
-    background: rgba(26,24,20,0.55);
-  }
-  .masonry-item:hover .masonry-img { transform: scale(1.04); }
-  .masonry-info {
-    opacity: 0;
-    transition: opacity 0.4s, transform 0.4s;
-    transform: translateY(8px);
-    color: var(--warm-white);
-  }
-  .masonry-item:hover .masonry-info {
-    opacity: 1; transform: translateY(0);
-  }
-  .masonry-cat {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--rose);
-    display: block; margin-bottom: 0.25rem;
-  }
-  .masonry-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 300;
-  }
-  /* Photo placeholders with varying heights */
-  .ph { display: block; width: 100%; }
+/* REVIEWS */
+#reviews{background:var(--warm-white);padding:9rem 5rem}
+.reviews-wrap{position:relative;margin-top:5rem;overflow:hidden}
+.reviews-track{display:flex;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+.review-slide{min-width:100%;display:grid;grid-template-columns:auto 1fr;gap:4rem;align-items:center;padding:0 4rem}
+.review-avatar{width:88px;height:88px;border-radius:50%;overflow:hidden;flex-shrink:0}
+.review-avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
+.review-qmark{font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:.6;color:var(--beige);display:block;margin-bottom:1.5rem}
+.review-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,2.2vw,1.65rem);font-weight:300;font-style:italic;line-height:1.55;color:var(--dark);margin-bottom:1.5rem}
+.review-author{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid)}
+.review-dots{display:flex;justify-content:center;gap:.5rem;margin-top:3rem}
+.dot{width:6px;height:6px;background:var(--beige);border-radius:50%;cursor:pointer;transition:all .3s;border:none}
+.dot.active{background:var(--dark);width:22px;border-radius:3px}
+.review-arrows{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none}
+.arrow-btn{pointer-events:all;width:48px;height:48px;background:none;border:1px solid var(--beige);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;color:var(--mid);font-size:1.1rem;font-family:'Jost',sans-serif}
+.arrow-btn:hover{background:var(--dark);color:var(--warm-white);border-color:var(--dark)}
 
-  /* ── WHY ── */
-  #why { background: var(--dark); }
-  #why .section-label { color: var(--sand); }
-  #why h2 { color: var(--warm-white); margin-bottom: 4rem; }
-  .why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-  .why-card {
-    padding: 2.5rem;
-    border: 1px solid rgba(255,255,255,0.1);
-    transition: background 0.3s;
-  }
-  .why-card:hover { background: rgba(255,255,255,0.04); }
-  .why-icon {
-    font-size: 1.5rem; margin-bottom: 1.25rem;
-    color: var(--sand);
-  }
-  .why-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--warm-white);
-    margin-bottom: 0.75rem;
-  }
-  .why-card p {
-    font-size: 0.875rem;
-    line-height: 1.75;
-    color: rgba(255,255,255,0.5);
-  }
+/* INSTAGRAM */
+#instagram{background:var(--cream);text-align:center;padding:9rem 5rem}
+#instagram h2{margin-bottom:.75rem}
+.ig-sub{font-size:.875rem;color:var(--mid);margin-bottom:3rem;letter-spacing:.05em}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-bottom:3rem}
+.ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
+.ig-thumb{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.ig-item:hover .ig-thumb{transform:scale(1.08)}
+.ig-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .3s;display:flex;align-items:center;justify-content:center}
+.ig-item:hover .ig-overlay{background:rgba(26,24,20,.38)}
+.ig-icon{opacity:0;transition:opacity .3s;color:#fff;font-size:1.3rem}
+.ig-item:hover .ig-icon{opacity:1}
+.ig-btn{display:inline-flex;align-items:center;gap:.75rem;padding:1rem 2.5rem;background:var(--dark);color:var(--warm-white);text-decoration:none;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;transition:background .3s;font-family:'Jost',sans-serif}
+.ig-btn:hover{background:#2C2420}
 
-  /* ── PACKAGES ── */
-  #packages { background: var(--cream); }
-  .packages-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem; margin-top: 4rem;
-  }
-  .pkg-card {
-    background: var(--warm-white);
-    padding: 3rem 2.5rem;
-    position: relative;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .pkg-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(26,24,20,0.08);
-  }
-  .pkg-card.featured {
-    background: var(--dark);
-  }
-  .pkg-card.featured .pkg-name,
-  .pkg-card.featured .pkg-price,
-  .pkg-card.featured .pkg-includes { color: var(--warm-white); }
-  .pkg-card.featured .pkg-detail { color: rgba(255,255,255,0.55); }
-  .pkg-card.featured .pkg-divider { background: rgba(255,255,255,0.15); }
-  .pkg-badge {
-    position: absolute; top: 2rem; right: 2rem;
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sand);
-    border: 1px solid var(--sand);
-    padding: 0.3rem 0.75rem;
-  }
-  .pkg-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem;
-    font-weight: 300;
-    line-height: 1;
-    color: var(--beige);
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-  .pkg-card.featured .pkg-num { color: rgba(255,255,255,0.12); }
-  .pkg-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
-    font-weight: 300;
-    margin-bottom: 0.5rem;
-  }
-  .pkg-price {
-    font-size: 1rem;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    margin-bottom: 2rem;
-  }
-  .pkg-card.featured .pkg-price { color: var(--sand); }
-  .pkg-divider { height: 1px; background: var(--beige); margin-bottom: 2rem; }
-  .pkg-includes {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: var(--mid);
-  }
-  .pkg-list { list-style: none; }
-  .pkg-list li {
-    font-size: 0.875rem;
-    line-height: 1.6;
-    color: var(--mid);
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    display: flex; align-items: center; gap: 0.75rem;
-  }
-  .pkg-card.featured .pkg-list li { color: rgba(255,255,255,0.7); border-bottom-color: rgba(255,255,255,0.08); }
-  .pkg-detail { font-size: 0.7rem; color: var(--sand); letter-spacing: 0.05em; }
-  .pkg-check { color: var(--sand); font-size: 1rem; flex-shrink: 0; }
-  .pkg-cta {
-    display: block; text-align: center;
-    margin-top: 2.5rem;
-    padding: 0.8rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid var(--beige);
-    color: var(--dark);
-    transition: all 0.3s;
-    font-family: 'Jost', sans-serif;
-  }
-  .pkg-cta:hover { background: var(--dark); color: var(--warm-white); border-color: var(--dark); }
-  .pkg-card.featured .pkg-cta {
-    border-color: rgba(255,255,255,0.3);
-    color: var(--warm-white);
-  }
-  .pkg-card.featured .pkg-cta:hover { background: var(--warm-white); color: var(--dark); }
+/* CONTACT */
+#contact{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+.contact-left{background:var(--dark);padding:9rem 5rem;display:flex;flex-direction:column;justify-content:center}
+.contact-left .section-label{color:var(--sand)}
+.contact-left h2{color:var(--warm-white);margin-bottom:1.5rem}
+.contact-desc{font-size:.9rem;line-height:1.85;color:rgba(255,255,255,.5);margin-bottom:3rem;max-width:360px}
+.contact-links{display:flex;flex-direction:column;gap:0}
+.contact-link{display:flex;align-items:center;gap:1rem;text-decoration:none;color:rgba(255,255,255,.7);font-size:.875rem;letter-spacing:.04em;transition:color .3s;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.contact-link:hover{color:#fff}
+.contact-link-icon{width:42px;height:42px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:border-color .3s}
+.contact-link:hover .contact-link-icon{border-color:rgba(255,255,255,.3)}
+.contact-right{background:var(--ivory);padding:9rem 5rem}
+.contact-right h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;margin-bottom:2.5rem}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:.6rem}
+.form-input,.form-select,.form-textarea{width:100%;padding:.85rem 0;background:none;border:none;border-bottom:1px solid var(--beige);font-family:'Jost',sans-serif;font-size:.95rem;font-weight:300;color:var(--dark);outline:none;transition:border-color .3s;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--dark)}
+.form-select{cursor:pointer}
+.form-textarea{resize:none;height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.form-submit{width:100%;padding:1.1rem;background:var(--dark);color:var(--warm-white);border:none;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s;margin-top:1rem;text-decoration:none;display:block;text-align:center}
+.form-submit:hover{background:#2C2420}
 
-  /* ── REVIEWS ── */
-  #reviews { background: var(--warm-white); }
-  .reviews-slider { position: relative; margin-top: 4rem; }
-  .reviews-track { overflow: hidden; }
-  .reviews-slides {
-    display: flex;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .review-slide {
-    min-width: 100%; padding: 0 8rem;
-    display: flex; gap: 4rem; align-items: center;
-  }
-  .review-avatar {
-    width: 80px; height: 80px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-  .avatar-img {
-    width: 100%; height: 100%;
-    background: linear-gradient(135deg, var(--beige), var(--rose));
-  }
-  .review-body { flex: 1; }
-  .review-quote-mark {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 6rem;
-    line-height: 0.7;
-    color: var(--beige);
-    display: block;
-    margin-bottom: 1.5rem;
-  }
-  .review-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.2rem, 2.5vw, 1.75rem);
-    font-weight: 300;
-    font-style: italic;
-    line-height: 1.55;
-    color: var(--dark);
-    margin-bottom: 1.5rem;
-  }
-  .review-author {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--mid);
-  }
-  .review-dots {
-    display: flex; justify-content: center; gap: 0.5rem;
-    margin-top: 3rem;
-  }
-  .dot {
-    width: 6px; height: 6px;
-    background: var(--beige);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s, width 0.3s;
-    border: none;
-  }
-  .dot.active { background: var(--dark); width: 24px; border-radius: 3px; }
-  .review-arrows {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 100%;
-    display: flex; justify-content: space-between;
-    pointer-events: none;
-  }
-  .arrow-btn {
-    pointer-events: all;
-    width: 48px; height: 48px;
-    background: none; border: 1px solid var(--beige);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: all 0.3s;
-    color: var(--mid);
-    font-size: 1.2rem;
-  }
-  .arrow-btn:hover { background: var(--dark); color: var(--warm-white); border-color: var(--dark); }
+/* FOOTER */
+footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:rgba(255,255,255,.7);letter-spacing:.06em}
+.footer-copy{font-size:.72rem;color:rgba(255,255,255,.25);letter-spacing:.06em}
+.footer-love{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.875rem;color:rgba(255,255,255,.3)}
 
-  /* ── INSTAGRAM ── */
-  #instagram { background: var(--cream); text-align: center; }
-  #instagram h2 { margin-bottom: 1rem; }
-  .ig-sub {
-    font-size: 0.875rem; color: var(--mid); margin-bottom: 3rem;
-    letter-spacing: 0.05em;
-  }
-  .ig-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.5rem;
-    margin-bottom: 3rem;
-  }
-  .ig-item {
-    aspect-ratio: 1;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-  }
-  .ig-thumb {
-    width: 100%; height: 100%;
-    transition: transform 0.5s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .ig-item:hover .ig-thumb { transform: scale(1.08); }
-  .ig-overlay {
-    position: absolute; inset: 0;
-    background: rgba(26,24,20,0);
-    transition: background 0.3s;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .ig-item:hover .ig-overlay {
-    background: rgba(26,24,20,0.35);
-  }
-  .ig-icon {
-    opacity: 0; transition: opacity 0.3s;
-    color: white; font-size: 1.5rem;
-  }
-  .ig-item:hover .ig-icon { opacity: 1; }
-  .ig-btn {
-    display: inline-flex; align-items: center; gap: 0.75rem;
-    padding: 1rem 2.5rem;
-    background: var(--dark);
-    color: var(--warm-white);
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: background 0.3s;
-    font-family: 'Jost', sans-serif;
-  }
-  .ig-btn:hover { background: #2C2420; }
+/* BACK TO TOP */
+#back-top{position:fixed;bottom:2rem;right:2rem;z-index:50;width:46px;height:46px;background:var(--dark);color:var(--warm-white);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;transform:translateY(8px)}
+#back-top.visible{opacity:1;pointer-events:all;transform:translateY(0)}
+#back-top:hover{background:#2C2420}
 
-  /* ── CONTACT ── */
-  #contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 0;
-  }
-  .contact-left {
-    background: var(--dark);
-    padding: 8rem 5rem;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-  .contact-left .section-label { color: var(--sand); }
-  .contact-left h2 { color: var(--warm-white); margin-bottom: 1.5rem; }
-  .contact-desc {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.55);
-    margin-bottom: 3rem;
-    max-width: 380px;
-  }
-  .contact-links { display: flex; flex-direction: column; gap: 1.25rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 1rem;
-    text-decoration: none;
-    color: rgba(255,255,255,0.75);
-    font-size: 0.875rem;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-    padding-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .contact-link:hover { color: var(--warm-white); }
-  .contact-link-icon {
-    width: 40px; height: 40px;
-    border: 1px solid rgba(255,255,255,0.15);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem;
-    flex-shrink: 0;
-  }
-  .contact-right {
-    background: var(--cream);
-    padding: 8rem 5rem;
-  }
-  .contact-right h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.75rem;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-  }
-  .form-group { margin-bottom: 1.5rem; }
-  .form-label {
-    display: block;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 0.6rem;
-  }
-  .form-input, .form-select, .form-textarea {
-    width: 100%;
-    padding: 0.85rem 0;
-    background: none;
-    border: none;
-    border-bottom: 1px solid var(--beige);
-    font-family: 'Jost', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: var(--dark);
-    outline: none;
-    transition: border-color 0.3s;
-    appearance: none;
-  }
-  .form-input:focus, .form-select:focus, .form-textarea:focus {
-    border-color: var(--dark);
-  }
-  .form-select { cursor: pointer; }
-  .form-textarea { resize: none; height: 80px; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .form-submit {
-    width: 100%;
-    padding: 1.1rem;
-    background: var(--dark);
-    color: var(--warm-white);
-    border: none;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 1rem;
-  }
-  .form-submit:hover { background: #2C2420; }
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes scrollPulse{0%,100%{opacity:.35}50%{opacity:.8}}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--dark);
-    padding: 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: var(--warm-white);
-    letter-spacing: 0.05em;
-  }
-  .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(255,255,255,0.3);
-    letter-spacing: 0.05em;
-  }
-  .footer-love {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.875rem;
-    color: rgba(255,255,255,0.35);
-  }
-
-  /* ── BACK TO TOP ── */
-  #back-top {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 50;
-    width: 48px; height: 48px;
-    background: var(--dark);
-    color: var(--warm-white);
-    border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s, transform 0.3s;
-    transform: translateY(8px);
-  }
-  #back-top.visible { opacity: 1; pointer-events: all; transform: translateY(0); }
-  #back-top:hover { background: #2C2420; }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
-  }
-  .reveal {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  .reveal.visible {
-    opacity: 1; transform: translateY(0);
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1.25rem 2rem; }
-    nav.scrolled { padding: 0.75rem 2rem; }
-    .nav-links { display: none; }
-    section { padding: 5rem 2rem; }
-    #about { grid-template-columns: 1fr; gap: 3rem; }
-    .about-accent { display: none; }
-    .masonry { columns: 2; }
-    .packages-grid { grid-template-columns: 1fr; }
-    .why-grid { grid-template-columns: 1fr 1fr; }
-    #contact { grid-template-columns: 1fr; }
-    .contact-left, .contact-right { padding: 5rem 2rem; }
-    .review-slide { padding: 0 1rem; flex-direction: column; }
-    footer { flex-direction: column; text-align: center; }
-    .ig-grid { grid-template-columns: repeat(3, 1fr); }
-    .form-row { grid-template-columns: 1fr; }
-  }
-
-  @media (max-width: 600px) {
-    .masonry { columns: 1; }
-    .why-grid { grid-template-columns: 1fr; }
-    .ig-grid { grid-template-columns: repeat(2, 1fr); }
-    .review-slide { padding: 0; }
-  }
+/* RESPONSIVE */
+@media(max-width:1024px){
+  nav,nav.scrolled{padding:1rem 2rem}
+  .nav-links{display:none}
+  section,#about,#contact .contact-left,#contact .contact-right{padding:6rem 2rem}
+  #about{grid-template-columns:1fr;gap:3rem}
+  .about-photo-frame{display:none}
+  .masonry{columns:2}
+  .packages-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr 1fr}
+  #contact{grid-template-columns:1fr}
+  .review-slide{padding:0 1rem;grid-template-columns:1fr;gap:1.5rem}
+  footer{flex-direction:column;text-align:center}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .form-row{grid-template-columns:1fr}
+  .hero-logo-mark{left:2rem}
+}
+@media(max-width:600px){
+  .masonry{columns:1}
+  .why-grid{grid-template-columns:1fr}
+  .ig-grid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -830,26 +242,30 @@
   <a href="#" class="nav-logo">photo.nastyachoo</a>
   <ul class="nav-links">
     <li><a href="#about">Обо мне</a></li>
-    <li><a href="#portfolio">Портфолио</a></li>
+    <li><a href="#portfolio">Работы</a></li>
     <li><a href="#packages">Пакеты</a></li>
     <li><a href="#reviews">Отзывы</a></li>
-    <li><a href="#contact">Контакты</a></li>
+    <li><a href="#contact">Записаться</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <div class="hero-parallax" id="parallax"></div>
+  </div>
   <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-logo-mark">N</div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Москва · С 2018</p>
+    <p class="hero-eyebrow">Москва · Lifestyle · Family · Studio</p>
     <h1 class="hero-title">photo<br>.nastyachoo</h1>
-    <p class="hero-sub">Lifestyle & Family Photographer</p>
-    <p class="hero-city">Москва</p>
+    <p class="hero-sub">Family · Lifestyle · Studio Photographer</p>
+    <div class="hero-divider"></div>
     <p class="hero-phrase">«Ловлю настоящие эмоции<br>и превращаю их в воспоминания.»</p>
     <div class="hero-btns">
-      <a href="#portfolio" class="btn-primary">Посмотреть работы</a>
-      <a href="https://instagram.com/photo.nastyachoo" class="btn-outline" target="_blank">Написать в Instagram</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="btn-primary">Записаться на съёмку</a>
+      <a href="#portfolio" class="btn-outline">Посмотреть работы</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -861,29 +277,29 @@
 <!-- ABOUT -->
 <section id="about">
   <div class="about-photo reveal">
-    <div class="about-photo-img"></div>
-    <div class="about-accent"></div>
+    <div class="about-photo-frame"></div>
+    <img class="about-photo-img" src="images/about.webp" alt="Анастасия фотограф Москва" loading="lazy">
   </div>
-  <div class="about-text reveal">
-    <div class="section-label">Обо мне</div>
-    <h2>Привет!<br>Меня зовут<br><em style="font-style:italic; font-family:'Cormorant Garamond',serif;">Анастасия.</em></h2>
-    <div style="margin-top: 2rem;">
-      <p>Я создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
-      <p>Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой.</p>
-      <p>Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
+  <div class="about-text">
+    <div class="section-label reveal">Обо мне</div>
+    <h2 class="reveal">Привет!<br>Меня зовут<br><em style="font-style:italic;">Анастасия.</em></h2>
+    <div style="margin-top:2rem">
+      <p class="reveal reveal-delay-1">Я создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
+      <p class="reveal reveal-delay-2">Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой.</p>
+      <p class="reveal reveal-delay-3">Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
     </div>
-    <div class="about-stats">
+    <div class="about-stats reveal">
       <div>
-        <div class="stat-num">500+</div>
+        <div class="stat-num">1+</div>
+        <div class="stat-label">Год опыта</div>
+      </div>
+      <div>
+        <div class="stat-num">100+</div>
         <div class="stat-label">Съёмок</div>
       </div>
       <div>
-        <div class="stat-num">6</div>
-        <div class="stat-label">Лет опыта</div>
-      </div>
-      <div>
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Довольных клиентов</div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Любви к делу</div>
       </div>
     </div>
   </div>
@@ -899,50 +315,50 @@
     <div class="category-filters">
       <button class="cat-btn active" data-cat="all">Все</button>
       <button class="cat-btn" data-cat="children">Детские</button>
-      <button class="cat-btn" data-cat="studio">Студия</button>
+      <button class="cat-btn" data-cat="studio">Студийные</button>
       <button class="cat-btn" data-cat="street">Уличные</button>
-      <button class="cat-btn" data-cat="family">Семейные</button>
-      <button class="cat-btn" data-cat="love">Love Story</button>
-      <button class="cat-btn" data-cat="wedding">Свадьбы</button>
     </div>
   </div>
-  <div class="masonry" id="masonry">
-    <!-- Generated photo placeholders -->
-    <div class="masonry-item" data-cat="children">
-      <img class="masonry-img" src="images/portfolio-1.webp" alt="Детский праздник фотограф Москва" loading="lazy" width="400" height="560">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские праздники</span><div class="masonry-title">Яркий день</div></div></div>
-    </div>
-    <div class="masonry-item" data-cat="children">
-      <img class="masonry-img" src="images/portfolio-2.webp" alt="Детский день рождения фотограф Москва" loading="lazy" width="400" height="480">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские праздники</span><div class="masonry-title">Момент счастья</div></div></div>
+  <div class="masonry reveal" id="masonry">
+    <div class="masonry-item" data-cat="studio">
+      <img src="images/portfolio-6.webp" alt="Студийная съёмка Москва" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Естественность</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
-      <img class="masonry-img" src="images/portfolio-3.webp" alt="Студийная съёмка девушки Москва" loading="lazy" width="400" height="600">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные съёмки</span><div class="masonry-title">Женственность</div></div></div>
+      <img src="images/portfolio-7.webp" alt="Студийный портрет девушки" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Чистый образ</div></div></div>
+    </div>
+    <div class="masonry-item" data-cat="children">
+      <img src="images/portfolio-8.webp" alt="Детский праздник подруги" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Лучшие подруги</div></div></div>
+    </div>
+    <div class="masonry-item" data-cat="children">
+      <img src="images/portfolio-9.webp" alt="Детский день рождения" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Момент счастья</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
-      <img class="masonry-img" src="images/portfolio-4.webp" alt="Мужская студийная съёмка Москва" loading="lazy" width="400" height="500">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные съёмки</span><div class="masonry-title">Мужской портрет</div></div></div>
+      <img src="images/portfolio-3.webp" alt="Студийная съёмка девушки" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Женственность</div></div></div>
+    </div>
+    <div class="masonry-item" data-cat="studio">
+      <img src="images/portfolio-4.webp" alt="Мужской портрет студия" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Мужской портрет</div></div></div>
     </div>
     <div class="masonry-item" data-cat="street">
-      <img class="masonry-img" src="images/portfolio-5.webp" alt="Уличная съёмка портрет Москва" loading="lazy" width="400" height="520">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Уличные съёмки</span><div class="masonry-title">Город как фон</div></div></div>
-    </div>
-    <div class="masonry-item" data-cat="studio">
-      <img class="masonry-img" src="images/portfolio-6.webp" alt="Студийная съёмка на тёмном фоне Москва" loading="lazy" width="400" height="560">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные съёмки</span><div class="masonry-title">Естественность</div></div></div>
-    </div>
-    <div class="masonry-item" data-cat="studio">
-      <img class="masonry-img" src="images/portfolio-7.webp" alt="Студийный портрет девушки Москва" loading="lazy" width="400" height="460">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные съёмки</span><div class="masonry-title">Чистый образ</div></div></div>
+      <img src="images/portfolio-5.webp" alt="Уличный портрет Москва" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Уличные</span><div class="masonry-title">Город как фон</div></div></div>
     </div>
     <div class="masonry-item" data-cat="children">
-      <img class="masonry-img" src="images/portfolio-8.webp" alt="Детский праздник подруги Москва" loading="lazy" width="400" height="540">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские праздники</span><div class="masonry-title">Лучшие подруги</div></div></div>
+      <img src="images/portfolio-1.webp" alt="Детский праздник pop-it" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Яркий день</div></div></div>
+    </div>
+    <div class="masonry-item" data-cat="children">
+      <img src="images/portfolio-2.webp" alt="Детский день рождения торт" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Торт!</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
-      <img class="masonry-img" src="images/portfolio-9.webp" alt="Мужской портрет студия Москва" loading="lazy" width="400" height="480">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные съёмки</span><div class="masonry-title">Сила образа</div></div></div>
+      <img src="images/portfolio-9.webp" alt="Мужской портрет свитер студия" loading="lazy">
+      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Сила образа</div></div></div>
     </div>
   </div>
 </section>
@@ -952,88 +368,70 @@
   <div class="section-label reveal">Преимущества</div>
   <h2 class="reveal">Почему мне<br>доверяют</h2>
   <div class="why-grid reveal">
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Помогаю с позированием</h3>
-      <p>Направляю и подсказываю — вы расслабляетесь, я получаю искренние кадры.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Лучшие локации</h3>
-      <p>Знаю красивые места Москвы и подбираю подходящее под ваш образ и настроение.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Быстрая обработка</h3>
-      <p>Отредактированные фотографии в течение 7–10 дней после съёмки.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Индивидуальный подход</h3>
-      <p>Каждая съёмка — это история конкретных людей, а не шаблонный набор кадров.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Комфортная атмосфера</h3>
-      <p>Создаю тёплую и расслабляющую атмосферу — даже если вы не любите фотографироваться.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">✦</div>
-      <h3>Естественная ретушь</h3>
-      <p>Обработка без перебора: вы остаётесь собой, но в лучшем свете.</p>
-    </div>
+    <div class="why-card"><div class="why-num">01</div><h3>Помогаю с позированием</h3><p>Направляю и подсказываю — вы расслабляетесь, я получаю искренние кадры.</p></div>
+    <div class="why-card"><div class="why-num">02</div><h3>Лучшие локации</h3><p>Знаю красивые места и подбираю подходящее под ваш образ и настроение.</p></div>
+    <div class="why-card"><div class="why-num">03</div><h3>Быстрая обработка</h3><p>Отредактированные фотографии в течение 7–10 дней после съёмки.</p></div>
+    <div class="why-card"><div class="why-num">04</div><h3>Индивидуальный подход</h3><p>Каждая съёмка — история конкретных людей, а не шаблонный набор кадров.</p></div>
+    <div class="why-card"><div class="why-num">05</div><h3>Комфортная атмосфера</h3><p>Создаю тёплую расслабляющую атмосферу — даже если вы не любите фотографироваться.</p></div>
+    <div class="why-card"><div class="why-num">06</div><h3>Естественная ретушь</h3><p>Обработка без перебора: вы остаётесь собой, но в лучшем свете.</p></div>
   </div>
 </section>
 
 <!-- PACKAGES -->
 <section id="packages">
-  <div class="section-label reveal">Услуги</div>
-  <h2 class="reveal">Пакеты съёмок</h2>
+  <div class="packages-intro">
+    <div class="section-label reveal">Услуги</div>
+    <h2 class="reveal">Пакеты съёмок</h2>
+    <p class="reveal">Выберите формат, который подходит именно вам — или напишите мне, и мы придумаем что-то своё.</p>
+  </div>
   <div class="packages-grid">
     <div class="pkg-card reveal">
       <span class="pkg-num">01</span>
       <div class="pkg-name">Мини</div>
-      <div class="pkg-price">от 10 000 ₽</div>
+      <div class="pkg-duration">1 час съёмки</div>
+      <div class="pkg-price">от 3 500 ₽</div>
       <div class="pkg-divider"></div>
-      <div class="pkg-includes">Включено</div>
+      <div class="pkg-detail-label">Включено</div>
       <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> <span>1 час съёмки<span class="pkg-detail"> · одна локация</span></span></li>
-        <li><span class="pkg-check">✓</span> <span>30–40 обработанных фото</span></li>
-        <li><span class="pkg-check">✓</span> <span>Галерея для скачивания</span></li>
-        <li><span class="pkg-check">✓</span> <span>Консультация перед съёмкой</span></li>
+        <li><span class="pkg-check">✓</span>1 час · одна локация</li>
+        <li><span class="pkg-check">✓</span>30–40 обработанных фото</li>
+        <li><span class="pkg-check">✓</span>Галерея для скачивания</li>
+        <li><span class="pkg-check">✓</span>Консультация перед съёмкой</li>
       </ul>
-      <a href="#contact" class="pkg-cta">Записаться</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться</a>
     </div>
-    <div class="pkg-card featured reveal">
+    <div class="pkg-card featured reveal reveal-delay-1">
       <div class="pkg-badge">Популярный</div>
       <span class="pkg-num">02</span>
       <div class="pkg-name">Стандарт</div>
-      <div class="pkg-price">от 20 000 ₽</div>
+      <div class="pkg-duration">2 часа съёмки</div>
+      <div class="pkg-price">от 6 000 ₽</div>
       <div class="pkg-divider"></div>
-      <div class="pkg-includes">Включено</div>
+      <div class="pkg-detail-label">Включено</div>
       <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> <span>2 часа съёмки<span class="pkg-detail"> · до 2 локаций</span></span></li>
-        <li><span class="pkg-check">✓</span> <span>70–100 обработанных фото</span></li>
-        <li><span class="pkg-check">✓</span> <span>Галерея + распечатка 10 фото</span></li>
-        <li><span class="pkg-check">✓</span> <span>Помощь с образами и локацией</span></li>
-        <li><span class="pkg-check">✓</span> <span>Приоритетная обработка</span></li>
+        <li><span class="pkg-check">✓</span>2 часа · до 2 локаций</li>
+        <li><span class="pkg-check">✓</span>70–100 обработанных фото</li>
+        <li><span class="pkg-check">✓</span>Помощь с образами и локацией</li>
+        <li><span class="pkg-check">✓</span>Приоритетная обработка</li>
+        <li><span class="pkg-check">✓</span>Галерея для скачивания</li>
       </ul>
-      <a href="#contact" class="pkg-cta">Записаться</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Записаться</a>
     </div>
-    <div class="pkg-card reveal">
+    <div class="pkg-card reveal reveal-delay-2">
       <span class="pkg-num">03</span>
       <div class="pkg-name">Премиум</div>
-      <div class="pkg-price">Индивидуально</div>
+      <div class="pkg-duration">Индивидуальный проект</div>
+      <div class="pkg-price">Обсуждается</div>
       <div class="pkg-divider"></div>
-      <div class="pkg-includes">Включено</div>
+      <div class="pkg-detail-label">Включено</div>
       <ul class="pkg-list">
-        <li><span class="pkg-check">✓</span> <span>Полный день съёмки</span></li>
-        <li><span class="pkg-check">✓</span> <span>Неограниченное количество фото</span></li>
-        <li><span class="pkg-check">✓</span> <span>Стилист и визажист</span></li>
-        <li><span class="pkg-check">✓</span> <span>Аренда студии или выезд</span></li>
-        <li><span class="pkg-check">✓</span> <span>Фотокнига в подарок</span></li>
+        <li><span class="pkg-check">✓</span>Полный день съёмки</li>
+        <li><span class="pkg-check">✓</span>Неограниченное кол-во фото</li>
+        <li><span class="pkg-check">✓</span>Несколько локаций</li>
+        <li><span class="pkg-check">✓</span>Индивидуальная концепция</li>
+        <li><span class="pkg-check">✓</span>Фотокнига в подарок</li>
       </ul>
-      <a href="#contact" class="pkg-cta">Обсудить проект</a>
+      <a href="https://t.me/patcheycho" target="_blank" class="pkg-cta">Обсудить проект</a>
     </div>
   </div>
 </section>
@@ -1042,44 +440,42 @@
 <section id="reviews">
   <div class="section-label reveal">Отзывы</div>
   <h2 class="reveal">Клиенты говорят</h2>
-  <div class="reviews-slider reveal">
-    <div class="reviews-track">
-      <div class="reviews-slides" id="slides">
-        <div class="review-slide">
-          <div class="review-avatar">
-            <div class="avatar-img"></div>
-          </div>
-          <div class="review-body">
-            <span class="review-quote-mark">"</span>
-            <p class="review-text">Анастасия — волшебник! Я никогда не умела фотографироваться, но она так умело меня направляла, что фотографии получились просто невероятными. Пересматриваю их каждый день и всё равно не верю, что это я.</p>
-            <div class="review-author">Мария К. · Семейная съёмка · Москва</div>
-          </div>
+  <div class="reviews-wrap reveal">
+    <div class="reviews-track" id="slides">
+      <div class="review-slide">
+        <div class="review-avatar">
+          <img src="images/portfolio-8.webp" alt="Мария" loading="lazy">
         </div>
-        <div class="review-slide">
-          <div class="review-avatar">
-            <div class="avatar-img" style="background: linear-gradient(135deg, #C8B4A0, #D4C0AC);"></div>
-          </div>
-          <div class="review-body">
-            <span class="review-quote-mark">"</span>
-            <p class="review-text">Заказывали съёмку Love Story перед свадьбой. Настя создала такую тёплую атмосферу, что мы совершенно расслабились. Фотографии получились живыми и настоящими — именно такими, о которых мы мечтали.</p>
-            <div class="review-author">Алина & Дмитрий · Love Story · Москва</div>
-          </div>
+        <div>
+          <span class="review-qmark">"</span>
+          <p class="review-text">Снимала дочку на день рождения — Настя поймала столько искренних эмоций, которые иначе просто ушли бы в никуда. Дети совершенно не замечали камеру, а фотографии получились живыми и тёплыми. Это настоящее сокровище!</p>
+          <div class="review-author">Екатерина · Детский праздник</div>
         </div>
-        <div class="review-slide">
-          <div class="review-avatar">
-            <div class="avatar-img" style="background: linear-gradient(135deg, #B8A898, #C8B8A8);"></div>
-          </div>
-          <div class="review-body">
-            <span class="review-quote-mark">"</span>
-            <p class="review-text">Детский праздник — это всегда хаос, но Анастасия справилась блестяще. Поймала столько искренних детских эмоций, которые иначе просто ушли бы в никуда. Эти фотографии — настоящее сокровище.</p>
-            <div class="review-author">Елена Т. · Детский праздник · Москва</div>
-          </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-avatar">
+          <img src="images/portfolio-5.webp" alt="Алина" loading="lazy">
+        </div>
+        <div>
+          <span class="review-qmark">"</span>
+          <p class="review-text">Я никогда не умела фотографироваться и очень переживала. Но Настя так легко и ненавязчиво направляла меня, что я совершенно расслабилась. Фотографии получились невероятными — пересматриваю их каждый день!</p>
+          <div class="review-author">Алина · Уличная съёмка · Москва</div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-avatar">
+          <img src="images/portfolio-3.webp" alt="Дарья" loading="lazy">
+        </div>
+        <div>
+          <span class="review-qmark">"</span>
+          <p class="review-text">Студийная съёмка прошла в такой комфортной атмосфере, что я даже не заметила как прошёл час. Настя точно знает свет и умеет подчеркнуть лучшее в каждом. Результат превзошёл все ожидания — уже планирую следующую!</p>
+          <div class="review-author">Дарья · Студийная съёмка</div>
         </div>
       </div>
     </div>
     <div class="review-arrows">
-      <button class="arrow-btn" id="prev-btn" onclick="changeSlide(-1)">←</button>
-      <button class="arrow-btn" id="next-btn" onclick="changeSlide(1)">→</button>
+      <button class="arrow-btn" onclick="changeSlide(-1)">←</button>
+      <button class="arrow-btn" onclick="changeSlide(1)">→</button>
     </div>
     <div class="review-dots" id="dots">
       <button class="dot active" onclick="goToSlide(0)"></button>
@@ -1091,38 +487,19 @@
 
 <!-- INSTAGRAM -->
 <section id="instagram">
-  <div class="section-label reveal" style="justify-content:center;">Instagram</div>
+  <div class="section-label reveal" style="justify-content:center">Instagram</div>
   <h2 class="reveal">@photo.nastyachoo</h2>
   <p class="ig-sub reveal">Следите за новыми работами и вдохновением</p>
   <div class="ig-grid reveal">
-    <!-- 6 IG thumbnails -->
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#D4C4B0"/><ellipse cx="100" cy="90" rx="50" ry="65" fill="rgba(190,170,150,0.4)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#C8B8A4"/><ellipse cx="80" cy="100" rx="45" ry="55" fill="rgba(175,155,135,0.4)"/><ellipse cx="135" cy="110" rx="42" ry="52" fill="rgba(160,140,120,0.35)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#E0CEB8"/><ellipse cx="100" cy="85" rx="60" ry="45" fill="rgba(200,180,160,0.35)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#CCB8A8"/><ellipse cx="100" cy="95" rx="55" ry="70" fill="rgba(185,165,145,0.4)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#D8C8B4"/><rect x="50" y="40" width="100" height="140" rx="2" fill="rgba(195,178,158,0.3)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
-    <div class="ig-item">
-      <div class="ig-thumb"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;"><rect width="200" height="200" fill="#BEA898"/><ellipse cx="100" cy="100" rx="70" ry="50" fill="rgba(175,158,138,0.35)"/></svg></div>
-      <div class="ig-overlay"><span class="ig-icon">♡</span></div>
-    </div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-6.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-1.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-3.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-5.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-8.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-4.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
   </div>
   <a href="https://instagram.com/photo.nastyachoo" target="_blank" class="ig-btn reveal">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="vertical-align:middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
     Подписаться на @photo.nastyachoo
   </a>
 </section>
@@ -1132,25 +509,25 @@
   <div class="contact-left">
     <div class="section-label">Контакты</div>
     <h2>Запишитесь<br>на съёмку</h2>
-    <p class="contact-desc">Напишите мне в любом удобном мессенджере или заполните форму — я отвечу в течение нескольких часов.</p>
+    <p class="contact-desc">Напишите мне в удобном мессенджере или заполните форму — отвечу в течение нескольких часов.</p>
     <div class="contact-links">
-      <a href="https://t.me/nastyachoo" class="contact-link" target="_blank">
+      <a href="https://t.me/patcheycho" class="contact-link" target="_blank">
         <div class="contact-link-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         </div>
-        Telegram · @nastyachoo
+        Telegram · @patcheycho
       </a>
       <a href="https://instagram.com/photo.nastyachoo" class="contact-link" target="_blank">
         <div class="contact-link-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </div>
         Instagram · @photo.nastyachoo
       </a>
-      <a href="https://wa.me/79001234567" class="contact-link" target="_blank">
+      <a href="https://wa.me/79217504658" class="contact-link" target="_blank">
         <div class="contact-link-icon">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
         </div>
-        WhatsApp · +7 (900) 123-45-67
+        WhatsApp · +7 921 750 46 58
       </a>
     </div>
   </div>
@@ -1159,35 +536,33 @@
     <div class="form-row">
       <div class="form-group">
         <label class="form-label">Имя</label>
-        <input type="text" class="form-input" placeholder="Анна">
+        <input type="text" class="form-input" id="f-name" placeholder="Анна">
       </div>
       <div class="form-group">
         <label class="form-label">Телефон</label>
-        <input type="tel" class="form-input" placeholder="+7 (___) ___-__-__">
+        <input type="tel" class="form-input" id="f-phone" placeholder="+7 (___) ___-__-__">
       </div>
     </div>
     <div class="form-group">
       <label class="form-label">Тип съёмки</label>
-      <select class="form-select">
+      <select class="form-select" id="f-type">
         <option value="">Выберите тип съёмки</option>
-        <option>Детский праздник</option>
+        <option>Детская съёмка</option>
         <option>Студийная съёмка</option>
         <option>Уличная съёмка</option>
         <option>Семейная съёмка</option>
-        <option>Love Story</option>
-        <option>Свадебная съёмка</option>
         <option>Другое</option>
       </select>
     </div>
     <div class="form-group">
       <label class="form-label">Желаемая дата</label>
-      <input type="date" class="form-input">
+      <input type="date" class="form-input" id="f-date">
     </div>
     <div class="form-group">
       <label class="form-label">Комментарий</label>
-      <textarea class="form-textarea" placeholder="Расскажите о вашей идее..."></textarea>
+      <textarea class="form-textarea" id="f-comment" placeholder="Расскажите о вашей идее..."></textarea>
     </div>
-    <button class="form-submit" onclick="handleSubmit(event)">Записаться на съёмку →</button>
+    <a id="form-submit" href="#" class="form-submit">Записаться на съёмку →</a>
   </div>
 </section>
 
@@ -1198,75 +573,65 @@
   <div class="footer-love">Сделано с любовью к красивым историям.</div>
 </footer>
 
-<!-- BACK TO TOP -->
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-  // Nav scroll
-  const nav = document.getElementById('nav');
-  const backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 80);
-    backTop.classList.toggle('visible', window.scrollY > 500);
-  });
+// Nav scroll
+const nav = document.getElementById('nav');
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+  backTop.classList.toggle('visible', window.scrollY > 500);
+  // Parallax
+  const p = document.getElementById('parallax');
+  if(p) p.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+}, {passive:true});
 
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 100);
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+// Reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Portfolio filter
-  document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('.masonry-item').forEach(item => {
-        const show = cat === 'all' || item.dataset.cat === cat;
-        item.style.transition = 'opacity 0.4s, transform 0.4s';
-        item.style.opacity = show ? '1' : '0.15';
-        item.style.transform = show ? 'scale(1)' : 'scale(0.97)';
-        item.style.pointerEvents = show ? '' : 'none';
-      });
+// Portfolio filter
+document.querySelectorAll('.cat-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    document.querySelectorAll('.masonry-item').forEach(item => {
+      item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
     });
   });
+});
 
-  // Reviews slider
-  let currentSlide = 0;
-  const totalSlides = 3;
-  function updateSlider() {
-    document.getElementById('slides').style.transform = `translateX(-${currentSlide * 100}%)`;
-    document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-  }
-  function changeSlide(dir) {
-    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
-    updateSlider();
-  }
-  function goToSlide(i) {
-    currentSlide = i;
-    updateSlider();
-  }
-  // Auto-advance
-  setInterval(() => changeSlide(1), 5000);
+// Reviews slider
+let cur = 0;
+const total = 3;
+function updateSlider() {
+  document.getElementById('slides').style.transform = `translateX(-${cur * 100}%)`;
+  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+}
+function changeSlide(dir) { cur = (cur + dir + total) % total; updateSlider(); }
+function goToSlide(i) { cur = i; updateSlider(); }
+setInterval(() => changeSlide(1), 6000);
 
-  // Form submit
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target;
-    btn.textContent = 'Заявка отправлена ✓';
-    btn.style.background = '#4A7C59';
-    setTimeout(() => {
-      btn.textContent = 'Записаться на съёмку →';
-      btn.style.background = '';
-    }, 3000);
-  }
+// Form → Telegram
+document.getElementById('form-submit').addEventListener('click', function(e) {
+  e.preventDefault();
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const type = document.getElementById('f-type').value;
+  const date = document.getElementById('f-date').value;
+  const comment = document.getElementById('f-comment').value.trim();
+  let msg = 'Привет! Хочу записаться на съёмку.';
+  if(name) msg += `\nИмя: ${name}`;
+  if(phone) msg += `\nТелефон: ${phone}`;
+  if(type) msg += `\nТип съёмки: ${type}`;
+  if(date) msg += `\nДата: ${date}`;
+  if(comment) msg += `\nКомментарий: ${comment}`;
+  window.open(`https://t.me/patcheycho?text=${encodeURIComponent(msg)}`, '_blank');
+});
 </script>
 </body>
 </html>
