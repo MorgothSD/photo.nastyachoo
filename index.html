@@ -8,6 +8,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/hero.webp">
+<link rel="preload" as="image" href="images/portfolio-6.webp">
+<link rel="preload" as="image" href="images/portfolio-7.webp">
+<link rel="preload" as="image" href="images/portfolio-8.webp">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap"></noscript>
 <style>
@@ -85,7 +88,8 @@ h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.75rem);
 .cat-btn:hover,.cat-btn.active{background:var(--dark);border-color:var(--dark);color:var(--warm-white)}
 .masonry{columns:3;column-gap:1rem}
 .masonry-item{break-inside:avoid;margin-bottom:1rem;position:relative;overflow:hidden;cursor:pointer}
-.masonry-item img{width:100%;height:auto;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94)}
+#why,#packages,#reviews,#instagram,#contact{content-visibility:auto;contain-intrinsic-size:0 800px}
+.masonry-item img{width:100%;height:auto;display:block;object-fit:cover;transition:transform .7s cubic-bezier(.25,.46,.45,.94);decoding:async}
 .masonry-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .4s;display:flex;align-items:flex-end;padding:1.5rem}
 .masonry-item:hover .masonry-overlay{background:rgba(26,24,20,.5)}
 .masonry-item:hover img{transform:scale(1.05)}
@@ -158,7 +162,7 @@ h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.75rem);
 .ig-sub{font-size:.875rem;color:var(--mid);margin-bottom:3rem;letter-spacing:.05em}
 .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.5rem;margin-bottom:3rem}
 .ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
-.ig-thumb{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.ig-thumb{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .55s}
 .ig-item:hover .ig-thumb{transform:scale(1.08)}
 .ig-overlay{position:absolute;inset:0;background:rgba(26,24,20,0);transition:background .3s;display:flex;align-items:center;justify-content:center}
 .ig-item:hover .ig-overlay{background:rgba(26,24,20,.38)}
@@ -321,28 +325,20 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
   </div>
   <div class="masonry reveal" id="masonry">
     <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-6.webp" alt="Студийная съёмка Москва" loading="lazy">
+      <img src="images/portfolio-6.webp" alt="Студийная съёмка Москва" fetchpriority="high" decoding="async">
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Естественность</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-7.webp" alt="Студийный портрет девушки" loading="lazy">
+      <img src="images/portfolio-7.webp" alt="Студийный портрет девушки" fetchpriority="high" decoding="async">
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Чистый образ</div></div></div>
     </div>
     <div class="masonry-item" data-cat="children">
-      <img src="images/portfolio-8.webp" alt="Детский праздник подруги" loading="lazy">
+      <img src="images/portfolio-8.webp" alt="Детский праздник подруги" fetchpriority="high" decoding="async">
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Лучшие подруги</div></div></div>
-    </div>
-    <div class="masonry-item" data-cat="children">
-      <img src="images/portfolio-9.webp" alt="Детский день рождения" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Момент счастья</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
       <img src="images/portfolio-3.webp" alt="Студийная съёмка девушки" loading="lazy">
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Женственность</div></div></div>
-    </div>
-    <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-4.webp" alt="Мужской портрет студия" loading="lazy">
-      <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Мужской портрет</div></div></div>
     </div>
     <div class="masonry-item" data-cat="street">
       <img src="images/portfolio-5.webp" alt="Уличный портрет Москва" loading="lazy">
@@ -357,7 +353,7 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Детские</span><div class="masonry-title">Торт!</div></div></div>
     </div>
     <div class="masonry-item" data-cat="studio">
-      <img src="images/portfolio-9.webp" alt="Мужской портрет свитер студия" loading="lazy">
+      <img src="images/portfolio-9.webp" alt="Мужской портрет студия" loading="lazy">
       <div class="masonry-overlay"><div class="masonry-info"><span class="masonry-cat">Студийные</span><div class="masonry-title">Сила образа</div></div></div>
     </div>
   </div>
@@ -444,32 +440,32 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
     <div class="reviews-track" id="slides">
       <div class="review-slide">
         <div class="review-avatar">
-          <img src="images/portfolio-8.webp" alt="Мария" loading="lazy">
+          <img src="images/portfolio-3.webp" alt="Анастасия" loading="lazy">
         </div>
         <div>
           <span class="review-qmark">"</span>
-          <p class="review-text">Снимала дочку на день рождения — Настя поймала столько искренних эмоций, которые иначе просто ушли бы в никуда. Дети совершенно не замечали камеру, а фотографии получились живыми и тёплыми. Это настоящее сокровище!</p>
+          <p class="review-text">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она умеет создать атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты. Фотографии до сих пор вызывают восторг у всех, кто их видит.</p>
+          <div class="review-author">Анастасия · Студийная съёмка</div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-avatar">
+          <img src="images/portfolio-5.webp" alt="Мария" loading="lazy">
+        </div>
+        <div>
+          <span class="review-qmark">"</span>
+          <p class="review-text">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё оказалось иначе: она так легко и естественно направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими — именно такими, о которых я мечтала.</p>
+          <div class="review-author">Мария · Уличная съёмка · Москва</div>
+        </div>
+      </div>
+      <div class="review-slide">
+        <div class="review-avatar">
+          <img src="images/portfolio-8.webp" alt="Екатерина" loading="lazy">
+        </div>
+        <div>
+          <span class="review-qmark">"</span>
+          <p class="review-text">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Это настоящее сокровище, которое мы будем пересматривать годами!</p>
           <div class="review-author">Екатерина · Детский праздник</div>
-        </div>
-      </div>
-      <div class="review-slide">
-        <div class="review-avatar">
-          <img src="images/portfolio-5.webp" alt="Алина" loading="lazy">
-        </div>
-        <div>
-          <span class="review-qmark">"</span>
-          <p class="review-text">Я никогда не умела фотографироваться и очень переживала. Но Настя так легко и ненавязчиво направляла меня, что я совершенно расслабилась. Фотографии получились невероятными — пересматриваю их каждый день!</p>
-          <div class="review-author">Алина · Уличная съёмка · Москва</div>
-        </div>
-      </div>
-      <div class="review-slide">
-        <div class="review-avatar">
-          <img src="images/portfolio-3.webp" alt="Дарья" loading="lazy">
-        </div>
-        <div>
-          <span class="review-qmark">"</span>
-          <p class="review-text">Студийная съёмка прошла в такой комфортной атмосфере, что я даже не заметила как прошёл час. Настя точно знает свет и умеет подчеркнуть лучшее в каждом. Результат превзошёл все ожидания — уже планирую следующую!</p>
-          <div class="review-author">Дарья · Студийная съёмка</div>
         </div>
       </div>
     </div>
@@ -491,12 +487,12 @@ footer{background:var(--dark);padding:3.5rem 5rem;display:flex;align-items:cente
   <h2 class="reveal">@photo.nastyachoo</h2>
   <p class="ig-sub reveal">Следите за новыми работами и вдохновением</p>
   <div class="ig-grid reveal">
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-6.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-1.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
     <div class="ig-item"><img class="ig-thumb" src="images/portfolio-3.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
     <div class="ig-item"><img class="ig-thumb" src="images/portfolio-5.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
     <div class="ig-item"><img class="ig-thumb" src="images/portfolio-8.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
-    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-4.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-1.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-6.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
+    <div class="ig-item"><img class="ig-thumb" src="images/portfolio-2.webp" alt="" loading="lazy"><div class="ig-overlay"><span class="ig-icon">♡</span></div></div>
   </div>
   <a href="https://instagram.com/photo.nastyachoo" target="_blank" class="ig-btn reveal">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
