@@ -2,830 +2,433 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Анастасия — семейный, детский и студийный фотограф в Москве. Lifestyle-съёмки, детские праздники, студийные портреты. Запись через сайт.">
-<meta name="keywords" content="фотограф Москва, семейный фотограф, детский фотограф, студийная съёмка, lifestyle фотограф">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Анастасия — фотограф в Москве. Событийные, детские, семейные и студийные съёмки. Запись на фотосессию.">
+<meta name="keywords" content="фотограф Москва, событийная съёмка, детский фотограф, семейный фотограф, студийная съёмка">
 <meta property="og:title" content="photo.nastyachoo — Фотограф в Москве">
-<meta property="og:description" content="Семейные, детские и студийные съёмки в Москве. Запись на фотосессию.">
+<meta property="og:description" content="Событийные, детские, семейные и студийные съёмки в Москве.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://photo-nastyachoo.netlify.app/">
-<title>photo.nastyachoo — Семейный & Lifestyle Фотограф в Москве</title>
+<link rel="canonical" href="https://photo-nastyachoo.ru/">
+<title>photo.nastyachoo — Событийный & Lifestyle Фотограф в Москве</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23F5EFE6'/><text x='50%25' y='73%25' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23A08060'>N</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400&display=swap">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"photo.nastyachoo","description":"Семейный, детский и студийный фотограф в Москве","url":"https://photo-nastyachoo.netlify.app","telephone":"+79217504658","areaServed":{"@type":"City","name":"Москва"},"serviceType":["Семейная съёмка","Детская съёмка","Студийная съёмка","Lifestyle фотография"],"priceRange":"₽₽","sameAs":["https://instagram.com/photo.nastyachoo","https://t.me/patcheycho"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"photo.nastyachoo","description":"Событийный, детский и семейный фотограф в Москве","url":"https://photo-nastyachoo.ru","telephone":"+79217504658","areaServed":{"@type":"City","name":"Москва"},"serviceType":["Событийная съёмка","Детская съёмка","Семейная съёмка","Студийная съёмка"],"priceRange":"₽₽","sameAs":["https://instagram.com/photo.nastyachoo","https://t.me/patcheycho"]}
 </script>
 <style>
-/* ═══════════════════════════════════════════
-   DESIGN TOKENS
-═══════════════════════════════════════════ */
 :root{
-  /* Colors */
-  --ink:        #16140F;
-  --ink-soft:   #2A2520;
-  --gold:       #B8A07A;
-  --gold-lt:    #D4C4A8;
-  --gold-faint: rgba(184,160,122,.14);
-  --gold-dim:   rgba(184,160,122,.32);
-  --warm:       #FDFAF5;
-  --cream:      #F7F2EA;
-  --ivory:      #EDE6D9;
-  --linen:      #E4DAC9;
-  --sand:       #D4C8B4;
-  --text-dark:  #1E1B16;
-  --text-mid:   #6B6358;
-  --text-light: rgba(30,27,22,.5);
-  /* Type */
-  --serif: 'Cormorant Garamond',Georgia,serif;
-  --sans:  'Jost',system-ui,sans-serif;
-  /* Layout */
-  --max:    1640px;
-  --max-md: 1140px;
-  --px:     clamp(1.25rem,5vw,5rem);
-  --py:     clamp(4.5rem,8vw,10rem);
-  /* Easing */
-  --ease: cubic-bezier(.16,1,.3,1);
+  --ink:#16140F; --ink-soft:#2A2520;
+  --gold:#B8A07A; --gold-dk:#A88A5E; --gold-lt:#D4C4A8;
+  --gold-faint:rgba(184,160,122,.14); --gold-dim:rgba(184,160,122,.32);
+  --warm:#FDFAF5; --cream:#F7F2EA; --ivory:#EDE6D9;
+  --linen:#E4DAC9; --sand:#D4C8B4;
+  --text-dark:#1E1B16; --text-mid:#6B6358;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,-apple-system,sans-serif;
+  --max:1640px; --px:clamp(1rem,4vw,5rem); --py:clamp(4rem,8vw,10rem);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
-/* ─── Reset ─── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
 body{
   font-family:var(--sans);font-weight:300;
   background:var(--warm);color:var(--text-dark);
-  font-size:clamp(.9rem,1.05vw,1rem);
-  line-height:1.75;overflow-x:hidden;
+  font-size:clamp(.9rem,1.05vw,1rem);line-height:1.75;
+  overflow-x:hidden;width:100%;
 }
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
-
-/* ═══════════════════════════════════════════
-   GRAIN UTILITY
-═══════════════════════════════════════════ */
 .grain{position:relative}
 .grain::after{
-  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;
-  opacity:.022;
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.022;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
-  background-repeat:repeat;mix-blend-mode:multiply;
+  mix-blend-mode:multiply;
 }
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding-left:var(--px);padding-right:var(--px)}
+.section-py{padding-top:var(--py);padding-bottom:var(--py)}
 
-/* ═══════════════════════════════════════════
-   NAV
-═══════════════════════════════════════════ */
+/* NAV */
 #nav{
   position:fixed;top:0;left:0;right:0;z-index:300;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.75rem var(--px);
-  transition:padding .5s var(--ease),background .5s var(--ease),border-color .5s var(--ease);
+  padding:1.5rem var(--px);
+  transition:padding .5s var(--ease),background .5s var(--ease),border-color .5s;
   border-bottom:1px solid transparent;
 }
 #nav.scrolled{
-  padding:1rem var(--px);
-  background:rgba(253,250,245,.94);
+  padding-top:.9rem;padding-bottom:.9rem;
+  background:rgba(253,250,245,.95);
   backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
   border-bottom-color:var(--sand);
 }
-.nav-logo{
-  font-family:var(--serif);font-size:clamp(.85rem,1vw,.95rem);
-  font-weight:400;letter-spacing:.14em;color:#fff;transition:color .3s;
-}
+.nav-logo{font-family:var(--serif);font-size:clamp(.85rem,1vw,.95rem);font-weight:400;letter-spacing:.14em;color:#fff;transition:color .3s}
 #nav.scrolled .nav-logo{color:var(--text-dark)}
-.nav-links{display:flex;gap:clamp(1.5rem,3vw,2.75rem);list-style:none}
-.nav-links a{
-  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);transition:color .3s;
-}
+.nav-links{display:flex;gap:clamp(1.25rem,2.5vw,2.5rem);list-style:none}
+.nav-links a{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .3s}
 #nav.scrolled .nav-links a{color:var(--text-mid)}
 .nav-links a:hover{color:rgba(255,255,255,.9)}
 #nav.scrolled .nav-links a:hover{color:var(--text-dark)}
-.nav-burger{
-  display:none;flex-direction:column;gap:5px;padding:.4rem;
-}
-.nav-burger span{
-  display:block;width:22px;height:1px;
-  background:rgba(255,255,255,.7);transition:all .3s var(--ease);
-}
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:.5rem;min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.nav-burger span{display:block;width:22px;height:1px;background:rgba(255,255,255,.75);transition:all .3s}
 #nav.scrolled .nav-burger span{background:var(--text-dark)}
-/* Mobile overlay */
-#mob{
-  display:none;position:fixed;inset:0;z-index:299;
-  background:rgba(247,242,234,.97);backdrop-filter:blur(24px);
-  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;
-}
+#mob{display:none;position:fixed;inset:0;z-index:299;background:rgba(247,242,234,.98);backdrop-filter:blur(24px);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
 #mob.open{display:flex}
-#mob a{
-  font-family:var(--serif);font-size:clamp(1.75rem,5vw,2.5rem);
-  font-weight:300;color:var(--text-mid);transition:color .25s;letter-spacing:.04em;
-}
-#mob a:hover{color:var(--text-dark)}
-.mob-x{
-  position:absolute;top:1.5rem;right:var(--px);
-  font-size:1.25rem;color:var(--text-mid);padding:.5rem;
-}
-@media(max-width:860px){
-  .nav-links{display:none}
-  .nav-burger{display:flex}
-}
+#mob a{font-family:var(--serif);font-size:clamp(1.6rem,7vw,2.4rem);font-weight:300;color:var(--text-mid);letter-spacing:.04em;padding:.4rem 1rem}
+#mob a:active{color:var(--text-dark)}
+.mob-x{position:absolute;top:1.25rem;right:var(--px);font-size:1.5rem;color:var(--text-mid);padding:.75rem;min-width:44px;min-height:44px}
+@media(max-width:900px){.nav-links{display:none}.nav-burger{display:flex}}
 
-/* ═══════════════════════════════════════════
-   HERO  — content renders immediately
-═══════════════════════════════════════════ */
-#hero{
-  position:relative;height:100svh;min-height:640px;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-  /* Dark fallback so text is readable before image loads */
-  background:#1A1710;
-}
-/* Background image loaded async — never blocks render */
-.hero-photo{
-  position:absolute;inset:-5%;
-  background:url('images/hero.webp') center/cover no-repeat;
-  opacity:0;transition:opacity 1.2s var(--ease);
-  will-change:transform,opacity;
-}
+/* HERO */
+#hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#1A1710}
+.hero-photo{position:absolute;inset:-5%;background:url('images/hero.webp') center/cover no-repeat;opacity:0;transition:opacity 1.2s var(--ease)}
 .hero-photo.vis{opacity:1}
-.hero-vignette{
-  position:absolute;inset:0;
-  background:linear-gradient(
-    170deg,
-    rgba(16,13,9,.18) 0%,
-    rgba(16,13,9,.05) 35%,
-    rgba(16,13,9,.5) 72%,
-    rgba(16,13,9,.88) 100%
-  );
+.hero-vignette{position:absolute;inset:0;background:linear-gradient(170deg,rgba(16,13,9,.2) 0%,rgba(16,13,9,.08) 35%,rgba(16,13,9,.52) 72%,rgba(16,13,9,.88) 100%)}
+.hero-body{position:relative;z-index:2;text-align:center;padding:6rem var(--px) 5rem;width:100%}
+.hero-kicker{font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-lt);margin-bottom:1.5rem;display:block;line-height:1.8}
+.hero-title{font-family:var(--serif);font-size:clamp(2.75rem,11vw,8rem);font-weight:300;color:#fff;line-height:.94;letter-spacing:-.02em;margin-bottom:1rem;word-break:break-word}
+.hero-divider{width:24px;height:1px;background:rgba(255,255,255,.28);margin:.9rem auto}
+.hero-sub{font-family:var(--serif);font-size:clamp(.85rem,3vw,1.1rem);font-style:italic;font-weight:300;color:rgba(255,255,255,.55);letter-spacing:.06em;margin-bottom:2.5rem;line-height:1.5}
+.hero-ctas{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.cta-fill,.cta-line{
+  padding:.9rem 1.75rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  font-family:var(--sans);font-weight:400;transition:all .35s var(--ease);
+  display:inline-block;min-height:44px;line-height:1.6;
 }
-/* Hero text — visible IMMEDIATELY, no animation-delay */
-.hero-body{
-  position:relative;z-index:2;text-align:center;
-  padding:0 var(--px);width:100%;
-}
-.hero-kicker{
-  font-size:.58rem;letter-spacing:.48em;text-transform:uppercase;
-  color:var(--gold-lt);margin-bottom:clamp(1.25rem,2.5vw,2rem);
-  display:block;
-}
-.hero-title{
-  font-family:var(--serif);
-  font-size:clamp(3.25rem,9vw,8rem);
-  font-weight:300;color:#fff;
-  line-height:.92;letter-spacing:-.02em;
-  margin-bottom:clamp(.75rem,1.5vw,1.25rem);
-}
-.hero-divider{
-  width:24px;height:1px;background:rgba(255,255,255,.28);
-  margin:.9rem auto;
-}
-.hero-sub{
-  font-family:var(--serif);font-size:clamp(.85rem,1.5vw,1.1rem);
-  font-style:italic;font-weight:300;
-  color:rgba(255,255,255,.52);letter-spacing:.07em;
-  margin-bottom:clamp(2.25rem,4vw,3.5rem);
-}
-.hero-ctas{
-  display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;
-}
-.cta-fill{
-  padding:.82rem clamp(1.5rem,2.5vw,2.25rem);
-  background:rgba(255,255,255,.88);color:var(--ink);
-  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
-  font-family:var(--sans);font-weight:400;
-  transition:all .35s var(--ease);display:inline-block;
-}
+.cta-fill{background:rgba(255,255,255,.9);color:var(--ink)}
 .cta-fill:hover{background:#fff;transform:translateY(-2px)}
-.cta-line{
-  padding:.82rem clamp(1.5rem,2.5vw,2.25rem);
-  border:1px solid rgba(255,255,255,.32);color:rgba(255,255,255,.82);
-  font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
-  font-family:var(--sans);font-weight:400;
-  transition:all .35s var(--ease);display:inline-block;
-}
+.cta-line{border:1px solid rgba(255,255,255,.32);color:rgba(255,255,255,.85)}
 .cta-line:hover{border-color:rgba(255,255,255,.72);transform:translateY(-2px)}
-/* N monogram */
-.hero-mono{
-  position:absolute;bottom:2.25rem;left:var(--px);z-index:2;
-  width:36px;height:36px;border:1px solid rgba(255,255,255,.18);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-size:.8rem;color:rgba(255,255,255,.38);
-}
-/* Scroll cue */
-.hero-scroll{
-  position:absolute;bottom:2.25rem;left:50%;transform:translateX(-50%);z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:.45rem;
-  color:rgba(255,255,255,.3);font-size:.52rem;letter-spacing:.24em;text-transform:uppercase;
-}
-.scroll-tick{
-  width:1px;height:32px;
-  background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);
-  animation:tickPulse 2.4s ease-in-out infinite;
-}
-@keyframes tickPulse{0%,100%{opacity:.2}50%{opacity:.75}}
+.hero-mono{position:absolute;bottom:1.75rem;left:var(--px);z-index:2;width:34px;height:34px;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:.78rem;color:rgba(255,255,255,.38)}
+.hero-scroll{position:absolute;bottom:1.75rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.3);font-size:.5rem;letter-spacing:.24em;text-transform:uppercase}
+.scroll-tick{width:1px;height:28px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:tick 2.4s ease-in-out infinite}
+@keyframes tick{0%,100%{opacity:.2}50%{opacity:.75}}
 
-/* ═══════════════════════════════════════════
-   LAYOUT SHELL
-═══════════════════════════════════════════ */
-.wrap{
-  width:100%;max-width:var(--max);
-  margin:0 auto;padding-left:var(--px);padding-right:var(--px);
-}
-.section-py{padding-top:var(--py);padding-bottom:var(--py)}
-
-/* ═══════════════════════════════════════════
-   LABELS & HEADINGS
-═══════════════════════════════════════════ */
-.sup{
-  font-size:.58rem;letter-spacing:.38em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;
-  display:flex;align-items:center;gap:.85rem;
-}
-.sup::after{content:'';width:2rem;height:1px;background:var(--gold);flex-shrink:0}
-h2.serif{
-  font-family:var(--serif);
-  font-size:clamp(2.25rem,4vw,3.75rem);
-  font-weight:300;line-height:1.07;letter-spacing:-.01em;
-  color:var(--text-dark);
-}
+/* SHARED */
+.sup{font-size:.56rem;letter-spacing:.36em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:1.25rem;display:flex;align-items:center;gap:.8rem}
+.sup::after{content:'';width:1.75rem;height:1px;background:var(--gold-dk);flex-shrink:0}
+h2.serif{font-family:var(--serif);font-size:clamp(2rem,5.5vw,3.75rem);font-weight:300;line-height:1.08;letter-spacing:-.01em;color:var(--text-dark)}
 h2.serif-lt{color:#fff}
 
-/* ═══════════════════════════════════════════
-   ABOUT  — magazine spread
-═══════════════════════════════════════════ */
+/* ABOUT */
 #about{background:var(--cream)}
-.about-grid{
-  display:grid;
-  grid-template-columns:42% 1fr;
-  gap:clamp(3rem,6vw,8rem);
-  align-items:center;
-  padding-top:var(--py);padding-bottom:var(--py);
-}
-/* Image column */
+.about-grid{display:grid;grid-template-columns:42% 1fr;gap:clamp(2.5rem,6vw,8rem);align-items:center;padding-top:var(--py);padding-bottom:var(--py)}
 .about-photo{position:relative}
-.about-frame{
-  position:absolute;
-  top:2.5rem;right:-2rem;bottom:-2.5rem;left:2rem;
-  border:1px solid var(--linen);z-index:0;
-  pointer-events:none;
-}
-.about-img{
-  position:relative;z-index:1;aspect-ratio:3/4;overflow:hidden;
-}
-.about-img img{
-  width:100%;height:100%;object-fit:cover;object-position:center 15%;
-  transition:transform .9s var(--ease);
-}
+.about-frame{position:absolute;top:2.5rem;right:-2rem;bottom:-2.5rem;left:2rem;border:1px solid var(--linen);z-index:0;pointer-events:none}
+.about-img{position:relative;z-index:1;aspect-ratio:3/4;overflow:hidden}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .9s var(--ease)}
 .about-img:hover img{transform:scale(1.04)}
-/* Text column */
 .about-text{max-width:600px}
-.about-lead{
-  font-family:var(--serif);
-  font-size:clamp(1.1rem,1.8vw,1.45rem);
-  font-style:italic;font-weight:300;
-  color:var(--text-dark);line-height:1.65;
-  margin:1.75rem 0 1.1rem;
-}
-.about-body{
-  font-size:clamp(.875rem,.95vw,.95rem);
-  line-height:1.95;color:var(--text-mid);
-  margin-bottom:.85rem;
-}
-.about-stats{
-  display:flex;gap:0;
-  margin-top:3rem;padding-top:2.5rem;
-  border-top:1px solid var(--linen);
-  width:fit-content;
-}
-.stat{padding-right:clamp(2rem,4vw,3.5rem)}
-.stat:not(:last-child){
-  margin-right:clamp(2rem,4vw,3.5rem);
-  border-right:1px solid var(--linen);
-}
-.stat-n{
-  font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);
-  font-weight:300;color:var(--text-dark);line-height:1;
-}
-.stat-l{
-  font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--text-mid);margin-top:.3rem;
-}
+.about-lead{font-family:var(--serif);font-size:clamp(1.05rem,3vw,1.45rem);font-style:italic;font-weight:300;color:var(--text-dark);line-height:1.65;margin:1.5rem 0 1rem}
+.about-body{font-size:clamp(.875rem,2.4vw,.95rem);line-height:1.9;color:var(--text-mid);margin-bottom:.85rem}
 
-/* ═══════════════════════════════════════════
-   PORTFOLIO
-═══════════════════════════════════════════ */
+/* PORTFOLIO */
 #portfolio{background:#fff}
-.port-head{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  flex-wrap:wrap;gap:1.5rem;
-  margin-bottom:clamp(2rem,3.5vw,3.5rem);
-}
-.cats{display:flex;gap:.3rem;flex-wrap:wrap}
+.port-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:clamp(1.75rem,3.5vw,3.5rem)}
+.cats{display:flex;gap:.35rem;flex-wrap:wrap}
 .cat{
-  padding:.4rem 1.1rem;font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.5rem 1.05rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;
   border:1px solid var(--sand);color:var(--text-mid);
   transition:all .28s var(--ease);font-family:var(--sans);
+  min-height:38px;white-space:nowrap;
 }
 .cat:hover,.cat.on{background:var(--text-dark);border-color:var(--text-dark);color:#fff}
-/* Masonry */
 .masonry{columns:3;column-gap:.7rem}
-.mi{
-  break-inside:avoid;margin-bottom:.7rem;
-  position:relative;overflow:hidden;cursor:pointer;
-  background:var(--ivory);
-}
-.mi img{
-  width:100%;height:auto;display:block;object-fit:cover;
-  transition:transform .85s var(--ease);will-change:transform;
-}
+.mi{break-inside:avoid;margin-bottom:.7rem;position:relative;overflow:hidden;cursor:pointer;background:var(--ivory);
+  animation:miIn .55s var(--ease) both;}
+@keyframes miIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.mi img{width:100%;height:auto;display:block;object-fit:cover;transition:transform .85s var(--ease)}
 .mi:hover img{transform:scale(1.06)}
-.mi-over{
-  position:absolute;inset:0;background:rgba(14,11,7,0);
-  transition:background .42s var(--ease);
-  display:flex;align-items:flex-end;
-  padding:clamp(.9rem,1.5vw,1.4rem);
-}
+.mi-over{position:absolute;inset:0;background:rgba(14,11,7,0);transition:background .42s var(--ease);display:flex;align-items:flex-end;padding:clamp(.85rem,1.5vw,1.4rem)}
 .mi:hover .mi-over{background:rgba(14,11,7,.5)}
-.mi-info{
-  opacity:0;transform:translateY(9px);
-  transition:all .42s var(--ease);color:#fff;
-}
+.mi-info{opacity:0;transform:translateY(9px);transition:all .42s var(--ease);color:#fff}
 .mi:hover .mi-info{opacity:1;transform:translateY(0)}
-.mi-cat{font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:.2rem}
+.mi-cat{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt);display:block;margin-bottom:.15rem}
 .mi-title{font-family:var(--serif);font-size:1rem;font-weight:300}
-.mi.off{opacity:.07;pointer-events:none;transition:opacity .4s}
+/* Touch devices: always show captions */
+@media(hover:none){
+  .mi-over{background:linear-gradient(to top,rgba(14,11,7,.62) 0%,rgba(14,11,7,0) 45%)}
+  .mi-info{opacity:1;transform:none}
+}
 /* Wedding coming soon */
-.wedding-soon{
-  break-inside:avoid;margin-bottom:.7rem;
-  position:relative;overflow:hidden;
-  background:var(--cream);
-  aspect-ratio:3/4;
+.ws{
+  break-inside:avoid;margin-bottom:.7rem;position:relative;overflow:hidden;
+  background:var(--cream);aspect-ratio:3/4;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:2.5rem;
-  border:1px solid var(--linen);
+  text-align:center;padding:clamp(1.5rem,4vw,2.5rem);border:1px solid var(--linen);
+  animation:miIn .55s var(--ease) both;
 }
-.wedding-soon .ws-n{
-  font-family:var(--serif);font-size:clamp(3rem,5vw,5rem);
-  font-weight:300;color:var(--linen);line-height:1;
-  position:absolute;top:.75rem;right:1.25rem;
-  user-select:none;
-}
-.wedding-soon .ws-sup{
-  font-size:.54rem;letter-spacing:.32em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.25rem;
-}
-.wedding-soon h3{
-  font-family:var(--serif);font-size:clamp(1.4rem,2.5vw,1.85rem);
-  font-weight:300;color:var(--text-dark);margin-bottom:.75rem;
-  line-height:1.2;
-}
-.wedding-soon p{font-size:.8rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.5rem}
-.wedding-soon .ws-btn{
-  padding:.65rem 1.5rem;border:1px solid var(--gold-dim);
-  color:var(--gold);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
-  font-family:var(--sans);transition:all .3s;
-}
-.wedding-soon .ws-btn:hover{background:var(--gold-faint);border-color:var(--gold);color:var(--text-dark)}
+.ws-icon{position:absolute;top:.75rem;right:1.25rem;font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);color:var(--linen);line-height:1;user-select:none}
+.ws-sup{font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:1.1rem}
+.ws h3{font-family:var(--serif);font-size:clamp(1.25rem,3.5vw,1.85rem);font-weight:300;color:var(--text-dark);margin-bottom:.7rem;line-height:1.2}
+.ws p{font-size:.8rem;color:var(--text-mid);line-height:1.7;margin-bottom:1.35rem}
+.ws-btn{padding:.7rem 1.4rem;border:1px solid var(--gold-dim);color:var(--gold-dk);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans);transition:all .3s;min-height:42px;display:inline-flex;align-items:center}
+.ws-btn:hover{background:var(--gold-faint);border-color:var(--gold);color:var(--text-dark)}
 
-/* ═══════════════════════════════════════════
-   WHY
-═══════════════════════════════════════════ */
-#why{
-  background:linear-gradient(155deg, var(--cream) 0%, var(--ivory) 60%, var(--linen) 100%);
-  position:relative;
-}
-#why::before,#why::after{
-  content:'';position:absolute;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,var(--sand),transparent);
-}
+/* WHY */
+#why{background:linear-gradient(155deg,var(--cream) 0%,var(--ivory) 60%,var(--linen) 100%);position:relative}
+#why::before,#why::after{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sand),transparent)}
 #why::before{top:0}#why::after{bottom:0}
-.why-head{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  flex-wrap:wrap;gap:2rem;margin-bottom:clamp(3rem,5vw,5rem);
-}
-.why-intro{
-  font-size:clamp(.875rem,.95vw,.95rem);line-height:1.85;
-  color:var(--text-mid);max-width:360px;
-}
-.why-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  border-top:1px solid var(--linen);border-left:1px solid var(--linen);
-}
-.why-c{
-  padding:clamp(2rem,3vw,3rem) clamp(1.5rem,2.5vw,2.5rem);
-  border-right:1px solid var(--linen);border-bottom:1px solid var(--linen);
-  transition:background .32s;
-}
+.why-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem;margin-bottom:clamp(2.5rem,5vw,5rem)}
+.why-intro{font-size:clamp(.875rem,2.4vw,.95rem);line-height:1.85;color:var(--text-mid);max-width:360px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--linen);border-left:1px solid var(--linen)}
+.why-c{padding:clamp(1.75rem,3vw,3rem) clamp(1.25rem,2.5vw,2.5rem);border-right:1px solid var(--linen);border-bottom:1px solid var(--linen);transition:background .32s}
 .why-c:hover{background:rgba(184,160,122,.07)}
-.why-n{
-  font-family:var(--serif);font-size:3rem;font-weight:300;
-  color:#A88A5E;line-height:1;margin-bottom:1.2rem;
-}
-.why-c h3{
-  font-family:var(--serif);font-size:clamp(1.05rem,1.5vw,1.2rem);
-  font-weight:400;color:var(--text-dark);margin-bottom:.55rem;
-}
+.why-n{font-family:var(--serif);font-size:clamp(2.25rem,5vw,3rem);font-weight:300;color:var(--gold-dk);line-height:1;margin-bottom:1.1rem}
+.why-c h3{font-family:var(--serif);font-size:clamp(1.05rem,2.8vw,1.2rem);font-weight:400;color:var(--text-dark);margin-bottom:.5rem}
 .why-c p{font-size:.82rem;line-height:1.85;color:var(--text-mid)}
 
-/* ═══════════════════════════════════════════
-   PACKAGES
-═══════════════════════════════════════════ */
+/* PACKAGES */
 #packages{background:var(--ink);position:relative;overflow:hidden}
-#packages::before{
-  content:'';position:absolute;
-  top:-30%;right:-15%;width:55%;aspect-ratio:1;
-  background:radial-gradient(circle,rgba(184,160,122,.05) 0%,transparent 70%);
-  pointer-events:none;
-}
-.pkg-intro{margin-bottom:clamp(3rem,5vw,5rem)}
-.pkg-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1px;background:var(--gold-faint);
-}
-.pkg{
-  background:var(--ink-soft);
-  padding:clamp(2.5rem,4vw,3.5rem) clamp(2rem,3vw,3rem);
-  transition:background .32s;
-}
+#packages::before{content:'';position:absolute;top:-30%;right:-15%;width:55%;aspect-ratio:1;background:radial-gradient(circle,rgba(184,160,122,.05) 0%,transparent 70%);pointer-events:none}
+.pkg-intro{margin-bottom:clamp(2.5rem,5vw,5rem)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--gold-faint)}
+.pkg{background:var(--ink-soft);padding:clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,3rem);transition:background .32s}
 .pkg:hover{background:#27231E}
 .pkg.feat{background:#222018}
-.pkg-badge{
-  display:inline-block;font-size:.52rem;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--gold-dim);
-  padding:.2rem .7rem;margin-bottom:1.5rem;
-}
-.pkg-num{
-  font-family:var(--serif);font-size:clamp(3rem,5vw,5rem);
-  font-weight:300;color:rgba(255,255,255,.04);line-height:1;
-  margin-bottom:1.5rem;display:block;
-}
-.pkg-name{
-  font-family:var(--serif);font-size:clamp(1.5rem,2.2vw,2rem);
-  font-weight:300;color:#fff;margin-bottom:.3rem;
-}
+.pkg-badge{display:inline-block;font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-dim);padding:.2rem .7rem;margin-bottom:1.35rem}
+.pkg-num{font-family:var(--serif);font-size:clamp(2.5rem,6vw,5rem);font-weight:300;color:rgba(255,255,255,.045);line-height:1;margin-bottom:1.35rem;display:block}
+.pkg-name{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,2rem);font-weight:300;color:#fff;margin-bottom:.3rem}
 .pkg-dur{font-size:.76rem;color:rgba(255,255,255,.32);letter-spacing:.04em;margin-bottom:.3rem}
-.pkg-price{
-  font-family:var(--serif);font-size:1.1rem;
-  color:var(--gold);margin-bottom:2rem;
-}
-.pkg-div{height:1px;background:rgba(255,255,255,.06);margin-bottom:1.75rem}
-.pkg-lbl{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.9rem}
+.pkg-price{font-family:var(--serif);font-size:1.1rem;color:var(--gold);margin-bottom:1.75rem}
+.pkg-div{height:1px;background:rgba(255,255,255,.06);margin-bottom:1.6rem}
+.pkg-lbl{font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.85rem}
 .pkg-list{list-style:none}
-.pkg-list li{
-  font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.44);
-  padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04);
-  display:flex;gap:.6rem;align-items:flex-start;
-}
+.pkg-list li{font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.45);padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.6rem;align-items:flex-start}
 .pkg-ck{color:var(--gold);flex-shrink:0}
-.pkg-cta{
-  display:block;text-align:center;margin-top:2rem;
-  padding:.82rem;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
-  border:1px solid var(--gold-faint);color:var(--gold);
-  font-family:var(--sans);transition:all .3s;
-}
+.pkg-cta{display:block;text-align:center;margin-top:1.75rem;padding:.9rem;font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--gold-faint);color:var(--gold);font-family:var(--sans);transition:all .3s;min-height:44px}
 .pkg-cta:hover{border-color:var(--gold);background:var(--gold-faint);color:#fff}
 
-/* ═══════════════════════════════════════════
-   REVIEWS
-═══════════════════════════════════════════ */
-#reviews{background:var(--cream)}
-.rev-wrap{position:relative;margin-top:clamp(3rem,5vw,5rem);overflow:hidden}
-.rtrack{display:flex;transition:transform .72s cubic-bezier(.65,0,.35,1)}
-.rslide{
-  min-width:100%;
-  display:grid;grid-template-columns:80px 1fr;
-  gap:clamp(2rem,5vw,5rem);align-items:start;
-  padding:0 clamp(0px,7vw,9rem);
-}
-.rav{
-  width:80px;height:80px;border-radius:50%;overflow:hidden;
-  border:1px solid var(--linen);flex-shrink:0;
-}
-.rav img{width:100%;height:100%;object-fit:cover;object-position:top}
-.rq{
-  font-family:var(--serif);font-size:clamp(4rem,6vw,6rem);
-  line-height:.5;color:var(--linen);display:block;margin-bottom:1.4rem;
-}
-.rt{
-  font-family:var(--serif);
-  font-size:clamp(1.05rem,1.8vw,1.5rem);
-  font-weight:300;font-style:italic;
-  line-height:1.65;color:var(--text-dark);margin-bottom:1.4rem;
-}
-.rw{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-mid)}
-.rdots{display:flex;justify-content:center;gap:.45rem;margin-top:3rem}
-.dot{
-  width:5px;height:5px;background:var(--linen);
-  border-radius:50%;cursor:pointer;transition:all .32s;
-}
-.dot.on{background:var(--text-dark);width:20px;border-radius:3px}
-.rarrows{
-  position:absolute;top:38%;transform:translateY(-50%);
-  width:100%;display:flex;justify-content:space-between;
-  pointer-events:none;padding:0 var(--px);
-}
-.rarr{
-  pointer-events:all;width:42px;height:42px;
-  border:1px solid var(--linen);color:var(--text-mid);font-size:.95rem;
-  transition:all .3s;
-}
-.rarr:hover{border-color:var(--text-dark);color:var(--text-dark);background:rgba(30,27,22,.04)}
+/* TERMS */
+#terms{background:var(--ivory);position:relative}
+#terms::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--sand),transparent)}
+.terms-grid{display:grid;grid-template-columns:1fr 1.9fr;gap:clamp(2.5rem,6vw,6rem);align-items:start}
+.terms-head{position:sticky;top:6rem}
+.terms-list{display:flex;flex-direction:column;gap:0}
+.term{display:grid;grid-template-columns:auto 1fr;gap:clamp(1rem,2.5vw,2rem);padding:clamp(1.5rem,3vw,2.25rem) 0;border-bottom:1px solid var(--linen)}
+.term:first-child{border-top:1px solid var(--linen)}
+.term-n{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:300;color:var(--gold-dk);line-height:1;min-width:2.25rem}
+.term-body h3{font-family:var(--serif);font-size:clamp(1.05rem,2.8vw,1.25rem);font-weight:400;color:var(--text-dark);margin-bottom:.5rem;line-height:1.3}
+.term-body p{font-size:clamp(.82rem,2.3vw,.9rem);line-height:1.9;color:var(--text-mid)}
 
-/* ═══════════════════════════════════════════
-   INSTAGRAM
-═══════════════════════════════════════════ */
+/* REVIEWS */
+#reviews{background:var(--cream)}
+.rev-wrap{position:relative;margin-top:clamp(2.5rem,5vw,5rem);overflow:hidden}
+.rtrack{display:flex;transition:transform .72s cubic-bezier(.65,0,.35,1)}
+.rslide{min-width:100%;display:grid;grid-template-columns:80px 1fr;gap:clamp(1.5rem,5vw,5rem);align-items:start;padding:0 clamp(0px,7vw,9rem)}
+.rav{width:80px;height:80px;border-radius:50%;overflow:hidden;border:1px solid var(--linen);flex-shrink:0}
+.rav img{width:100%;height:100%;object-fit:cover;object-position:top}
+.rq{font-family:var(--serif);font-size:clamp(3rem,7vw,6rem);line-height:.5;color:var(--linen);display:block;margin-bottom:1.25rem}
+.rt{font-family:var(--serif);font-size:clamp(1rem,3vw,1.5rem);font-weight:300;font-style:italic;line-height:1.65;color:var(--text-dark);margin-bottom:1.25rem}
+.rw{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-mid)}
+.rdots{display:flex;justify-content:center;gap:.45rem;margin-top:2.5rem}
+.dot{width:6px;height:6px;background:var(--linen);border-radius:50%;cursor:pointer;transition:all .32s;padding:0}
+.dot.on{background:var(--text-dark);width:20px;border-radius:3px}
+.rarrows{position:absolute;top:36%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;pointer-events:none;padding:0 var(--px)}
+.rarr{pointer-events:all;width:44px;height:44px;border:1px solid var(--linen);color:var(--text-mid);font-size:.95rem;transition:all .3s}
+.rarr:hover{border-color:var(--text-dark);color:var(--text-dark);background:rgba(30,27,22,.04)}
+@media(max-width:900px){.rarrows{display:none}}
+
+/* INSTAGRAM */
 #instagram{background:var(--ivory);text-align:center}
-.ig-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);
-  gap:.4rem;margin:2.5rem 0;
-}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;margin:2.25rem 0}
 .ig-i{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
-.ig-i img{
-  width:100%;height:100%;object-fit:cover;object-position:top;
-  transition:transform .6s var(--ease);
-}
+.ig-i img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s var(--ease)}
 .ig-i:hover img{transform:scale(1.08)}
-.ig-fog{
-  position:absolute;inset:0;background:rgba(14,11,7,0);
-  transition:background .35s;
-  display:flex;align-items:center;justify-content:center;
-}
+.ig-fog{position:absolute;inset:0;background:rgba(14,11,7,0);transition:background .35s;display:flex;align-items:center;justify-content:center}
 .ig-i:hover .ig-fog{background:rgba(14,11,7,.35)}
 .ig-h{opacity:0;transition:opacity .3s;color:#fff;font-size:1.1rem}
 .ig-i:hover .ig-h{opacity:1}
-.ig-btn{
-  display:inline-flex;align-items:center;gap:.65rem;
-  padding:.85rem 2.25rem;
-  border:1px solid var(--linen);color:var(--text-mid);
-  font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
-  font-family:var(--sans);transition:all .3s;
-}
+.ig-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.9rem 1.75rem;border:1px solid var(--linen);color:var(--text-mid);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--sans);transition:all .3s;min-height:44px;text-align:center}
 .ig-btn:hover{border-color:var(--text-dark);color:var(--text-dark)}
 
-/* ═══════════════════════════════════════════
-   SEO EDITORIAL SECTION
-═══════════════════════════════════════════ */
-#about-seo{
-  background:var(--cream);
-  border-top:1px solid var(--linen);
-}
-.seo-grid{
-  display:grid;grid-template-columns:1fr 2fr;
-  gap:clamp(3rem,6vw,7rem);align-items:start;
-}
-.seo-heading{
-  font-family:var(--serif);
-  font-size:clamp(1.75rem,3vw,2.75rem);
-  font-weight:300;line-height:1.2;
-  color:var(--text-dark);
-  position:sticky;top:7rem;
-}
+/* SEO */
+#seo{background:var(--cream);border-top:1px solid var(--linen)}
+.seo-grid{display:grid;grid-template-columns:1fr 2fr;gap:clamp(2.5rem,6vw,7rem);align-items:start}
+.seo-h{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.75rem);font-weight:300;line-height:1.2;color:var(--text-dark);position:sticky;top:6.5rem}
 .seo-body{columns:2;column-gap:clamp(2rem,4vw,4rem)}
-.seo-body p{
-  font-size:clamp(.85rem,.9vw,.9rem);line-height:1.95;
-  color:var(--text-mid);break-inside:avoid;
-  margin-bottom:1.1rem;
-}
+.seo-body p{font-size:clamp(.82rem,2.3vw,.9rem);line-height:1.95;color:var(--text-mid);break-inside:avoid;margin-bottom:1.05rem}
 
-/* ═══════════════════════════════════════════
-   CONTACT
-═══════════════════════════════════════════ */
+/* CONTACT */
 #contact{display:grid;grid-template-columns:1fr 1fr}
-.cl{
-  background:var(--ink);
-  padding:clamp(5rem,9vw,10rem) var(--px);
-  display:flex;flex-direction:column;justify-content:center;
-}
-.cr{
-  background:var(--ink-soft);
-  padding:clamp(5rem,9vw,10rem) var(--px);
-}
-.c-sup{
-  font-size:.58rem;letter-spacing:.36em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:1.4rem;
-  display:flex;align-items:center;gap:.85rem;
-}
-.c-sup::after{content:'';width:2rem;height:1px;background:var(--gold)}
-.c-h2{
-  font-family:var(--serif);
-  font-size:clamp(2rem,3.5vw,3.25rem);
-  font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.1rem;
-}
-.c-desc{
-  font-size:.86rem;line-height:1.9;
-  color:rgba(255,255,255,.34);
-  margin-bottom:2.75rem;max-width:340px;
-}
+.cl{background:var(--ink);padding:clamp(4rem,9vw,10rem) var(--px);display:flex;flex-direction:column;justify-content:center}
+.cr{background:var(--ink-soft);padding:clamp(4rem,9vw,10rem) var(--px)}
+.c-sup{font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;display:flex;align-items:center;gap:.8rem}
+.c-sup::after{content:'';width:1.75rem;height:1px;background:var(--gold)}
+.c-h2{font-family:var(--serif);font-size:clamp(1.9rem,5vw,3.25rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1rem}
+.c-desc{font-size:.86rem;line-height:1.9;color:rgba(255,255,255,.34);margin-bottom:2.5rem;max-width:340px}
 .clinks{display:flex;flex-direction:column}
-.clink{
-  display:flex;align-items:center;gap:1rem;
-  color:rgba(255,255,255,.55);font-size:.85rem;
-  padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);
-  transition:color .3s;
-}
+.clink{display:flex;align-items:center;gap:1rem;color:rgba(255,255,255,.55);font-size:.85rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s;min-height:44px}
 .clink:hover{color:#fff}
-.cico{
-  width:38px;height:38px;border:1px solid rgba(255,255,255,.1);
-  display:flex;align-items:center;justify-content:center;
-  font-size:.95rem;flex-shrink:0;transition:border-color .3s;
-}
+.cico{width:38px;height:38px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:border-color .3s}
 .clink:hover .cico{border-color:var(--gold-dim)}
-.c-h3{
-  font-family:var(--serif);font-size:1.6rem;
-  font-weight:300;color:#fff;margin-bottom:2.25rem;
-}
-.fg{margin-bottom:1.35rem}
-.fl{
-  display:block;font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.28);margin-bottom:.52rem;
-}
+.c-h3{font-family:var(--serif);font-size:clamp(1.4rem,3.5vw,1.6rem);font-weight:300;color:#fff;margin-bottom:2rem}
+.fg{margin-bottom:1.3rem}
+.fl{display:block;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.5rem}
 .fi,.fs,.fa{
-  width:100%;padding:.78rem 0;background:none;border:none;
+  width:100%;padding:.85rem 0;background:none;border:none;
   border-bottom:1px solid rgba(255,255,255,.1);
-  font-family:var(--sans);font-size:.88rem;font-weight:300;
+  font-family:var(--sans);font-size:16px;font-weight:300;
   color:#fff;outline:none;transition:border-color .3s;
-  appearance:none;-webkit-appearance:none;
+  appearance:none;-webkit-appearance:none;border-radius:0;
 }
 .fi:focus,.fs:focus,.fa:focus{border-bottom-color:var(--gold)}
 .fi::placeholder,.fa::placeholder{color:rgba(255,255,255,.18)}
 .fs{cursor:pointer;color:rgba(255,255,255,.38)}
 .fs option{background:var(--ink);color:#fff}
-.fa{resize:none;height:68px}
+.fa{resize:none;height:72px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-.fsub{
-  display:block;width:100%;text-align:center;
-  margin-top:1.75rem;padding:.95rem;
-  border:1px solid var(--gold-faint);color:var(--gold);
-  font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;
-  transition:all .3s;cursor:pointer;
-}
+.fsub{display:block;width:100%;text-align:center;margin-top:1.6rem;padding:1.05rem;border:1px solid var(--gold-faint);color:var(--gold);font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;transition:all .3s;min-height:48px}
 .fsub:hover{background:var(--gold-faint);border-color:var(--gold);color:#fff}
 
-/* ═══════════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════════ */
-footer{
-  background:#0D0B08;
-  padding:clamp(2rem,3vw,3rem) var(--px);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-  border-top:1px solid rgba(255,255,255,.04);
-}
+/* FOOTER */
+footer{background:#0D0B08;padding:clamp(1.75rem,3vw,3rem) var(--px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.04)}
 .fl-logo{font-family:var(--serif);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.36);letter-spacing:.1em}
-.fl-copy{font-size:.58rem;color:rgba(255,255,255,.18);letter-spacing:.06em}
+.fl-copy{font-size:.56rem;color:rgba(255,255,255,.18);letter-spacing:.06em}
 .fl-love{font-family:var(--serif);font-style:italic;font-size:.75rem;color:rgba(255,255,255,.18)}
 
-/* ═══════════════════════════════════════════
-   BACK TO TOP
-═══════════════════════════════════════════ */
-#topbtn{
-  position:fixed;bottom:1.75rem;right:1.75rem;z-index:100;
-  width:40px;height:40px;
-  border:1px solid var(--gold-faint);color:var(--gold);font-size:.85rem;
-  opacity:0;pointer-events:none;
-  transition:all .35s var(--ease);transform:translateY(8px);
-}
+/* TOP BTN */
+#topbtn{position:fixed;bottom:1.5rem;right:1.5rem;z-index:100;width:44px;height:44px;border:1px solid var(--gold-faint);background:rgba(253,250,245,.9);backdrop-filter:blur(8px);color:var(--gold-dk);font-size:.9rem;opacity:0;pointer-events:none;transition:all .35s var(--ease);transform:translateY(8px)}
 #topbtn.on{opacity:1;pointer-events:all;transform:translateY(0)}
-#topbtn:hover{border-color:var(--gold);background:var(--gold-faint)}
+#topbtn:hover{border-color:var(--gold);background:#fff}
 
-/* ═══════════════════════════════════════════
-   REVEAL ANIMATIONS
-═══════════════════════════════════════════ */
-.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .rv.in{opacity:1;transform:translateY(0)}
-.rv1{transition-delay:.1s}.rv2{transition-delay:.2s}.rv3{transition-delay:.32s}
+.rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.26s}
 .rvi{opacity:0;transition:opacity 1.1s var(--ease)}
 .rvi.in{opacity:1}
 
-/* ═══════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════ */
+/* ═══ RESPONSIVE ═══ */
 @media(max-width:1200px){
-  .about-grid{gap:clamp(2.5rem,5vw,5rem)}
+  .about-grid{gap:clamp(2rem,5vw,5rem)}
   .why-grid,.pkg-grid{grid-template-columns:1fr 1fr}
+  .why-c:nth-child(3n){border-right:1px solid var(--linen)}
+  .why-c:nth-child(2n){border-right:none}
   .masonry{columns:2}
   .seo-body{columns:1}
+  .terms-grid{grid-template-columns:1fr 1.6fr}
 }
 @media(max-width:900px){
-  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .about-frame{display:none}
-  .about-img{aspect-ratio:4/3;max-height:460px}
+  .about-img{aspect-ratio:4/3;max-height:420px}
   .about-text{max-width:100%}
-  .masonry{columns:2}
-  .rslide{grid-template-columns:1fr;gap:1.5rem;padding:0}
+  .rslide{grid-template-columns:1fr;gap:1.25rem;padding:0}
+  .rav{width:64px;height:64px}
   .ig-grid{grid-template-columns:repeat(3,1fr)}
   #contact{grid-template-columns:1fr}
-  .frow{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr;gap:0}
+  .why-grid{grid-template-columns:1fr;border-left:none}
+  .why-c{border-right:none!important;padding-left:0;padding-right:0}
   .pkg-grid{grid-template-columns:1fr}
-  .seo-grid{grid-template-columns:1fr}
-  .seo-heading{position:static}
+  .seo-grid{grid-template-columns:1fr;gap:2rem}
+  .seo-h{position:static}
+  .terms-grid{grid-template-columns:1fr;gap:2rem}
+  .terms-head{position:static}
+  .port-head{flex-direction:column;align-items:flex-start;gap:1.25rem}
+  .cats{width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .cats::-webkit-scrollbar{display:none}
 }
-@media(max-width:600px){
-  .masonry{columns:1}
+@media(max-width:640px){
+  .masonry{columns:1;column-gap:0}
+  .mi,.ws{margin-bottom:.6rem}
   .ig-grid{grid-template-columns:repeat(2,1fr)}
-  .hero-ctas{flex-direction:column;align-items:center}
-  .cta-fill,.cta-line{width:100%;max-width:280px;text-align:center}
-  footer{flex-direction:column;text-align:center}
-  .about-stats{flex-direction:column;gap:1.5rem;width:100%}
-  .stat{padding:0;border:none!important;margin:0!important;padding-bottom:1.5rem;border-bottom:1px solid var(--linen)!important}
-  .stat:last-child{border-bottom:none!important}
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:.6rem;max-width:300px;margin:0 auto}
+  .cta-fill,.cta-line{width:100%;text-align:center}
+  footer{flex-direction:column;text-align:center;gap:.75rem}
+  .term{grid-template-columns:1fr;gap:.5rem}
+  .term-n{font-size:1.5rem}
+  .why-head{flex-direction:column;align-items:flex-start}
+  .why-intro{max-width:100%}
+}
+@media(max-width:380px){
+  :root{--px:.9rem}
+  .hero-title{font-size:2.5rem}
+  .cat{padding:.45rem .85rem;font-size:.54rem}
 }
 @media(min-width:1920px){
   :root{--max:1720px;--px:clamp(4rem,5vw,7rem)}
   .masonry{columns:4}
 }
 @media print{
-  #nav,#topbtn,.hero-mono,.hero-scroll,.hero-ctas,.rarrows,.rdots,.pkg-cta,.fsub{display:none!important}
+  #nav,#topbtn,.hero-mono,.hero-scroll,.hero-ctas,.rarrows,.rdots,.pkg-cta,.fsub,.ws-btn{display:none!important}
   body{background:#fff;color:#000}
-  #hero{height:auto;padding:4rem 2rem;background:#f5f0e8}
+  #hero{min-height:auto;padding:3rem 2rem;background:#f5f0e8}
   .hero-photo,.hero-vignette{display:none}
-  .hero-title,.hero-sub,.hero-kicker{color:#1a1710;animation:none;opacity:1}
-  section,.cl,.cr{background:#fff!important;color:#000!important;padding:2rem!important}
+  .hero-title,.hero-sub,.hero-kicker{color:#1a1710;opacity:1}
+  section,.cl,.cr{background:#fff!important;color:#000!important;padding:1.5rem!important}
   .why-grid,.pkg-grid{grid-template-columns:1fr 1fr}
-  img{max-height:220px}
+  img{max-height:200px}
   .masonry{columns:2}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">photo.nastyachoo</a>
   <ul class="nav-links">
     <li><a href="#about">Обо мне</a></li>
     <li><a href="#portfolio">Работы</a></li>
     <li><a href="#packages">Пакеты</a></li>
+    <li><a href="#terms">Условия</a></li>
     <li><a href="#reviews">Отзывы</a></li>
     <li><a href="#contact">Записаться</a></li>
   </ul>
-  <button class="nav-burger" id="burger" aria-label="Меню">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
 </nav>
 <div id="mob">
-  <button class="mob-x" id="mobx">✕</button>
+  <button class="mob-x" id="mobx" aria-label="Закрыть">✕</button>
   <a href="#about" class="moblink">Обо мне</a>
   <a href="#portfolio" class="moblink">Работы</a>
   <a href="#packages" class="moblink">Пакеты</a>
+  <a href="#terms" class="moblink">Условия</a>
   <a href="#reviews" class="moblink">Отзывы</a>
   <a href="#contact" class="moblink">Записаться</a>
 </div>
 
-<!-- HERO — text renders before image loads -->
 <section id="hero">
   <div class="hero-photo" id="heroPhoto"></div>
   <div class="hero-vignette"></div>
   <div class="hero-mono">N</div>
   <div class="hero-body">
-    <span class="hero-kicker">Москва · Lifestyle · Family · Studio</span>
+    <span class="hero-kicker">Москва · Событийная · Семейная · Студийная</span>
     <h1 class="hero-title">photo<br>.nastyachoo</h1>
     <div class="hero-divider"></div>
-    <p class="hero-sub">Family · Lifestyle · Studio Photographer</p>
+    <p class="hero-sub">Event · Family · Lifestyle Photographer</p>
     <div class="hero-ctas">
       <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="cta-fill">Записаться на съёмку</a>
       <a href="#portfolio" class="cta-line">Посмотреть работы</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-tick"></div>
-    <span>Листать</span>
-  </div>
+  <div class="hero-scroll"><div class="scroll-tick"></div><span>Листать</span></div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="grain">
   <div class="wrap about-grid">
     <div class="about-photo rvi">
       <div class="about-frame"></div>
-      <div class="about-img">
-        <img src="images/about.webp" alt="Анастасия — семейный и lifestyle фотограф в Москве" decoding="async" loading="eager">
-      </div>
+      <div class="about-img"><img src="images/about.webp" alt="Анастасия — фотограф в Москве" decoding="async"></div>
     </div>
     <div class="about-text">
       <div class="sup rv">Обо мне</div>
       <h2 class="serif rv rv1">Привет!<br>Меня зовут<br><em style="font-style:italic">Анастасия.</em></h2>
-      <p class="about-lead rv rv2">Я создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
-      <p class="about-body rv rv2">Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой. Специализируюсь на семейных, детских и студийных съёмках в Москве и Подмосковье.</p>
-      <p class="about-body rv rv2">Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
-      <div class="about-stats rv rv3">
-        <div class="stat"><div class="stat-n">1+</div><div class="stat-l">Год опыта</div></div>
-        <div class="stat"><div class="stat-n">100+</div><div class="stat-l">Съёмок</div></div>
-        <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Любви к делу</div></div>
-      </div>
+      <p class="about-lead rv rv2">Я специализируюсь на событийных съёмках и создаю живые фотографии, которые хочется пересматривать спустя годы.</p>
+      <p class="about-body rv rv2">Детские праздники, дни рождения, семейные торжества — умею работать в динамике события и ловить те моменты, которые иначе просто исчезли бы. Также снимаю семейные, студийные и уличные фотосессии в Москве и Подмосковье.</p>
+      <p class="about-body rv rv3">Люблю естественный свет, искренние эмоции и кадры, в которых люди остаются собой. Для меня съёмка — это не просто красивые фотографии, а история, которую хочется сохранить навсегда.</p>
     </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
 <section id="portfolio" class="section-py">
   <div class="wrap">
     <div class="port-head rv">
       <div>
-        <div class="sup" style="color:var(--gold)">Портфолио</div>
+        <div class="sup">Портфолио</div>
         <h2 class="serif">Работы</h2>
       </div>
       <div class="cats">
@@ -837,61 +440,49 @@ footer{
       </div>
     </div>
     <div class="masonry rv rv1" id="masonry">
-
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-6.webp" alt="Студийная портретная съёмка Москва" fetchpriority="high" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Естественность</div></div></div>
       </div>
-
       <div class="mi" data-cat="children">
-        <img src="images/portfolio-8.webp" alt="Детская съёмка праздник Москва" fetchpriority="high" decoding="async">
+        <img src="images/portfolio-8.webp" alt="Детский праздник фотограф Москва" fetchpriority="high" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Лучшие подруги</div></div></div>
       </div>
-
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-3.webp" alt="Студийная женская съёмка Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Женственность</div></div></div>
       </div>
-
       <div class="mi" data-cat="street">
         <img src="images/portfolio-5.webp" alt="Уличная портретная съёмка Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Уличные</span><div class="mi-title">Город как фон</div></div></div>
       </div>
-
       <div class="mi" data-cat="children">
-        <img src="images/portfolio-1.webp" alt="Детский праздник фотограф Москва" loading="lazy" decoding="async">
+        <img src="images/portfolio-1.webp" alt="Детский праздник Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Яркий день</div></div></div>
       </div>
-
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-7.webp" alt="Студийный портрет Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Чистый образ</div></div></div>
       </div>
-
       <div class="mi" data-cat="children">
         <img src="images/portfolio-2.webp" alt="День рождения детский фотограф Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Торт!</div></div></div>
       </div>
-
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-9.webp" alt="Мужской студийный портрет Москва" loading="lazy" decoding="async">
         <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Сила образа</div></div></div>
       </div>
-
-      <!-- WEDDING COMING SOON — authentic only -->
-      <div class="wedding-soon" data-cat="wedding">
-        <div class="ws-n">♡</div>
+      <div class="ws" data-cat="wedding">
+        <div class="ws-icon">♡</div>
         <div class="ws-sup">Свадебная съёмка</div>
         <h3>Скоро здесь появятся<br>свадебные истории</h3>
-        <p>Раздел в разработке. Уже сейчас можно обсудить вашу дату и концепцию свадебной съёмки.</p>
-        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="ws-btn">Обсудить свадьбу →</a>
+        <p>Раздел в разработке. Уже сейчас можно обсудить вашу дату и концепцию съёмки.</p>
+        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="ws-btn">Обсудить →</a>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- WHY -->
 <section id="why" class="section-py grain">
   <div class="wrap">
     <div class="why-head rv">
@@ -899,20 +490,19 @@ footer{
         <div class="sup">Преимущества</div>
         <h2 class="serif">Почему мне<br>доверяют</h2>
       </div>
-      <p class="why-intro">Каждая деталь — от первого звонка до финальной галереи — продумана так, чтобы вы чувствовали себя в надёжных руках.</p>
+      <p class="why-intro">Каждая деталь продумана так, чтобы вы получили не просто фотографии, а спокойный и приятный опыт съёмки.</p>
     </div>
     <div class="why-grid rv rv1">
-      <div class="why-c"><div class="why-n">01</div><h3>Помогаю с позированием</h3><p>Направляю и подсказываю — вы расслабляетесь, я получаю искренние кадры.</p></div>
-      <div class="why-c"><div class="why-n">02</div><h3>Лучшие локации</h3><p>Знаю красивые места Москвы и подбираю подходящее под ваш образ.</p></div>
-      <div class="why-c"><div class="why-n">03</div><h3>Быстрая обработка</h3><p>Готовые фотографии в течение 7–10 дней после съёмки.</p></div>
+      <div class="why-c"><div class="why-n">01</div><h3>Помогаю с позированием</h3><p>Направляю и подсказываю прямо во время съёмки — вы расслабляетесь, я получаю искренние кадры.</p></div>
+      <div class="why-c"><div class="why-n">02</div><h3>Подскажу локацию</h3><p>Знаю красивые места Москвы и помогу выбрать подходящее под ваш образ и настроение.</p></div>
+      <div class="why-c"><div class="why-n">03</div><h3>Быстрая обработка</h3><p>Готовые фотографии в течение 7–10 дней после съёмки, без долгих ожиданий.</p></div>
       <div class="why-c"><div class="why-n">04</div><h3>Индивидуальный подход</h3><p>Каждая съёмка — история конкретных людей, а не шаблонный набор кадров.</p></div>
-      <div class="why-c"><div class="why-n">05</div><h3>Комфортная атмосфера</h3><p>Тёплая атмосфера — даже если вы не любите фотографироваться.</p></div>
+      <div class="why-c"><div class="why-n">05</div><h3>Комфортная атмосфера</h3><p>Создаю тёплую обстановку — даже если вы не любите фотографироваться.</p></div>
       <div class="why-c"><div class="why-n">06</div><h3>Естественная ретушь</h3><p>Обработка без перебора: вы остаётесь собой, но в лучшем свете.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PACKAGES -->
 <section id="packages" class="section-py grain">
   <div class="wrap">
     <div class="pkg-intro rv">
@@ -928,8 +518,8 @@ footer{
         <div class="pkg-div"></div>
         <div class="pkg-lbl">Включено</div>
         <ul class="pkg-list">
-          <li><span class="pkg-ck">✓</span>1 час · одна локация</li>
-          <li><span class="pkg-ck">✓</span>30–40 обработанных фото</li>
+          <li><span class="pkg-ck">✓</span>1 час съёмки</li>
+          <li><span class="pkg-ck">✓</span>20 обработанных фотографий</li>
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
           <li><span class="pkg-ck">✓</span>Консультация перед съёмкой</li>
         </ul>
@@ -944,8 +534,8 @@ footer{
         <div class="pkg-div"></div>
         <div class="pkg-lbl">Включено</div>
         <ul class="pkg-list">
-          <li><span class="pkg-ck">✓</span>2 часа · до 2 локаций</li>
-          <li><span class="pkg-ck">✓</span>70–100 обработанных фото</li>
+          <li><span class="pkg-ck">✓</span>2 часа съёмки</li>
+          <li><span class="pkg-ck">✓</span>40 обработанных фотографий</li>
           <li><span class="pkg-ck">✓</span>Помощь с образами и локацией</li>
           <li><span class="pkg-ck">✓</span>Приоритетная обработка</li>
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
@@ -961,7 +551,7 @@ footer{
         <div class="pkg-lbl">Включено</div>
         <ul class="pkg-list">
           <li><span class="pkg-ck">✓</span>Полный день съёмки</li>
-          <li><span class="pkg-ck">✓</span>Неограниченное кол-во фото</li>
+          <li><span class="pkg-ck">✓</span>Расширенная галерея</li>
           <li><span class="pkg-ck">✓</span>Несколько локаций</li>
           <li><span class="pkg-ck">✓</span>Индивидуальная концепция</li>
           <li><span class="pkg-ck">✓</span>Фотокнига в подарок</li>
@@ -972,7 +562,45 @@ footer{
   </div>
 </section>
 
-<!-- REVIEWS -->
+<section id="terms" class="section-py grain">
+  <div class="wrap terms-grid">
+    <div class="terms-head rv">
+      <div class="sup">Важная информация</div>
+      <h2 class="serif">Условия<br>работы</h2>
+    </div>
+    <div class="terms-list rv rv1">
+      <div class="term">
+        <div class="term-n">01</div>
+        <div class="term-body">
+          <h3>Отбор кадров на обработку</h3>
+          <p>Фотографии отбираются на обработку на усмотрение фотографа, если иное не согласовано заранее. Если у вас есть пожелания по конкретным кадрам — обсудим их до съёмки.</p>
+        </div>
+      </div>
+      <div class="term">
+        <div class="term-n">02</div>
+        <div class="term-body">
+          <h3>Стиль обработки</h3>
+          <p>Обработка выполняется в авторском стиле фотографа и соответствует работам, представленным в портфолио. Индивидуальные пожелания по обработке обсуждаются до начала съёмки.</p>
+        </div>
+      </div>
+      <div class="term">
+        <div class="term-n">03</div>
+        <div class="term-body">
+          <h3>Публикация в социальных сетях</h3>
+          <p>Запрет на публикацию фотографий обговаривается заранее. Если этот момент не был обсуждён до съёмки, фотограф вправе разместить фотографии в портфолио и социальных сетях на своё усмотрение.</p>
+        </div>
+      </div>
+      <div class="term">
+        <div class="term-n">04</div>
+        <div class="term-body">
+          <h3>Исходные файлы</h3>
+          <p>Если вы хотите получить все исходники съёмки, необходимо предупредить фотографа об этом заранее — до начала работы.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="reviews" class="section-py grain">
   <div class="wrap">
     <div class="rv">
@@ -985,7 +613,7 @@ footer{
           <div class="rav"><img src="images/portfolio-3.webp" alt="Анастасия" loading="lazy"></div>
           <div>
             <span class="rq">"</span>
-            <p class="rt">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты. Фотографии вызывают восторг у всех, кто их видит.</p>
+            <p class="rt">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты.</p>
             <div class="rw">Анастасия · Студийная съёмка</div>
           </div>
         </div>
@@ -993,7 +621,7 @@ footer{
           <div class="rav"><img src="images/portfolio-5.webp" alt="Мария" loading="lazy"></div>
           <div>
             <span class="rq">"</span>
-            <p class="rt">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё иначе: она так легко направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими — именно такими, о которых я мечтала.</p>
+            <p class="rt">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё иначе: она так легко направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими.</p>
             <div class="rw">Мария · Уличная съёмка · Москва</div>
           </div>
         </div>
@@ -1001,67 +629,64 @@ footer{
           <div class="rav"><img src="images/portfolio-8.webp" alt="Екатерина" loading="lazy"></div>
           <div>
             <span class="rq">"</span>
-            <p class="rt">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Это настоящее сокровище, которое мы будем пересматривать годами!</p>
+            <p class="rt">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Настоящее сокровище!</p>
             <div class="rw">Екатерина · Детский праздник</div>
           </div>
         </div>
       </div>
       <div class="rarrows">
-        <button class="rarr" onclick="chR(-1)">←</button>
-        <button class="rarr" onclick="chR(1)">→</button>
+        <button class="rarr" onclick="chR(-1)" aria-label="Назад">←</button>
+        <button class="rarr" onclick="chR(1)" aria-label="Вперёд">→</button>
       </div>
       <div class="rdots" id="rdots">
-        <button class="dot on" onclick="goR(0)"></button>
-        <button class="dot" onclick="goR(1)"></button>
-        <button class="dot" onclick="goR(2)"></button>
+        <button class="dot on" onclick="goR(0)" aria-label="1"></button>
+        <button class="dot" onclick="goR(1)" aria-label="2"></button>
+        <button class="dot" onclick="goR(2)" aria-label="3"></button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INSTAGRAM -->
 <section id="instagram" class="section-py grain">
   <div class="wrap">
-    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+    <div class="rv" style="text-align:center;margin-bottom:2rem">
       <div class="sup" style="justify-content:center">Instagram</div>
-      <h2 class="serif" style="font-size:clamp(2rem,3.5vw,3rem)">@photo.nastyachoo</h2>
-      <p style="font-size:.82rem;color:var(--text-mid);margin-top:.75rem">Последние работы и закулисье съёмок</p>
+      <h2 class="serif" style="font-size:clamp(1.75rem,4.5vw,3rem)">@photo.nastyachoo</h2>
+      <p style="font-size:.82rem;color:var(--text-mid);margin-top:.6rem">Последние работы и закулисье съёмок</p>
     </div>
     <div class="ig-grid rv rv1">
-      <div class="ig-i"><img src="ig_block/ig-1.webp" alt="Фотограф Москва семейная съёмка" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-2.webp" alt="Детская съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-3.webp" alt="Студийная съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-4.webp" alt="Lifestyle фотография Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-5.webp" alt="Портретная съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-6.webp" alt="Фотосессия Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-1.webp" alt="Событийная съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-2.webp" alt="Портретная съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-3.webp" alt="Детская съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-4.webp" alt="Студийная съёмка Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-5.webp" alt="Lifestyle фотография Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <div class="ig-i"><img src="ig_block/ig-6.webp" alt="Детский праздник Москва" loading="lazy"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
     </div>
     <div style="text-align:center" class="rv rv2">
       <a href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" class="ig-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Подписаться на @photo.nastyachoo
+        Подписаться
       </a>
     </div>
   </div>
 </section>
 
-<!-- SEO EDITORIAL SECTION -->
-<section id="about-seo" class="section-py grain">
+<section id="seo" class="section-py grain">
   <div class="wrap">
     <div class="seo-grid rv">
-      <h2 class="seo-heading">Фотограф<br>в Москве</h2>
+      <h2 class="seo-h">Фотограф<br>в Москве</h2>
       <div class="seo-body">
-        <p>Семейная фотография — это искусство остановить время в самые настоящие моменты. Как семейный фотограф в Москве, я создаю снимки, которые отражают настоящие чувства: детский смех, нежные объятия и тихие моменты близости между родными людьми.</p>
-        <p>Детские праздники и дни рождения — особое направление моей работы. Каждый детский праздник — это целая вселенная эмоций, которую важно сохранить. Я умею незаметно работать с детьми и ловить те самые искренние моменты радости.</p>
-        <p>Студийные съёмки в Москве позволяют создать идеальный контролируемый свет и атмосферу, полностью подстроенную под ваш образ. Индивидуальные портреты, парные сессии, творческие проекты — студия открывает безграничные возможности.</p>
-        <p>Уличная и lifestyle-фотография в Москве и Подмосковье — мой любимый формат. Живые кадры на фоне городских улиц, парков и природы создают неповторимую атмосферу и документируют вашу жизнь такой, какая она есть.</p>
-        <p>В 2026 году я открываю направление свадебной фотографии. Свадебный фотограф в Москве — это ответственность за самый важный день в жизни пары. Если вы планируете свадьбу, свяжитесь со мной заранее — буду рада обсудить вашу историю.</p>
-        <p>Работаю по всей Москве и Московской области: Центр, ЗАО, САО, ЮЗАО, а также выезжаю в Подмосковье. Всегда готова обсудить нестандартные локации и концепции — каждая история заслуживает своего особенного места.</p>
+        <p>Событийная фотография — основное направление моей работы. Дни рождения, детские праздники, семейные торжества и корпоративные мероприятия требуют умения работать быстро, незаметно и при этом видеть главное. Я снимаю так, чтобы гости чувствовали себя свободно, а вы получили живой репортаж вместо постановочных кадров.</p>
+        <p>Детские праздники — особая история. Каждое такое событие — целая вселенная эмоций, которую важно сохранить. Я умею работать с детьми любого возраста и ловить те самые искренние моменты радости, удивления и восторга.</p>
+        <p>Семейная фотография помогает остановить время в самые настоящие моменты. Как семейный фотограф в Москве, я создаю снимки, которые отражают настоящие чувства: детский смех, нежные объятия и тихие моменты близости между родными людьми.</p>
+        <p>Студийные съёмки позволяют создать идеальный контролируемый свет и атмосферу, полностью подстроенную под ваш образ. Индивидуальные портреты, парные сессии, творческие проекты — студия открывает безграничные возможности.</p>
+        <p>Уличная и lifestyle-фотография — мой любимый формат для тех, кто хочет живых кадров. Городские улицы, парки и природа Москвы создают неповторимую атмосферу и документируют вашу жизнь такой, какая она есть.</p>
+        <p>Работаю по всей Москве и Московской области, выезжаю в Подмосковье. Всегда готова обсудить нестандартные локации и концепции — каждая история заслуживает своего особенного места.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="cl grain">
     <div class="c-sup">Контакты</div>
@@ -1085,28 +710,27 @@ footer{
   <div class="cr grain">
     <h3 class="c-h3">Оставить заявку</h3>
     <div class="frow">
-      <div class="fg"><label class="fl">Имя</label><input type="text" class="fi" id="fn" placeholder="Анна" autocomplete="given-name"></div>
-      <div class="fg"><label class="fl">Телефон</label><input type="tel" class="fi" id="fp" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
+      <div class="fg"><label class="fl" for="fn">Имя</label><input type="text" class="fi" id="fn" placeholder="Анна" autocomplete="given-name"></div>
+      <div class="fg"><label class="fl" for="fp">Телефон</label><input type="tel" class="fi" id="fp" placeholder="+7 (___) ___-__-__" autocomplete="tel"></div>
     </div>
     <div class="fg">
-      <label class="fl">Тип съёмки</label>
-      <select class="fs" id="ft" aria-label="Тип съёмки">
+      <label class="fl" for="ft">Тип съёмки</label>
+      <select class="fs" id="ft">
         <option value="">Выберите тип</option>
-        <option>Детская съёмка / праздник</option>
+        <option>Событийная съёмка</option>
+        <option>Детский праздник</option>
+        <option>Семейная съёмка</option>
         <option>Студийная съёмка</option>
         <option>Уличная съёмка</option>
-        <option>Семейная съёмка</option>
-        <option>Свадебная съёмка</option>
         <option>Другое</option>
       </select>
     </div>
-    <div class="fg"><label class="fl">Дата</label><input type="date" class="fi" id="fd"></div>
-    <div class="fg"><label class="fl">Комментарий</label><textarea class="fa" id="fc" placeholder="Расскажите о вашей идее..."></textarea></div>
+    <div class="fg"><label class="fl" for="fd">Дата</label><input type="date" class="fi" id="fd"></div>
+    <div class="fg"><label class="fl" for="fc">Комментарий</label><textarea class="fa" id="fc" placeholder="Расскажите о вашей идее..."></textarea></div>
     <button class="fsub" id="fsub">Записаться на съёмку →</button>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="fl-logo">photo.nastyachoo</div>
   <div class="fl-copy">© 2026 photo.nastyachoo · Москва</div>
@@ -1116,98 +740,78 @@ footer{
 <button id="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Наверх">↑</button>
 
 <script>
-// ── Hero background — load async, never blocks render
 (function(){
-  var img = new Image();
-  img.onload = function(){
-    document.getElementById('heroPhoto').classList.add('vis');
-  };
-  img.src = 'images/hero.webp';
+  var i=new Image();
+  i.onload=function(){document.getElementById('heroPhoto').classList.add('vis')};
+  i.src='images/hero.webp';
 })();
 
-// ── Nav
-var nav = document.getElementById('nav');
-var topbtn = document.getElementById('topbtn');
-var ticking = false;
-window.addEventListener('scroll', function(){
-  if(!ticking){
-    requestAnimationFrame(function(){
-      nav.classList.toggle('scrolled', window.scrollY > 80);
-      topbtn.classList.toggle('on', window.scrollY > 600);
-      ticking = false;
-    });
-    ticking = true;
-  }
+var nav=document.getElementById('nav'),topbtn=document.getElementById('topbtn'),tick=false;
+window.addEventListener('scroll',function(){
+  if(!tick){requestAnimationFrame(function(){
+    nav.classList.toggle('scrolled',window.scrollY>70);
+    topbtn.classList.toggle('on',window.scrollY>600);
+    tick=false;
+  });tick=true;}
 },{passive:true});
 
-// ── Mobile nav
-var burger = document.getElementById('burger');
-var mob = document.getElementById('mob');
-var mobx = document.getElementById('mobx');
-var closeMob = function(){
-  mob.classList.remove('open');
-  document.body.style.overflow = '';
-};
-burger.addEventListener('click', function(){
-  mob.classList.add('open');
-  document.body.style.overflow = 'hidden';
-});
-mobx.addEventListener('click', closeMob);
-mob.querySelectorAll('.moblink').forEach(function(l){
-  l.addEventListener('click', closeMob);
-});
+var burger=document.getElementById('burger'),mob=document.getElementById('mob'),mobx=document.getElementById('mobx');
+function closeMob(){mob.classList.remove('open');document.body.style.overflow='';}
+burger.addEventListener('click',function(){mob.classList.add('open');document.body.style.overflow='hidden';});
+mobx.addEventListener('click',closeMob);
+mob.querySelectorAll('.moblink').forEach(function(l){l.addEventListener('click',closeMob)});
 
-// ── Reveal on scroll
-var obs = new IntersectionObserver(function(entries){
-  entries.forEach(function(e){
-    if(e.isIntersecting){
-      e.target.classList.add('in');
-      obs.unobserve(e.target);
-    }
-  });
-},{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
+var obs=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:0.05,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv,.rvi').forEach(function(el){obs.observe(el)});
 
-// ── Portfolio filter
+// Portfolio filter — hide non-matching entirely
+var masonry=document.getElementById('masonry');
 document.querySelectorAll('.cat').forEach(function(btn){
-  btn.addEventListener('click', function(){
+  btn.addEventListener('click',function(){
     document.querySelectorAll('.cat').forEach(function(b){b.classList.remove('on')});
     btn.classList.add('on');
-    var cat = btn.dataset.cat;
-    document.querySelectorAll('.mi, .wedding-soon').forEach(function(item){
-      item.classList.toggle('off', cat !== 'all' && item.dataset.cat !== cat);
+    var cat=btn.dataset.cat, idx=0;
+    masonry.querySelectorAll('.mi,.ws').forEach(function(item){
+      var show = cat==='all' || item.dataset.cat===cat;
+      if(show){
+        item.style.display='';
+        item.style.animation='none';
+        void item.offsetWidth;
+        item.style.animation='miIn .5s var(--ease) both';
+        item.style.animationDelay=(idx*0.04)+'s';
+        idx++;
+      } else {
+        item.style.display='none';
+      }
     });
   });
 });
 
-// ── Reviews slider
-var cur = 0, tot = 3;
-var rtrack = document.getElementById('rtrack');
-var upd = function(){
-  rtrack.style.transform = 'translateX(-' + (cur * 100) + '%)';
-  document.querySelectorAll('.dot').forEach(function(d,i){
-    d.classList.toggle('on', i === cur);
-  });
-};
-function chR(d){cur = (cur + d + tot) % tot; upd();}
-function goR(i){cur = i; upd();}
-var autoR = setInterval(function(){chR(1)}, 6500);
-rtrack.addEventListener('touchstart', function(){clearInterval(autoR)}, {passive:true});
+var cur=0,tot=3,rtrack=document.getElementById('rtrack');
+function upd(){
+  rtrack.style.transform='translateX(-'+(cur*100)+'%)';
+  document.querySelectorAll('.dot').forEach(function(d,i){d.classList.toggle('on',i===cur)});
+}
+function chR(d){cur=(cur+d+tot)%tot;upd();}
+function goR(i){cur=i;upd();}
+var autoR=setInterval(function(){chR(1)},6500);
+rtrack.addEventListener('touchstart',function(){clearInterval(autoR)},{passive:true});
 
-// ── Form → Telegram
-document.getElementById('fsub').addEventListener('click', function(){
-  var n = document.getElementById('fn').value.trim();
-  var p = document.getElementById('fp').value.trim();
-  var t = document.getElementById('ft').value;
-  var d = document.getElementById('fd').value;
-  var c = document.getElementById('fc').value.trim();
-  var msg = 'Привет! Хочу записаться на съёмку.';
-  if(n) msg += '\nИмя: ' + n;
-  if(p) msg += '\nТелефон: ' + p;
-  if(t) msg += '\nТип съёмки: ' + t;
-  if(d) msg += '\nДата: ' + d;
-  if(c) msg += '\nКомментарий: ' + c;
-  window.open('https://t.me/patcheycho?text=' + encodeURIComponent(msg), '_blank');
+document.getElementById('fsub').addEventListener('click',function(){
+  var n=document.getElementById('fn').value.trim(),
+      p=document.getElementById('fp').value.trim(),
+      t=document.getElementById('ft').value,
+      d=document.getElementById('fd').value,
+      c=document.getElementById('fc').value.trim();
+  var m='Привет! Хочу записаться на съёмку.';
+  if(n)m+='\nИмя: '+n;
+  if(p)m+='\nТелефон: '+p;
+  if(t)m+='\nТип съёмки: '+t;
+  if(d)m+='\nДата: '+d;
+  if(c)m+='\nКомментарий: '+c;
+  window.open('https://t.me/patcheycho?text='+encodeURIComponent(m),'_blank');
 });
 </script>
 </body>
