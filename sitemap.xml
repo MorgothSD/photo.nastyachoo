@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://photo-nastyachoo.ru/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/wedding-2.webp</image:loc>
+      <image:title>Свадебная фотосъёмка в сосновом лесу</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/wedding-1.webp</image:loc>
+      <image:title>Обручальное кольцо, свадебные детали</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/wedding-3.webp</image:loc>
+      <image:title>Портрет невесты перед церемонией</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-8.webp</image:loc>
+      <image:title>Детский праздник, портрет подруг</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-2.webp</image:loc>
+      <image:title>День рождения ребёнка, торт со свечами</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-1.webp</image:loc>
+      <image:title>Дети на празднике у фотозоны</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-6.webp</image:loc>
+      <image:title>Студийная съёмка, женский портрет</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-3.webp</image:loc>
+      <image:title>Студийный женский портрет</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-7.webp</image:loc>
+      <image:title>Портрет в профиль на белом фоне</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-9.webp</image:loc>
+      <image:title>Мужской студийный портрет</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://photo-nastyachoo.ru/images/portfolio-5.webp</image:loc>
+      <image:title>Уличный портрет в центре Москвы</image:title>
+    </image:image>
+  </url>
+</urlset>

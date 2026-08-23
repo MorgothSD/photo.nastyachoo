@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Технический поддомен Netlify не должен конкурировать
+# с основным доменом в выдаче — канонический URL указан в HTML.
+
+Sitemap: https://photo-nastyachoo.ru/sitemap.xml
+Host: photo-nastyachoo.ru
