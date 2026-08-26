@@ -543,7 +543,9 @@ h2.serif-lt{color:#fff}
 .mi{
   break-inside:avoid;
   margin-bottom:clamp(.5rem,1vw,1rem);
-  position:relative;overflow:hidden;cursor:pointer;
+  /* position+overflow удерживают зум внутри рамки;
+     cursor:pointer убран — фотографии не кликабельны */
+  position:relative;overflow:hidden;
   background:var(--ivory);
   animation:miIn .55s var(--ease) both;
 }
@@ -552,34 +554,10 @@ h2.serif-lt{color:#fff}
   width:100%;height:auto;display:block;object-fit:cover;
   transition:transform .85s var(--ease);
 }
-.mi-over{
-  position:absolute;inset:0;
-  background:rgba(14,11,7,0);
-  transition:background .42s var(--ease);
-  display:flex;align-items:flex-end;
-  padding:clamp(.85rem,1.6vw,1.4rem);
-}
-.mi-info{
-  opacity:0;transform:translateY(9px);
-  transition:opacity .42s var(--ease),transform .42s var(--ease);
-  color:#fff;
-}
-.mi-cat{
-  font-size:clamp(.58rem,.55rem + .1vw,.66rem);
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold-lt);display:block;margin-bottom:.15rem;
-}
-.mi-title{font-family:var(--serif);font-size:clamp(1rem,.95rem + .2vw,1.15rem);font-weight:300}
-
+/* Подписей поверх фотографий нет: галерея говорит сама за себя.
+   Единственная реакция на наведение — лёгкий зум. */
 @media(hover:hover){
-  .mi:hover img{transform:scale(1.06)}
-  .mi:hover .mi-over{background:rgba(14,11,7,.5)}
-  .mi:hover .mi-info{opacity:1;transform:translateY(0)}
-}
-/* Touch: подписи видны всегда */
-@media(hover:none){
-  .mi-over{background:linear-gradient(to top,rgba(14,11,7,.64) 0%,rgba(14,11,7,0) 48%)}
-  .mi-info{opacity:1;transform:none}
+  .mi:hover img{transform:scale(1.04)}
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1318,47 +1296,36 @@ footer{
     <div class="masonry rv rv1" id="masonry">
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-6.webp" alt="Девушка на съёмке в фотостудии с мягким тёмным фоном" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Естественность</div></div></div>
       </div>
       <div class="mi" data-cat="children">
         <img src="images/portfolio-8.webp" alt="Две подруги смеются на детском празднике" width="1200" height="800" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Лучшие подруги</div></div></div>
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-3.webp" alt="Женский портрет в студии на светлом фоне" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Женственность</div></div></div>
       </div>
       <div class="mi" data-cat="street">
         <img src="images/portfolio-5.webp" alt="Портрет девушки на улице в центре Москвы" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Уличные</span><div class="mi-title">Город как фон</div></div></div>
       </div>
       <div class="mi" data-cat="children">
         <img src="images/portfolio-1.webp" alt="Дети на празднике у яркой фотозоны" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Яркий день</div></div></div>
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-7.webp" alt="Портрет в профиль на белом студийном фоне" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Чистый образ</div></div></div>
       </div>
       <div class="mi" data-cat="children">
         <img src="images/portfolio-2.webp" alt="Мальчик задувает свечи на торте в день рождения" width="1200" height="800" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Детские праздники</span><div class="mi-title">Торт!</div></div></div>
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-9.webp" alt="Мужской портрет в студии на сером фоне" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Студийные</span><div class="mi-title">Сила образа</div></div></div>
       </div>
       <div class="mi" data-cat="wedding">
         <img src="images/wedding-1.webp" alt="Руки жениха и невесты с обручальным кольцом крупным планом" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Свадебные</span><div class="mi-title">Обещание</div></div></div>
       </div>
       <div class="mi" data-cat="wedding">
         <img src="images/wedding-2.webp" alt="Пара молодожёнов держится за руки в сосновом лесу" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Свадебные</span><div class="mi-title">Первый взгляд</div></div></div>
       </div>
       <div class="mi" data-cat="wedding">
         <img src="images/wedding-3.webp" alt="Портрет невесты в светлом интерьере перед церемонией" width="800" height="1200" loading="lazy" decoding="async">
-        <div class="mi-over"><div class="mi-info"><span class="mi-cat">Свадебные</span><div class="mi-title">Утро невесты</div></div></div>
       </div>
     </div>
   </div>
@@ -1494,7 +1461,7 @@ footer{
           <div class="rav"><img src="images/portfolio-3.webp" alt="Фото клиентки Анастасия со съёмки" loading="lazy" decoding="async" width="80" height="80"></div>
           <div>
             <span class="rq">"</span>
-            <p class="rt">Настя — моя подруга, и когда она предложила поснимать вместе, я сразу согласилась. Но даже я не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты.</p>
+            <p class="rt">Когда Настя предложила поснимать вместе, я сразу согласилась. Но даже не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты.</p>
             <div class="rw">Анастасия · Студийная съёмка</div>
           </div>
         </div>
