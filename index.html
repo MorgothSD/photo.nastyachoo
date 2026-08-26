@@ -560,6 +560,43 @@ h2.serif-lt{color:#fff}
   .mi:hover img{transform:scale(1.04)}
 }
 
+/* Продолжение после портфолио: момент максимального доверия */
+.after-port{
+  margin-top:clamp(2.5rem,5vw,4rem);
+  padding-top:clamp(2rem,4vw,3rem);
+  border-top:1px solid var(--linen);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:clamp(1.25rem,3vw,2.5rem);
+}
+.ap-text{
+  font-family:var(--serif);
+  font-size:clamp(1.05rem,.95rem + .6vw,1.5rem);
+  font-style:italic;font-weight:300;
+  color:var(--text-dark);line-height:1.5;
+  max-width:34ch;
+}
+.ap-btns{display:flex;gap:.5rem;flex-wrap:wrap}
+.ap-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:46px;padding:.8rem clamp(1.1rem,2.2vw,1.6rem);
+  border:1px solid var(--sand);color:var(--text-mid);
+  font-size:clamp(.62rem,.58rem + .14vw,.72rem);
+  letter-spacing:.16em;text-transform:uppercase;
+  font-family:var(--sans);transition:all .3s var(--ease);
+  white-space:nowrap;
+}
+.ap-btn.ap-tg{background:var(--text-dark);border-color:var(--text-dark);color:#fff}
+@media(hover:hover){
+  .ap-btn:hover{border-color:var(--text-dark);color:var(--text-dark)}
+  .ap-btn.ap-tg:hover{background:#000;color:#fff}
+}
+@media(max-width:700px){
+  .after-port{flex-direction:column;align-items:stretch;text-align:center}
+  .ap-text{max-width:none}
+  .ap-btns{justify-content:center}
+  .ap-btn{flex:1 1 auto;min-width:8rem}
+}
+
 /* ══════════════════════════════════════════════════════════
    ПРЕИМУЩЕСТВА
    ══════════════════════════════════════════════════════════ */
@@ -934,6 +971,19 @@ h2.serif-lt{color:#fff}
   display:flex;align-items:center;justify-content:center;
   flex-shrink:0;transition:border-color .3s;
 }
+.c-or{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1.75rem;
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  color:rgba(255,255,255,.28);
+}
+.c-or::before,.c-or::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.09)}
+.pkg-note{
+  display:inline-block;margin-bottom:1rem;
+  padding:.4rem .9rem;border:1px solid var(--gold-dim);
+  font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);
+}
+@media(min-width:861px){.c-or{display:none}}
 .c-h3{
   font-family:var(--serif);
   font-size:clamp(1.4rem,1.2rem + .8vw,1.75rem);
@@ -1255,8 +1305,8 @@ footer{
     <div class="hero-divider"></div>
     <p class="hero-sub">Съёмка от 3 500 ₽ · готовые фото за 7–10 дней</p>
     <div class="hero-ctas">
-      <a href="#portfolio" class="cta-fill">Посмотреть работы</a>
-      <a href="#packages" class="cta-line">Цены и пакеты</a>
+      <a href="#contact" class="cta-fill" data-cta="hero">Обсудить съёмку</a>
+      <a href="#portfolio" class="cta-line">Смотреть работы</a>
     </div>
   </div>
   <div class="hero-scroll"><div class="scroll-tick"></div><span>Листать</span></div>
@@ -1328,6 +1378,15 @@ footer{
         <img src="images/wedding-3.webp" alt="Портрет невесты в светлом интерьере перед церемонией" width="800" height="1200" loading="lazy" decoding="async">
       </div>
     </div>
+
+    <div class="after-port rv">
+      <p class="ap-text">Понравился стиль? Расскажите о вашей съёмке — подберу формат и свободную дату.</p>
+      <div class="ap-btns">
+        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="ap-btn ap-tg" data-cta="portfolio">Telegram</a>
+        <a href="https://wa.me/79217504658" target="_blank" rel="noopener" class="ap-btn" data-cta="portfolio">WhatsApp</a>
+        <a href="#contact" class="ap-btn ap-form" data-cta="portfolio">Оставить заявку</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1371,7 +1430,7 @@ footer{
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
           <li><span class="pkg-ck">✓</span>Консультация перед съёмкой</li>
         </ul>
-        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="pkg-cta">Записаться →</a>
+        <a href="#contact" class="pkg-cta" data-pkg="Мини">Выбрать пакет →</a>
       </div>
       <div class="pkg feat rv rv1">
         <div class="pkg-badge">Популярный выбор</div>
@@ -1388,7 +1447,7 @@ footer{
           <li><span class="pkg-ck">✓</span>Приоритетная обработка</li>
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
         </ul>
-        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="pkg-cta">Записаться →</a>
+        <a href="#contact" class="pkg-cta" data-pkg="Стандарт">Выбрать пакет →</a>
       </div>
       <div class="pkg rv rv2">
         <span class="pkg-num">03</span>
@@ -1404,7 +1463,7 @@ footer{
           <li><span class="pkg-ck">✓</span>Индивидуальная концепция</li>
           <li><span class="pkg-ck">✓</span>Фотокнига в подарок</li>
         </ul>
-        <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="pkg-cta">Обсудить →</a>
+        <a href="#contact" class="pkg-cta" data-pkg="Премиум">Обсудить проект →</a>
       </div>
     </div>
   </div>
@@ -1503,12 +1562,12 @@ footer{
       <p style="font-size:.82rem;color:var(--text-mid);margin-top:.6rem">Последние работы и закулисье съёмок</p>
     </div>
     <div class="ig-grid rv rv1">
-      <div class="ig-i"><img src="ig_block/ig-1.webp" alt="Кадр со съёмки: девочка на детском празднике" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-2.webp" alt="Кадр со съёмки: портрет девушки на городской улице" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-3.webp" alt="Кадр со съёмки: детский портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-4.webp" alt="Кадр со съёмки: студийный портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-5.webp" alt="Кадр со съёмки: lifestyle-портрет в интерьере" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
-      <div class="ig-i"><img src="ig_block/ig-6.webp" alt="Кадр со съёмки: детский праздник" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></div>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-1.webp" alt="Кадр со съёмки: девочка на детском празднике" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-2.webp" alt="Кадр со съёмки: портрет девушки на городской улице" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-3.webp" alt="Кадр со съёмки: детский портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-4.webp" alt="Кадр со съёмки: студийный портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-5.webp" alt="Кадр со съёмки: lifestyle-портрет в интерьере" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
+      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-6.webp" alt="Кадр со съёмки: детский праздник" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
     </div>
     <div style="text-align:center" class="rv rv2">
       <a href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" class="ig-btn">
@@ -1541,7 +1600,7 @@ footer{
   <div class="cl grain">
     <div class="c-sup">Контакты</div>
     <h2 class="c-h2">Запишитесь<br>на съёмку</h2>
-    <p class="c-desc">Напишите в удобном мессенджере или заполните форму — отвечу в течение нескольких часов.</p>
+    <p class="c-desc">Самый быстрый способ — написать в мессенджер. Отвечу в течение нескольких часов.</p>
     <div class="clinks">
       <a href="https://t.me/patcheycho" target="_blank" rel="noopener" class="clink">
         <div class="cico"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div>
@@ -1558,11 +1617,14 @@ footer{
     </div>
   </div>
   <div class="cr grain">
+    <div class="c-or"><span>или</span></div>
+    <p class="pkg-note" id="pkg-note" hidden></p>
     <h3 class="c-h3">Оставить заявку</h3>
-    <p class="c-formnote">Отвечу в течение нескольких часов. Заявка сохранится, даже если мессенджер не откроется.</p>
+    <p class="c-formnote">Оставьте контакты — свяжусь сама. Удобно, если сейчас неудобно писать.</p>
 
     <form id="lead-form" name="lead" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
       <input type="hidden" name="form-name" value="lead">
+      <input type="hidden" name="package" id="f-package" value="">
       <p class="hp"><label>Не заполняйте: <input name="bot-field"></label></p>
 
       <div class="frow">
@@ -1891,6 +1953,27 @@ document.addEventListener('click', function(e){
   else if (a.classList.contains('clink')) goal('contacts_cta_click');
 }, {passive:true});
 
+/* ── Выбор пакета переносится в заявку ──
+   Пользователь нажал «Стандарт» → в форме уже выбран тип,
+   а в сообщении мессенджера указан пакет. Меньше печатать. */
+var chosenPkg = '';
+document.querySelectorAll('.pkg-cta[data-pkg]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    chosenPkg = btn.dataset.pkg;
+    goal('packages_cta_click', { package: chosenPkg });
+    var note = document.getElementById('pkg-note');
+    if (note){
+      note.textContent = 'Выбран пакет: ' + chosenPkg;
+      note.hidden = false;
+    }
+  });
+});
+
+/* Источник клика по CTA — понимаем, какой блок приводит к контакту */
+document.querySelectorAll('[data-cta]').forEach(function(el){
+  el.addEventListener('click', function(){ goal('cta_' + el.dataset.cta); });
+});
+
 /* ── Форма заявки ──────────────────────────────────────────
    Порядок действий важен:
    1) валидация → 2) фиксируем lead-intent в аналитике →
@@ -1913,6 +1996,7 @@ function buildMessage(){
   function v(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
   var n = v('fn'), p = v('fp'), t = v('ft'), d = v('fd'), c = v('fc');
   var m = 'Здравствуйте! Хочу записаться на съёмку.';
+  if (chosenPkg) m += '\nПакет: ' + chosenPkg;
   if (n) m += '\nИмя: ' + n;
   if (p) m += '\nТелефон: ' + p;
   if (t) m += '\nТип съёмки: ' + t;
@@ -1956,7 +2040,9 @@ if (lead) {
     /* Сохраняем заявку на сервере. Работает при включённых
        Netlify Forms; при ошибке пользователь всё равно
        получает переход в мессенджер. */
-    var body = new URLSearchParams(new FormData(lead)).toString();
+    var pkgField = document.getElementById('f-package');
+  if (pkgField) pkgField.value = chosenPkg;
+  var body = new URLSearchParams(new FormData(lead)).toString();
     var done = function(){
       lead.hidden = true;
       fdone.hidden = false;
