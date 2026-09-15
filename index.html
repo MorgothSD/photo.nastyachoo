@@ -143,7 +143,7 @@
 :root{
   /* ── Палитра ── */
   --ink:#16140F; --ink-soft:#2A2520;
-  --gold:#B8A07A; --gold-dk:#A88A5E; --gold-lt:#D4C4A8;
+  --gold:#B8A07A; --gold-dk:#806238;   /* WCAG AA на cream/ivory/white: 5.06 / 4.55 / 5.64 */ --gold-lt:#D4C4A8;
   --gold-faint:rgba(184,160,122,.14); --gold-dim:rgba(184,160,122,.32);
   --warm:#FDFAF5; --cream:#F7F2EA; --ivory:#EDE6D9;
   --linen:#E4DAC9; --sand:#D4C8B4;
@@ -271,6 +271,7 @@ h1,h2,h3{text-wrap:balance}
   border-bottom-color:var(--sand);
 }
 .nav-logo{
+  display:inline-flex;align-items:center;min-height:44px;
   font-family:var(--serif);font-size:clamp(.9rem,.85rem + .18vw,1.05rem);
   font-weight:400;letter-spacing:.13em;color:var(--text-dark);
   transition:color .3s;white-space:nowrap;flex-shrink:0;
@@ -284,7 +285,9 @@ h1,h2,h3{text-wrap:balance}
   font-size:clamp(.68rem,.64rem + .14vw,.76rem);
   letter-spacing:.18em;text-transform:uppercase;
   color:var(--text-mid);transition:color .3s;
-  white-space:nowrap;padding-block:.55rem;
+  white-space:nowrap;
+  /* зона нажатия 44px без изменения визуального размера */
+  padding-block:.9rem;display:inline-flex;align-items:center;min-height:44px;
 }
 .nav-links a:hover{color:var(--text-dark)}
 
@@ -299,7 +302,9 @@ h1,h2,h3{text-wrap:balance}
 }
 
 #mob{
-  display:none;position:fixed;inset:0;z-index:299;
+  /* z-index выше #nav (300): иначе бургер физически перекрывает
+     кнопку закрытия — они занимают одну и ту же точку экрана */
+  display:none;position:fixed;inset:0;z-index:310;
   background:rgba(247,242,234,.98);
   backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   flex-direction:column;align-items:center;justify-content:center;
@@ -327,6 +332,7 @@ h1,h2,h3{text-wrap:balance}
 @media(max-width:940px){
   .nav-links{display:none}
   .nav-burger{display:flex}
+  .nav-burger[aria-expanded="true"]{visibility:hidden}
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -398,17 +404,32 @@ h1,h2,h3{text-wrap:balance}
 /* Коллаж работ */
 .hero-shots{
   display:grid;
-  grid-template-columns:1.35fr 1fr;
-  grid-template-rows:repeat(2,1fr);
+  grid-template-columns:1.32fr 1fr;
+  /* Строки неравные: верхняя под горизонтальный кадр,
+     нижняя выше — под вертикальный портрет, чтобы не срезать голову */
+  grid-template-rows:0.82fr 1.18fr;
   gap:clamp(.5rem,1vw,.85rem);
   min-width:0;
 }
-.hs{margin:0;overflow:hidden;background:var(--ivory);position:relative}
-.hs img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
-.hs-main{grid-row:span 2;aspect-ratio:3/4}
-.hs-a{aspect-ratio:3/2;object-position:center}
-.hs-b{aspect-ratio:3/2}
-.hs-a img,.hs-b img{object-position:center 30%}
+.hs{margin:0;overflow:hidden;background:var(--ivory);position:relative;min-height:0}
+.hs img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+  transition:transform .9s var(--ease);
+}
+/* Высоту сетки задаёт ТОЛЬКО главный кадр.
+   Изображения боковых ячеек выведены из потока (position:absolute),
+   иначе их собственная высота раздувает строки грида и появляются пустоты. */
+.hs-main{grid-row:1 / span 2;grid-column:1;aspect-ratio:3/4}
+.hs-a{grid-column:2;grid-row:1}
+.hs-b{grid-column:2;grid-row:2}
+.hs-a img,.hs-b img{position:absolute;inset:0}
+
+/* Точки кадрирования подобраны под каждый снимок отдельно:
+   у детского кадра важны головы вверху, у студийного — лицо. */
+.hs-main img{object-position:center 26%}   /* пара с букетом: лица и розы в кадре */
+.hs-a img{object-position:center 30%}      /* горизонтальный кадр: лица по центру */
+.hs-b img{object-position:center 18%}      /* вертикальный портрет: голова с запасом сверху */
 @media(hover:hover){.hs:hover img{transform:scale(1.03)}}
 
 .hero-scroll{
@@ -434,8 +455,10 @@ h1,h2,h3{text-wrap:balance}
   .hero-copy{max-width:none}
   .hero-note{max-width:none}
   .hero-shots{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .hs-main{grid-row:span 1;grid-column:span 2;aspect-ratio:4/3}
-  .hs-a,.hs-b{aspect-ratio:1}
+  .hs-main{grid-row:1;grid-column:1 / span 2;aspect-ratio:4/3}
+  .hs-a{grid-row:2;grid-column:1;aspect-ratio:1}
+  .hs-b{grid-row:2;grid-column:2;aspect-ratio:1}
+  .hs-a img,.hs-b img{position:static}
   .hero-scroll{display:none}
   .hero-ctas .cta-fill,.hero-ctas .cta-line{flex:1 1 auto;min-width:9rem}
 }
@@ -1332,7 +1355,10 @@ footer{
   .grain::after{display:none}
   .hero-title,.hero-kicker{color:#1a1710}
   .hero-shots{grid-template-columns:repeat(3,1fr);grid-template-rows:auto}
-  .hs-main{grid-row:span 1;grid-column:span 1}
+  .hs-main{grid-row:1;grid-column:1;aspect-ratio:3/4}
+  .hs-a{grid-row:1;grid-column:2;aspect-ratio:3/4}
+  .hs-b{grid-row:1;grid-column:3;aspect-ratio:3/4}
+  .hs-a img,.hs-b img{position:static}
   section,.cl,.cr{background:#fff;color:#000;padding:1.5rem;page-break-inside:avoid}
   .c-h2,.c-h3,.pkg-name,.serif-lt{color:#000}
   .pkg-list li,.c-desc,.pkg-dur{color:#333}
@@ -1914,6 +1940,7 @@ if (reduceMotion || !('IntersectionObserver' in window)) {
 
 /* ── Фильтр портфолио ── */
 var masonry = document.getElementById('masonry');
+var lastFilter = 'all';
 var catBtns = document.querySelectorAll('.cat');
 var srvLinks = document.querySelectorAll('.srv');
 
@@ -1938,7 +1965,12 @@ function applyFilter(cat, source){
       idx++;
     } else { item.style.display = 'none'; }
   });
-  goal('portfolio_filter', { category: cat, source: source || 'filters' });
+  /* Защита от двойного счёта: клик по ссылке направления меняет hash,
+     из-за чего applyFilter вызывается повторно через hashchange */
+  if (cat !== lastFilter){
+    lastFilter = cat;
+    goal('portfolio_filter', { category: cat, source: source || 'filters' });
+  }
 }
 
 catBtns.forEach(function(btn){
@@ -2120,7 +2152,8 @@ document.addEventListener('click', function(e){
   var a = e.target.closest && e.target.closest('a,button');
   if (!a) return;
   if (a.classList.contains('cta-fill')) goal('hero_cta_click');
-  else if (a.classList.contains('pkg-cta')) goal('packages_cta_click');
+  /* packages_cta_click отправляет отдельный обработчик ниже —
+     он знает, какой именно пакет выбран. Здесь не дублируем. */
   else if (a.classList.contains('clink')) goal('contacts_cta_click');
 }, {passive:true});
 
@@ -2143,6 +2176,19 @@ document.querySelectorAll('.pkg-cta[data-pkg]').forEach(function(btn){
 /* Источник клика по CTA — понимаем, какой блок приводит к контакту */
 document.querySelectorAll('[data-cta]').forEach(function(el){
   el.addEventListener('click', function(){ goal('cta_' + el.dataset.cta); });
+});
+
+/* ── Возврат «назад» из bfcache: сбрасываем состояния,
+   чтобы страница не осталась в промежуточном виде ── */
+window.addEventListener('pageshow', function(e){
+  if (!e.persisted) return;
+  document.body.style.overflow = '';
+  var m = document.getElementById('mob');
+  if (m){ m.classList.remove('open'); m.hidden = true; }
+  var bg = document.getElementById('burger');
+  if (bg) bg.setAttribute('aria-expanded','false');
+  var fs = document.getElementById('fsub');
+  if (fs){ fs.disabled = false; fs.textContent = 'Жду звонка →'; }
 });
 
 /* ── Копирование контактов: запасной путь для тех,
@@ -2261,6 +2307,10 @@ if (lead) {
   if (pkgField) pkgField.value = chosenPkg;
   var body = new URLSearchParams(new FormData(lead)).toString();
     var done = function(){
+      /* Возвращаем кнопку в рабочее состояние: иначе при возврате «назад»
+         или повторном показе формы она останется заблокированной навсегда */
+      fsub.disabled = false;
+      fsub.textContent = 'Жду звонка →';
       lead.hidden = true;
       fdone.hidden = false;
       fdone.scrollIntoView({block:'center', behavior: reduceMotion ? 'auto' : 'smooth'});
