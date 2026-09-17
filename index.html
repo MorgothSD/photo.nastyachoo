@@ -544,7 +544,6 @@ h2.serif{
   color:var(--text-dark);
 }
 h2.serif-lt{color:#fff}
-.ig-h2{font-size:clamp(1.7rem,1.3rem + 1.6vw,2.6rem)}
 
 /* ══════════════════════════════════════════════════════════
    ОБО МНЕ — editorial-разворот
@@ -652,6 +651,25 @@ h2.serif-lt{color:#fff}
 @media(hover:hover){
   .mi:hover img{transform:scale(1.04)}
 }
+
+.more-wrap{display:flex;justify-content:center;margin-top:clamp(1.25rem,2.5vw,2rem)}
+.more-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  min-height:48px;padding:.85rem clamp(1.5rem,3vw,2.25rem);
+  border:1px solid var(--sand);color:var(--text-mid);
+  font-family:var(--sans);
+  font-size:clamp(.64rem,.6rem + .14vw,.72rem);
+  letter-spacing:.18em;text-transform:uppercase;
+  transition:all .3s var(--ease);
+}
+.more-btn::after{
+  content:'';width:8px;height:8px;
+  border-right:1px solid currentColor;border-bottom:1px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+}
+@media(hover:hover){.more-btn:hover{border-color:var(--ink);color:var(--ink)}}
+.more-wrap[hidden]{display:none}
+.mi[data-more-hidden]{display:none !important}  /* приоритет над анимацией фильтра */
 
 /* Продолжение после портфолио: момент максимального доверия */
 .after-port{
@@ -791,6 +809,31 @@ h2.serif-lt{color:#fff}
 .pkg-dur{font-size:var(--fs-micro);color:rgba(255,255,255,.4);letter-spacing:.04em;margin-bottom:.3rem}
 .pkg-price{font-family:var(--serif);font-size:clamp(1.1rem,1rem + .35vw,1.3rem);color:var(--gold);margin-bottom:1.6rem}
 .pkg-div{height:1px;background:rgba(255,255,255,.07);margin-bottom:1.5rem}
+.pkg-det{margin-bottom:.25rem}
+.pkg-det summary{
+  list-style:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;
+  min-height:44px;padding:.35rem 0;
+  font-size:clamp(.62rem,.58rem + .12vw,.7rem);
+  letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition:color .25s;
+}
+.pkg-det summary::-webkit-details-marker{display:none}
+.pkg-det summary::after{
+  content:'';flex-shrink:0;
+  width:9px;height:9px;
+  border-right:1px solid var(--gold);border-bottom:1px solid var(--gold);
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .3s var(--ease);
+}
+.pkg-det[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+.pkg-det[open] summary{color:var(--gold)}
+@media(hover:hover){.pkg-det summary:hover{color:var(--gold)}}
+.pkg-det summary:focus-visible{outline-offset:4px}
+.pkg-det .pkg-list{padding-top:.6rem;animation:detIn .3s var(--ease) both}
+@keyframes detIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 .pkg-lbl{
   font-size:clamp(.56rem,.53rem + .1vw,.64rem);
   letter-spacing:.2em;text-transform:uppercase;
@@ -858,122 +901,6 @@ h2.serif-lt{color:#fff}
 @media(max-width:520px){
   .term{grid-template-columns:1fr;gap:.45rem}
 }
-
-/* ══════════════════════════════════════════════════════════
-   ОТЗЫВЫ
-   ══════════════════════════════════════════════════════════ */
-#reviews{background:var(--cream)}
-.rev-wrap{
-  position:relative;
-  margin-top:clamp(2.25rem,5vw,4.5rem);
-  overflow:hidden;
-  touch-action:pan-y;
-}
-.rtrack{
-  display:flex;
-  align-items:stretch;
-  transition:transform .7s cubic-bezier(.65,0,.35,1);
-}
-.rslide{
-  min-width:100%;
-  display:grid;
-  grid-template-columns:auto minmax(0,var(--w-narrow));
-  justify-content:center;        /* группа «аватар + текст» по центру */
-  gap:clamp(1.25rem,4vw,3.5rem);
-  align-items:start;
-  padding-inline:clamp(0px,4vw,4rem);
-}
-.rav{
-  width:clamp(60px,9vw,84px);aspect-ratio:1;
-  border-radius:50%;overflow:hidden;
-  border:1px solid var(--linen);flex-shrink:0;
-}
-.rav img{width:100%;height:100%;object-fit:cover;object-position:top}
-.rq{
-  font-family:var(--serif);
-  font-size:clamp(3rem,2rem + 3.5vw,6rem);
-  line-height:.5;color:var(--linen);
-  display:block;margin-bottom:1.15rem;
-}
-.rt{
-  font-family:var(--serif);
-  font-size:clamp(1.02rem,.9rem + .55vw,1.45rem);
-  font-weight:300;font-style:italic;line-height:1.62;
-  color:var(--text-dark);margin-bottom:1.15rem;
-  max-width:56ch;
-}
-.rw{
-  font-size:clamp(.6rem,.57rem + .12vw,.7rem);
-  letter-spacing:.18em;text-transform:uppercase;color:var(--text-mid);
-}
-.rdots{display:flex;justify-content:center;gap:.3rem;margin-top:clamp(1.75rem,4vw,2.75rem)}
-.dot{
-  width:44px;height:44px;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;
-}
-.dot::before{
-  content:'';display:block;
-  width:6px;height:6px;border-radius:50%;
-  background:var(--linen);transition:all .32s var(--ease);
-}
-.dot.on::before{background:var(--text-dark);width:22px;border-radius:3px}
-.rarrows{
-  position:absolute;top:0;bottom:0;left:0;right:0;
-  display:flex;justify-content:space-between;align-items:center;
-  pointer-events:none;
-}
-.rarr{
-  pointer-events:all;
-  width:46px;height:46px;
-  display:flex;align-items:center;justify-content:center;
-  border:1px solid var(--linen);color:var(--text-mid);
-  font-size:.95rem;transition:all .3s;background:rgba(247,242,234,.7);
-  backdrop-filter:blur(4px);
-}
-@media(hover:hover){
-  .rarr:hover{border-color:var(--text-dark);color:var(--text-dark);background:rgba(30,27,22,.05)}
-}
-@media(max-width:940px){.rarrows{display:none}}
-@media(max-width:640px){
-  .rslide{grid-template-columns:1fr;gap:1.1rem}
-}
-
-/* ══════════════════════════════════════════════════════════
-   INSTAGRAM
-   ══════════════════════════════════════════════════════════ */
-#instagram{background:var(--ivory);text-align:center}
-.ig-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(min(48%,max(9.5rem,24%)),1fr));
-  gap:clamp(.3rem,.7vw,.6rem);
-  margin-block:clamp(1.75rem,4vw,2.5rem);
-}
-.ig-i{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
-.ig-i img{
-  width:100%;height:100%;object-fit:cover;object-position:top;
-  transition:transform .6s var(--ease);
-}
-.ig-fog{
-  position:absolute;inset:0;background:rgba(14,11,7,0);
-  transition:background .35s;
-  display:flex;align-items:center;justify-content:center;
-}
-.ig-h{opacity:0;transition:opacity .3s;color:#fff;font-size:1.1rem}
-@media(hover:hover){
-  .ig-i:hover img{transform:scale(1.08)}
-  .ig-i:hover .ig-fog{background:rgba(14,11,7,.35)}
-  .ig-i:hover .ig-h{opacity:1}
-}
-.ig-btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
-  min-height:46px;padding:.85rem clamp(1.35rem,3vw,2.1rem);
-  border:1px solid var(--linen);color:var(--text-mid);
-  font-size:clamp(.62rem,.58rem + .14vw,.72rem);
-  letter-spacing:.18em;text-transform:uppercase;
-  font-family:var(--sans);transition:all .3s;
-}
-@media(hover:hover){.ig-btn:hover{border-color:var(--text-dark);color:var(--text-dark)}}
 
 /* ══════════════════════════════════════════════════════════
    SEO-БЛОК
@@ -1349,7 +1276,7 @@ footer{
    ══════════════════════════════════════════════════════════ */
 @media print{
   #nav,#mob,#topbtn,.hero-scroll,.hero-ctas,
-  .rarrows,.rdots,.pkg-cta,.fsub,.ig-btn,.cats{display:none}
+  .pkg-cta,.fsub,.cats{display:none}
   body{background:#fff;color:#000;font-size:11pt}
   #hero{padding:2.5rem;background:#fff}
   .grain::after{display:none}
@@ -1364,8 +1291,6 @@ footer{
   .pkg-list li,.c-desc,.pkg-dur{color:#333}
   .why-grid{grid-template-columns:1fr 1fr}
   .pkg-grid{grid-template-columns:repeat(3,1fr)}
-  .rtrack{transform:none !important;flex-direction:column;gap:1.5rem}
-  .rslide{min-width:0;padding:0}
   img{max-height:180px}
   .masonry{column-width:auto;columns:2}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#666}
@@ -1384,7 +1309,6 @@ footer{
     <li><a href="#portfolio">Работы</a></li>
     <li><a href="#packages">Пакеты</a></li>
     <li><a href="#terms">Условия</a></li>
-    <li><a href="#reviews">Отзывы</a></li>
     <li><a href="#contact">Записаться</a></li>
   </ul>
   <button class="nav-burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mob"><span></span><span></span><span></span></button>
@@ -1396,7 +1320,6 @@ footer{
   <a href="#portfolio" class="moblink">Работы</a>
   <a href="#packages" class="moblink">Пакеты</a>
   <a href="#terms" class="moblink">Условия</a>
-  <a href="#reviews" class="moblink">Отзывы</a>
   <a href="#contact" class="moblink">Записаться</a>
 </div>
 
@@ -1473,49 +1396,49 @@ footer{
         <img src="images/wedding-5.webp" alt="Жених обнимает невесту с букетом роз в дверном проёме" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="children">
-        <img src="images/portfolio-8.webp" alt="Две подруги смеются на детском празднике" width="1200" height="800" loading="lazy" decoding="async">
-      </div>
-      <div class="mi" data-cat="studio">
-        <img src="images/portfolio-6.webp" alt="Женский портрет на съёмке в фотостудии" width="800" height="1200" loading="lazy" decoding="async">
-      </div>
-      <div class="mi" data-cat="wedding">
-        <img src="images/wedding-6.webp" alt="Невеста смеётся, жених стоит рядом в светлом зале" width="800" height="1200" loading="lazy" decoding="async">
-      </div>
-      <div class="mi" data-cat="street">
-        <img src="images/portfolio-5.webp" alt="Портрет девушки на улице в центре Москвы" width="800" height="1200" loading="lazy" decoding="async">
-      </div>
-      <div class="mi" data-cat="children">
         <img src="images/portfolio-2.webp" alt="Мальчик задувает свечи на торте в день рождения" width="1200" height="800" loading="lazy" decoding="async">
-      </div>
-      <div class="mi" data-cat="wedding">
-        <img src="images/wedding-7.webp" alt="Невеста у колонны, жених в глубине кадра" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-3.webp" alt="Женский портрет в студии на светлом фоне" width="800" height="1200" loading="lazy" decoding="async">
       </div>
-      <div class="mi" data-cat="children">
-        <img src="images/portfolio-1.webp" alt="Дети на празднике у яркой фотозоны" width="800" height="1200" loading="lazy" decoding="async">
-      </div>
       <div class="mi" data-cat="wedding">
-        <img src="images/wedding-8.webp" alt="Руки жениха и невесты с обручальными кольцами" width="800" height="1200" loading="lazy" decoding="async">
+        <img src="images/wedding-2.webp" alt="Жених и невеста держатся за руки в сосновом лесу" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mi" data-cat="children">
+        <img src="images/portfolio-8.webp" alt="Две подруги смеются на детском празднике" width="1200" height="800" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-7.webp" alt="Портрет в профиль на белом студийном фоне" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="wedding">
-        <img src="images/wedding-9.webp" alt="Пара целуется у церемониальной колонны с кольцами" width="800" height="1200" loading="lazy" decoding="async">
+        <img src="images/wedding-8.webp" alt="Руки жениха и невесты с обручальными кольцами" width="800" height="1200" loading="lazy" decoding="async">
       </div>
-      <div class="mi" data-cat="wedding">
-        <img src="images/wedding-2.webp" alt="Жених и невеста держатся за руки в сосновом лесу" width="800" height="1200" loading="lazy" decoding="async">
+      <div class="mi" data-cat="street">
+        <img src="images/portfolio-5.webp" alt="Портрет девушки на улице в центре Москвы" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mi" data-cat="children">
+        <img src="images/portfolio-1.webp" alt="Дети на празднике у яркой фотозоны" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-9.webp" alt="Мужской портрет в студии на сером фоне" width="800" height="1200" loading="lazy" decoding="async">
       </div>
-      <div class="mi" data-cat="wedding">
-        <img src="images/wedding-1.webp" alt="Руки жениха и невесты с обручальным кольцом крупным планом" width="800" height="1200" loading="lazy" decoding="async">
+      <div class="mi" data-cat="studio">
+        <img src="images/portfolio-6.webp" alt="Женский портрет на съёмке в фотостудии" width="800" height="1200" loading="lazy" decoding="async">
       </div>
-      <div class="mi" data-cat="wedding">
-        <img src="images/wedding-3.webp" alt="Портрет невесты в светлом интерьере перед церемонией" width="800" height="1200" loading="lazy" decoding="async">
+    </div>
+
+    <div class="more-wrap">
+      <button type="button" class="more-btn" id="more-btn" aria-controls="masonry">
+        <span id="more-label">Показать ещё</span>
+      </button>
+    </div>
+
+    <div class="after-port rv">
+      <p class="ap-text">Понравился стиль? Напишите дату — проверю, свободна ли она, и подберу формат.</p>
+      <div class="ap-btns">
+        <a href="https://t.me/patcheycho?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%B0%20%D0%BB%D0%B8%20%D1%83%20%D0%B2%D0%B0%D1%81%20%D0%B4%D0%B0%D1%82%D0%B0." target="_blank" rel="noopener" class="ap-btn ap-tg" data-cta="portfolio">Написать в Telegram</a>
+        <a href="https://wa.me/79217504658?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D1%81%D0%B2%D0%BE%D0%B1%D0%BE%D0%B4%D0%BD%D0%B0%20%D0%BB%D0%B8%20%D1%83%20%D0%B2%D0%B0%D1%81%20%D0%B4%D0%B0%D1%82%D0%B0." target="_blank" rel="noopener" class="ap-btn" data-cta="portfolio">WhatsApp</a>
+        <a href="#contact" class="ap-btn ap-form" data-cta="portfolio">Оставить номер</a>
       </div>
     </div>
   </div>
@@ -1534,13 +1457,15 @@ footer{
         <div class="pkg-dur">1 час съёмки</div>
         <div class="pkg-price">от 3 500 ₽</div>
         <div class="pkg-div"></div>
-        <div class="pkg-lbl">Включено</div>
-        <ul class="pkg-list">
+        <details class="pkg-det">
+          <summary><span>Что входит</span></summary>
+          <ul class="pkg-list">
           <li><span class="pkg-ck">✓</span>1 час съёмки</li>
           <li><span class="pkg-ck">✓</span>20 обработанных фотографий</li>
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
           <li><span class="pkg-ck">✓</span>Консультация перед съёмкой</li>
         </ul>
+        </details>
         <a href="#contact" class="pkg-cta" data-pkg="Мини">Узнать дату →</a>
       </div>
       <div class="pkg feat rv rv1">
@@ -1550,14 +1475,16 @@ footer{
         <div class="pkg-dur">2 часа съёмки</div>
         <div class="pkg-price">от 6 000 ₽</div>
         <div class="pkg-div"></div>
-        <div class="pkg-lbl">Включено</div>
-        <ul class="pkg-list">
+        <details class="pkg-det">
+          <summary><span>Что входит</span></summary>
+          <ul class="pkg-list">
           <li><span class="pkg-ck">✓</span>2 часа съёмки</li>
           <li><span class="pkg-ck">✓</span>40 обработанных фотографий</li>
           <li><span class="pkg-ck">✓</span>Помощь с образами и локацией</li>
           <li><span class="pkg-ck">✓</span>Приоритетная обработка</li>
           <li><span class="pkg-ck">✓</span>Галерея для скачивания</li>
         </ul>
+        </details>
         <a href="#contact" class="pkg-cta" data-pkg="Стандарт">Узнать дату →</a>
       </div>
       <div class="pkg rv rv2">
@@ -1566,14 +1493,16 @@ footer{
         <div class="pkg-dur">Индивидуальный проект</div>
         <div class="pkg-price">Обсуждается</div>
         <div class="pkg-div"></div>
-        <div class="pkg-lbl">Включено</div>
-        <ul class="pkg-list">
+        <details class="pkg-det">
+          <summary><span>Что входит</span></summary>
+          <ul class="pkg-list">
           <li><span class="pkg-ck">✓</span>Полный день съёмки</li>
           <li><span class="pkg-ck">✓</span>Расширенная галерея</li>
           <li><span class="pkg-ck">✓</span>Несколько локаций</li>
           <li><span class="pkg-ck">✓</span>Индивидуальная концепция</li>
           <li><span class="pkg-ck">✓</span>Фотокнига в подарок</li>
         </ul>
+        </details>
         <a href="#contact" class="pkg-cta" data-pkg="Премиум">Обсудить проект →</a>
       </div>
     </div>
@@ -1613,51 +1542,6 @@ footer{
   </div>
 </section>
 
-<section id="reviews" class="section-py grain">
-  <div class="wrap wrap--narrow">
-    <div class="rv">
-      <div class="sup">Отзывы</div>
-      <h2 class="serif">Клиенты говорят</h2>
-    </div>
-    <div class="rev-wrap rv rv1" aria-roledescription="карусель">
-      <div class="rtrack" id="rtrack">
-        <div class="rslide">
-          <div class="rav"><img src="images/portfolio-3.webp" alt="Фото клиентки Анастасия со съёмки" loading="lazy" decoding="async" width="80" height="80"></div>
-          <div>
-            <span class="rq">"</span>
-            <p class="rt">Когда Настя предложила поснимать вместе, я сразу согласилась. Но даже не ожидала такого результата! Она создаёт атмосферу полного доверия — я просто была собой, а она поймала самые красивые моменты.</p>
-            <div class="rw">Анастасия · Студийная съёмка</div>
-          </div>
-        </div>
-        <div class="rslide">
-          <div class="rav"><img src="images/portfolio-5.webp" alt="Фото клиентки Мария со съёмки" loading="lazy" decoding="async" width="80" height="80"></div>
-          <div>
-            <span class="rq">"</span>
-            <p class="rt">Я так долго откладывала личную фотосессию — казалось, что это не для меня. Но с Настей всё иначе: она так легко направляла меня, что я совершенно забыла про камеру. Фотографии получились живыми и настоящими.</p>
-            <div class="rw">Мария · Уличная съёмка · Москва</div>
-          </div>
-        </div>
-        <div class="rslide">
-          <div class="rav"><img src="images/portfolio-8.webp" alt="Фото клиентки Екатерина со съёмки" loading="lazy" decoding="async" width="80" height="80"></div>
-          <div>
-            <span class="rq">"</span>
-            <p class="rt">Снимали день рождения дочки — Настя так умело работала с детьми, что они совершенно не замечали камеру. Поймала столько искренних эмоций и смеха, которые иначе просто ушли бы в никуда. Настоящее сокровище!</p>
-            <div class="rw">Екатерина · Детский праздник</div>
-          </div>
-        </div>
-      </div>
-      <div class="rarrows">
-        <button class="rarr" id="rprev" aria-label="Предыдущий отзыв">←</button>
-        <button class="rarr" id="rnext" aria-label="Следующий отзыв">→</button>
-      </div>
-      <div class="rdots" id="rdots" role="tablist" aria-label="Отзывы">
-        <button class="dot on" data-i="0" role="tab" aria-selected="true" aria-label="Отзыв 1"></button>
-        <button class="dot" data-i="1" role="tab" aria-selected="false" aria-label="Отзыв 2"></button>
-        <button class="dot" data-i="2" role="tab" aria-selected="false" aria-label="Отзыв 3"></button>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="about" class="grain">
   <div class="wrap wrap--content about-grid">
@@ -1675,29 +1559,6 @@ footer{
   </div>
 </section>
 
-<section id="instagram" class="section-py grain">
-  <div class="wrap">
-    <div class="rv" style="text-align:center;margin-bottom:2rem">
-      <div class="sup" style="justify-content:center">Instagram</div>
-      <h2 class="serif ig-h2">@photo.nastyachoo</h2>
-      <p style="font-size:.82rem;color:var(--text-mid);margin-top:.6rem">Последние работы и закулисье съёмок</p>
-    </div>
-    <div class="ig-grid rv rv1">
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-1.webp" alt="Кадр со съёмки: девочка на детском празднике" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-2.webp" alt="Кадр со съёмки: портрет девушки на городской улице" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-3.webp" alt="Кадр со съёмки: детский портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-4.webp" alt="Кадр со съёмки: студийный портрет" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-5.webp" alt="Кадр со съёмки: lifestyle-портрет в интерьере" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-      <a class="ig-i" href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" aria-label="Открыть Instagram"><img src="ig_block/ig-6.webp" alt="Кадр со съёмки: детский праздник" loading="lazy" decoding="async" width="400" height="400"><div class="ig-fog"><span class="ig-h">♡</span></div></a>
-    </div>
-    <div style="text-align:center" class="rv rv2">
-      <a href="https://instagram.com/photo.nastyachoo" target="_blank" rel="noopener" class="ig-btn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-        Подписаться
-      </a>
-    </div>
-  </div>
-</section>
 
 <section id="terms" class="section-py grain">
   <div class="wrap wrap--content terms-grid">
@@ -1963,8 +1824,14 @@ function applyFilter(cat, source){
         item.style.animationDelay = (idx * 0.04) + 's';
       }
       idx++;
-    } else { item.style.display = 'none'; }
+      item.dataset.filtered = 'in';
+    } else {
+      item.style.display = 'none';
+      item.dataset.filtered = 'out';
+    }
   });
+  shownLimit = STEP;          /* при смене категории показываем снова первые 6 */
+  applyLimit();
   /* Защита от двойного счёта: клик по ссылке направления меняет hash,
      из-за чего applyFilter вызывается повторно через hashchange */
   if (cat !== lastFilter){
@@ -1972,6 +1839,42 @@ function applyFilter(cat, source){
     goal('portfolio_filter', { category: cat, source: source || 'filters' });
   }
 }
+
+/* ── Галерея показывается порциями: страница короче,
+   а фотографии остаются крупными ── */
+var STEP = 6;
+var shownLimit = STEP;
+var moreWrap = document.querySelector('.more-wrap');
+var moreBtn = document.getElementById('more-btn');
+var moreLabel = document.getElementById('more-label');
+
+function applyLimit(){
+  var matching = Array.prototype.filter.call(
+    masonry.querySelectorAll('.mi'),
+    function(el){ return el.dataset.filtered !== 'out'; });
+  matching.forEach(function(el,i){
+    if (i < shownLimit) el.removeAttribute('data-more-hidden');
+    else el.setAttribute('data-more-hidden','');
+  });
+  var rest = matching.length - shownLimit;
+  if (rest > 0){
+    moreWrap.hidden = false;
+    moreLabel.textContent = 'Показать ещё ' + rest;
+  } else {
+    moreWrap.hidden = true;
+  }
+}
+if (moreBtn) moreBtn.addEventListener('click', function(){
+  shownLimit += STEP;
+  applyLimit();
+  goal('portfolio_more');
+});
+
+/* Начальное состояние: все кадры проходят фильтр «Все» */
+Array.prototype.forEach.call(masonry.querySelectorAll('.mi'), function(el){
+  el.dataset.filtered = 'in';
+});
+applyLimit();
 
 catBtns.forEach(function(btn){
   btn.setAttribute('aria-pressed', btn.classList.contains('on') ? 'true' : 'false');
@@ -2004,7 +1907,7 @@ srvLinks.forEach(function(link){
 (function(){
   if (!('IntersectionObserver' in window)) return;
   [['#portfolio','portfolio_view'],['#packages','packages_view'],
-   ['#reviews','reviews_view'],['#how','how_view']].forEach(function(pair){
+   ['#how','how_view']].forEach(function(pair){
     var el = document.querySelector(pair[0]);
     if (!el) return;
     var seen = false;
@@ -2016,72 +1919,6 @@ srvLinks.forEach(function(link){
     o.observe(el);
   });
 })();
-
-/* ── Слайдер отзывов: точки, стрелки, свайп, клавиатура ── */
-var rtrack = document.getElementById('rtrack');
-var dots = document.querySelectorAll('.dot');
-var slides = document.querySelectorAll('.rslide');
-var total = slides.length;
-var cur = 0;
-var autoTimer = null;
-
-function render(){
-  rtrack.style.transform = 'translateX(' + (-cur * 100) + '%)';
-  Array.prototype.forEach.call(dots, function(d,i){
-    var on = (i === cur);
-    d.classList.toggle('on', on);
-    d.setAttribute('aria-selected', on ? 'true' : 'false');
-  });
-  Array.prototype.forEach.call(slides, function(sl,i){
-    sl.setAttribute('aria-hidden', i === cur ? 'false' : 'true');
-  });
-}
-function go(i){ cur = (i + total) % total; render(); }
-function step(d){ go(cur + d); }
-
-function startAuto(){
-  if (reduceMotion) return;
-  stopAuto();
-  autoTimer = setInterval(function(){ step(1); }, 6500);
-}
-function stopAuto(){ if (autoTimer){ clearInterval(autoTimer); autoTimer = null; } }
-
-Array.prototype.forEach.call(dots, function(d){
-  d.addEventListener('click', function(){ go(parseInt(d.dataset.i,10)); stopAuto(); startAuto(); });
-});
-var rprev = document.getElementById('rprev'), rnext = document.getElementById('rnext');
-if (rprev) rprev.addEventListener('click', function(){ step(-1); stopAuto(); startAuto(); });
-if (rnext) rnext.addEventListener('click', function(){ step(1); stopAuto(); startAuto(); });
-
-/* Свайп — только горизонтальный, не мешает вертикальному скроллу */
-var tx = 0, ty = 0, swiping = false;
-var revWrap = document.querySelector('.rev-wrap');
-revWrap.addEventListener('touchstart', function(e){
-  if (e.touches.length !== 1) return;
-  tx = e.touches[0].clientX; ty = e.touches[0].clientY;
-  swiping = true; stopAuto();
-}, {passive:true});
-revWrap.addEventListener('touchend', function(e){
-  if (!swiping) return;
-  swiping = false;
-  var t = e.changedTouches[0];
-  var dx = t.clientX - tx, dy = t.clientY - ty;
-  if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) step(dx < 0 ? 1 : -1);
-  startAuto();
-}, {passive:true});
-
-/* Пауза автопрокрутки, когда карусель не видна */
-if ('IntersectionObserver' in window){
-  new IntersectionObserver(function(en){
-    en.forEach(function(e){ e.isIntersecting ? startAuto() : stopAuto(); });
-  }, {threshold:0.25}).observe(revWrap);
-} else { startAuto(); }
-
-revWrap.addEventListener('keydown', function(e){
-  if (e.key === 'ArrowLeft'){ step(-1); stopAuto(); startAuto(); }
-  if (e.key === 'ArrowRight'){ step(1); stopAuto(); startAuto(); }
-});
-render();
 
 /* ── Смена ориентации: снимаем блокировки, пересчитываем ── */
 function onViewportChange(){
