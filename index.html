@@ -1411,16 +1411,25 @@ footer{
         <img src="images/portfolio-7.webp" alt="Портрет в профиль на белом студийном фоне" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="wedding">
-        <img src="images/wedding-8.webp" alt="Руки жениха и невесты с обручальными кольцами" width="800" height="1200" loading="lazy" decoding="async">
+        <img src="images/wedding-6.webp" alt="Невеста смеётся, жених стоит рядом в светлом зале" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="street">
         <img src="images/portfolio-5.webp" alt="Портрет девушки на улице в центре Москвы" width="800" height="1200" loading="lazy" decoding="async">
       </div>
+      <div class="mi" data-cat="wedding">
+        <img src="images/wedding-8.webp" alt="Руки жениха и невесты с обручальными кольцами" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
       <div class="mi" data-cat="children">
         <img src="images/portfolio-1.webp" alt="Дети на празднике у яркой фотозоны" width="800" height="1200" loading="lazy" decoding="async">
       </div>
+      <div class="mi" data-cat="wedding">
+        <img src="images/wedding-3.webp" alt="Портрет невесты в светлом интерьере перед церемонией" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-9.webp" alt="Мужской портрет в студии на сером фоне" width="800" height="1200" loading="lazy" decoding="async">
+      </div>
+      <div class="mi" data-cat="wedding">
+        <img src="images/wedding-1.webp" alt="Рука невесты с обручальным кольцом крупным планом" width="800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="mi" data-cat="studio">
         <img src="images/portfolio-6.webp" alt="Женский портрет на съёмке в фотостудии" width="800" height="1200" loading="lazy" decoding="async">
@@ -1865,7 +1874,9 @@ function applyLimit(){
   }
 }
 if (moreBtn) moreBtn.addEventListener('click', function(){
-  shownLimit += STEP;
+  /* Раскрываем всё сразу: с 14 кадрами дробление на шаги
+     оставляло неудобный остаток в 2 фотографии */
+  shownLimit = masonry.querySelectorAll('.mi').length;
   applyLimit();
   goal('portfolio_more');
 });
