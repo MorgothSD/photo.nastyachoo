@@ -903,37 +903,6 @@ h2.serif-lt{color:#fff}
 }
 
 /* ══════════════════════════════════════════════════════════
-   SEO-БЛОК
-   ══════════════════════════════════════════════════════════ */
-#seo{background:var(--cream);border-top:1px solid var(--linen)}
-.seo-grid{
-  display:grid;
-  grid-template-columns:minmax(0,.5fr) minmax(0,1fr);
-  gap:var(--gap);align-items:start;
-}
-.seo-h{
-  font-family:var(--serif);
-  font-size:clamp(1.6rem,1.2rem + 1.9vw,2.75rem);
-  font-weight:300;line-height:1.18;color:var(--text-dark);
-  position:sticky;top:6.5rem;
-}
-/* Колонки появляются только когда каждая остаётся читаемой */
-.seo-body{
-  column-width:400px;
-  column-gap:clamp(2rem,4vw,5rem);
-  max-width:none;
-}
-.seo-body p{
-  font-size:var(--fs-small);line-height:1.95;
-  color:var(--text-mid);break-inside:avoid;
-  margin-bottom:1rem;max-width:64ch;
-}
-@media(max-width:860px){
-  .seo-grid{grid-template-columns:1fr;gap:clamp(1.5rem,4vw,2rem)}
-  .seo-h{position:static}
-}
-
-/* ══════════════════════════════════════════════════════════
    КОНТАКТЫ
    ══════════════════════════════════════════════════════════ */
 #contact{display:grid;grid-template-columns:1fr 1fr}
@@ -1055,6 +1024,30 @@ h2.serif-lt{color:#fff}
 .fa{resize:vertical;min-height:76px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 @media(max-width:560px){.frow{grid-template-columns:1fr;gap:0}}
+.f-consent{
+  display:flex;align-items:flex-start;gap:.7rem;
+  margin-top:1.25rem;cursor:pointer;
+  font-size:.78rem;line-height:1.6;
+  color:rgba(255,255,255,.42);
+}
+.f-consent input{
+  appearance:none;-webkit-appearance:none;
+  flex-shrink:0;width:20px;height:20px;margin-top:.1rem;
+  border:1px solid rgba(255,255,255,.25);
+  background:none;cursor:pointer;
+  transition:border-color .25s,background .25s;
+  position:relative;
+}
+.f-consent input:checked{border-color:var(--gold);background:var(--gold-faint)}
+.f-consent input:checked::after{
+  content:'';position:absolute;
+  left:6px;top:2px;width:5px;height:10px;
+  border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);
+  transform:rotate(45deg);
+}
+.f-consent input[aria-invalid="true"]{border-color:#E0A08A}
+.f-consent a{color:rgba(255,255,255,.62);text-decoration:underline;text-underline-offset:2px}
+.f-consent a:hover{color:#fff}
 .fsub{
   display:flex;align-items:center;justify-content:center;
   width:100%;margin-top:1.5rem;
@@ -1087,6 +1080,8 @@ h2.serif-lt{color:#fff}
   font-size:.85rem;line-height:1.8;
   color:rgba(255,255,255,.45);margin-bottom:1.5rem;
 }
+.fdone--warn{border-color:rgba(224,160,138,.5)}
+.fdone--warn .fdone-mark{border-color:rgba(224,160,138,.6);color:#E0A08A}
 .fdone-btns{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem}
 .fdone-btn{
   display:inline-flex;align-items:center;justify-content:center;
@@ -1118,6 +1113,8 @@ footer{
 }
 .fl-logo{font-family:var(--serif);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.4);letter-spacing:.1em}
 .fl-copy{font-size:var(--fs-micro);color:rgba(255,255,255,.22);letter-spacing:.06em}
+.fl-link{text-decoration:underline;text-underline-offset:2px;display:inline-block;padding-block:.6rem;min-height:40px}
+.fl-link:hover{color:rgba(255,255,255,.45)}
 .fl-love{font-family:var(--serif);font-style:italic;font-size:.82rem;color:rgba(255,255,255,.22)}
 @media(max-width:640px){.foot-inner{flex-direction:column;text-align:center}}
 
@@ -1608,23 +1605,6 @@ footer{
   </div>
 </section>
 
-<section id="seo" class="section-py grain">
-  <div class="wrap wrap--narrow">
-    <div class="seo-grid rv">
-      <h2 class="seo-h">Фотограф<br>в Москве</h2>
-      <div class="seo-body">
-        <p>Событийная фотография — основное направление моей работы. Дни рождения, детские праздники, семейные торжества и корпоративные мероприятия требуют умения работать быстро, незаметно и при этом видеть главное. Я снимаю так, чтобы гости чувствовали себя свободно, а вы получили живой репортаж вместо постановочных кадров.</p>
-        <p>Свадебная фотография — это ответственность за один из самых важных дней в жизни пары. Я снимаю свадьбы так, чтобы сохранить не только официальную хронику, но и живые эмоции: волнение перед церемонией, первый взгляд, смех гостей и тихие моменты вдвоём.</p>
-        <p>Детские праздники — особая история. Каждое такое событие — целая вселенная эмоций, которую важно сохранить. Я умею работать с детьми любого возраста и ловить те самые искренние моменты радости, удивления и восторга.</p>
-        <p>Семейная фотография помогает остановить время в самые настоящие моменты. Как семейный фотограф в Москве, я создаю снимки, которые отражают настоящие чувства: детский смех, нежные объятия и тихие моменты близости между родными людьми.</p>
-        <p>Студийные съёмки позволяют создать идеальный контролируемый свет и атмосферу, полностью подстроенную под ваш образ. Индивидуальные портреты, парные сессии, творческие проекты — студия открывает безграничные возможности.</p>
-        <p>Уличная и lifestyle-фотография — мой любимый формат для тех, кто хочет живых кадров. Городские улицы, парки и природа Москвы создают неповторимую атмосферу и документируют вашу жизнь такой, какая она есть.</p>
-        <p>Как проходит съёмка. Сначала мы обсуждаем идею, дату и место — я подскажу подходящую локацию и помогу с образами. На самой съёмке направляю и подсказываю позы, поэтому опыт позирования не нужен: достаточно прийти и быть собой. Обработанные фотографии вы получаете в течение 7–10 дней в галерее для скачивания. Стоимость зависит от продолжительности — актуальные пакеты и цены указаны выше.</p>
-        <p>Работаю по всей Москве и Московской области, выезжаю в Подмосковье. Всегда готова обсудить нестандартные локации и концепции — каждая история заслуживает своего особенного места.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="contact">
   <div class="cl grain">
@@ -1689,6 +1669,13 @@ footer{
       <div class="fg"><label class="fl" for="fd">Дата</label><input type="date" class="fi" id="fd" name="date"></div>
       <div class="fg"><label class="fl" for="fc">Комментарий</label><textarea class="fa" id="fc" name="comment" placeholder="Расскажите о вашей идее..."></textarea></div>
 
+      <label class="f-consent">
+        <input type="checkbox" id="fc-agree" name="consent" required>
+        <span>Я согласен(а) на обработку персональных данных в соответствии с
+          <a href="/privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a></span>
+      </label>
+      <span class="ferr" id="err-fc-agree"></span>
+
       <button type="submit" class="fsub" id="fsub">Жду звонка →</button>
     </form>
 
@@ -1710,7 +1697,7 @@ footer{
 <footer>
  <div class="foot-inner">
   <div class="fl-logo">photo.nastyachoo</div>
-  <div class="fl-copy">© 2026 photo.nastyachoo · Москва</div>
+  <div class="fl-copy">© 2026 photo.nastyachoo · Москва · <a href="/privacy.html" class="fl-link">Политика конфиденциальности</a></div>
   <div class="fl-love">Сделано с любовью к красивым историям.</div>
  </div>
 </footer>
@@ -2124,6 +2111,12 @@ function validate(){
   if (n.length < 2){ fieldErr('fn','Укажите, как к вам обращаться'); ok = false; }
   var digits = p.replace(/\D/g,'');
   if (digits.length < 10){ fieldErr('fp','Укажите номер для связи'); ok = false; }
+  var agree = document.getElementById('fc-agree');
+  fieldErr('fc-agree','');
+  if (agree && !agree.checked){
+    fieldErr('fc-agree','Без согласия на обработку данных заявку отправить нельзя');
+    ok = false;
+  }
   if (!ok){
     var bad = document.querySelector('[aria-invalid="true"]');
     if (bad){ bad.focus(); }
@@ -2148,17 +2141,38 @@ if (lead) {
     fsub.disabled = true;
     fsub.textContent = 'Отправляем…';
 
-    /* Сохраняем заявку на сервере. Работает при включённых
-       Netlify Forms; при ошибке пользователь всё равно
-       получает переход в мессенджер. */
+    /* Куда уходит заявка.
+       '/'          — Netlify Forms (текущий хостинг)
+       '/send.php'  — PHP-обработчик (reg.ru и другие обычные хостинги)
+       При переезде достаточно поменять одну строку ниже. */
+    var FORM_ENDPOINT = '/';
+
     var pkgField = document.getElementById('f-package');
-  if (pkgField) pkgField.value = chosenPkg;
-  var body = new URLSearchParams(new FormData(lead)).toString();
-    var done = function(){
+    if (pkgField) pkgField.value = chosenPkg;
+    var body = new URLSearchParams(new FormData(lead)).toString();
+    var done = function(saved){
       /* Возвращаем кнопку в рабочее состояние: иначе при возврате «назад»
          или повторном показе формы она останется заблокированной навсегда */
       fsub.disabled = false;
       fsub.textContent = 'Жду звонка →';
+
+      /* Если заявка не дошла до сервера — говорим об этом прямо,
+         а не показываем ложное подтверждение */
+      var mark = fdone.querySelector('.fdone-mark');
+      var head = fdone.querySelector('h4');
+      var text = fdone.querySelector('p');
+      if (saved === false){
+        fdone.classList.add('fdone--warn');
+        if (mark) mark.textContent = '!';
+        if (head) head.textContent = 'Не удалось отправить заявку';
+        if (text) text.textContent = 'Похоже, пропала связь. Напишите напрямую — текст заявки уже готов, его можно скопировать кнопкой ниже.';
+      } else {
+        fdone.classList.remove('fdone--warn');
+        if (mark) mark.textContent = '✓';
+        if (head) head.textContent = 'Записала ваш номер';
+        if (text) text.textContent = 'Свяжусь с вами в ближайшее время. Если хотите написать прямо сейчас — вот мессенджеры:';
+      }
+
       lead.hidden = true;
       fdone.hidden = false;
       fdone.scrollIntoView({block:'center', behavior: reduceMotion ? 'auto' : 'smooth'});
@@ -2167,12 +2181,21 @@ if (lead) {
       document.getElementById('fdone-wa').href = 'https://wa.me/79217504658?text=' + enc;
     };
 
-    fetch('/', {
+    /* Сбой отправки больше не проглатывается молча:
+       раньше человек видел «Записала ваш номер», даже если
+       заявка никуда не ушла. */
+    fetch(FORM_ENDPOINT, {
       method: 'POST',
       headers: {'Content-Type':'application/x-www-form-urlencoded'},
       body: body
-    }).then(function(){ goal('form_saved'); }).catch(function(){ /* офлайн или Forms выключены */ })
-      .then(done, done);
+    }).then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      goal('form_saved');
+      done(true);
+    }).catch(function(){
+      goal('form_failed');
+      done(false);
+    });
   });
 
   /* Снимаем ошибку, как только пользователь начал исправлять */
